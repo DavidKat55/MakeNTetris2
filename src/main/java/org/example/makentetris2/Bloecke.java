@@ -15,10 +15,6 @@ public class Bloecke {
         this.block = block;
     }
 
-    public static void bloeckeBewegen(int x, int y) {
-        spielFeld.setConstraints(block, (int) (block.getLayoutX()- block.getLayoutX()), (int) (block.getLayoutY() - block.getLayoutY() -1));
-    }
-
     public void setBlock(Rectangle block) {
         this.block = block;
     }

@@ -45,6 +45,6 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Rectangle fx:id="block" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" onKeyPressed="#movement" stroke="BLACK" strokeType="INSIDE" width="44.0" GridPane.columnIndex="7" GridPane.rowIndex="13" />
+      <Rectangle fx:id="block" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" stroke="BLACK" strokeType="INSIDE" width="44.0" GridPane.columnIndex="7" GridPane.rowIndex="13" />
    </children>
 </GridPane>

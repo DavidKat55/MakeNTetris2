@@ -12,14 +12,13 @@ public class Events {
     @FXML
     private GridPane spielFeld;
 
-    private Bloecke bloecke;
-    private int x;
-    private int y;
-
-    public void moveUp(Rectangle block) {
+    public void moveUp(Rectangle block, int x, int y) {
+        System.out.println("Move Up");
         block.setOnKeyPressed(event -> {
+            System.out.println("Key Pressed");
             if (event.getCode() == KeyCode.W) {
-                spielFeld.setConstraints(block, x, y - 1);
+                System.out.println("W Pressed");
+                spielFeld.setConstraints(block, x, y );
             }
         });
     }

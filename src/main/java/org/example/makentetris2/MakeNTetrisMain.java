@@ -16,23 +16,6 @@ public class MakeNTetrisMain extends Application {
         stage.setTitle("MakeNTetris");
         stage.setScene(scene);
         stage.show();
-
-        scene.setOnKeyPressed(event -> {
-            switch (event.getCode()) {
-                case W:
-                    Bloecke.bloeckeBewegen(1 , 1);
-                    break;
-                case A:
-                    System.out.println("A");
-                    break;
-                case S:
-                    System.out.println("S");
-                    break;
-                case D:
-                    System.out.println("D");
-                    break;
-            }
-        });
     }
 
     public static void main(String[] args) {
