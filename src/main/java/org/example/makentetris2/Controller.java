@@ -1,23 +1,20 @@
 package org.example.makentetris2;
 
 import javafx.fxml.FXML;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 
 public class Controller {
 
+    @FXML
     private Rectangle block;
-    private Bloecke bloecke = new Bloecke(block);
+    @FXML
+    private GridPane spielFeld;
     private Events events;
-    private int x = 0;
-    private int y = 0;
 
     @FXML
     public void initialize() {
-        block = bloecke.getBlooock();
         events = new Events();
-        events.moveBlock();
+        events.setBlockPosition(5, 0, block, spielFeld);
     }
-
 }
