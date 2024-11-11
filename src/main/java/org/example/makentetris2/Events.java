@@ -7,19 +7,38 @@ import javafx.scene.shape.Rectangle;
 
 public class Events {
 
-    @FXML
     private Rectangle block;
-    @FXML
-    private GridPane spielFeld;
+
+    private int x;
+    private int y;
 
     public void moveUp(Rectangle block, int x, int y) {
-        System.out.println("Move Up");
-        block.setOnKeyPressed(event -> {
-            System.out.println("Key Pressed");
-            if (event.getCode() == KeyCode.W) {
-                System.out.println("W Pressed");
-                spielFeld.setConstraints(block, x, y );
-            }
-        });
+        System.out.println("Move up");
+    }
+    public void moveDown(Rectangle block, int x, int y) {
+        System.out.println("Move down");
+    }
+    public void moveLeft(Rectangle block, int x, int y) {
+        System.out.println("Move left");
+    }
+    public void moveRight(Rectangle block, int x, int y) {
+        System.out.println("Move right");
+    }
+
+    public void moveBlock(KeyCode keyCode) {
+        switch (keyCode) {
+            case UP:
+                moveUp(block, x, y);
+                break;
+            case DOWN:
+                moveDown(block, x, y);
+                break;
+            case LEFT:
+                moveLeft(block, x, y);
+                break;
+            case RIGHT:
+                moveRight(block, x, y);
+                break;
+        }
     }
 }

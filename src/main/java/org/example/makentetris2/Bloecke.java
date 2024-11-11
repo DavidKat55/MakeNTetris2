@@ -1,25 +1,26 @@
 package org.example.makentetris2;
 
 import javafx.fxml.FXML;
-import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 
 public class Bloecke {
 
     @FXML
-    private static Rectangle block;
-    @FXML
-    private static GridPane spielFeld;
+    private Rectangle blooock;
+
+    public Bloecke() {
+        blooock = new Rectangle();
+    }
 
     public Bloecke(Rectangle block) {
-        this.block = block;
+        this.blooock = block;
     }
 
-    public void setBlock(Rectangle block) {
-        this.block = block;
+    public void setBlooock(Rectangle blooock) {
+        this.blooock = blooock;
     }
-    public Rectangle getBlock() {
-        return block;
+    public Rectangle getBlooock() {
+        return blooock;
     }
 
 }
