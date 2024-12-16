@@ -2,10 +2,12 @@ package org.example.makentetris2;
 
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 
 import java.util.EventListener;
+import java.util.List;
 
 public class Events {
 
