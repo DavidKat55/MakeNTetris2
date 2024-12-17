@@ -3,6 +3,7 @@
 <?import javafx.scene.Group?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 
@@ -46,8 +47,9 @@
    <children>
       <Group fx:id="block" GridPane.columnIndex="8" GridPane.rowIndex="10">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="122.0" layoutY="36.0" stroke="BLACK" strokeType="INSIDE" width="41.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="81.0" />
+            <Region cacheShape="false" centerShape="false" opacity="0.0" prefHeight="120.0" prefWidth="120.0" scaleShape="false" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" layoutX="40.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
          </children>
       </Group>
    </children>
