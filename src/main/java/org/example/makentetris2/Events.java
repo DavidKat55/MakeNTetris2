@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.EventListener;
@@ -44,5 +45,13 @@ public class Events {
 
     public void rotateBlock(Group block, GridPane spielFeld) {
         block.setRotate(block.getRotate() + 90);
+    }
+
+    public void changeBlockStrokeColor(Group block, Color color) {
+        for (Node node : block.getChildren()) {
+            if (node instanceof Rectangle) {
+                ((Rectangle) node).setStroke(color);
+            }
+        }
     }
 }

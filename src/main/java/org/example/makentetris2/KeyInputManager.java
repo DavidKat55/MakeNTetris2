@@ -3,6 +3,7 @@ package org.example.makentetris2;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 public class KeyInputManager {
 
@@ -36,7 +37,9 @@ public class KeyInputManager {
                     if (event.getCode().isDigitKey()) {
                         int index = Integer.parseInt(event.getText()) - 1;
                         if (index >= 0 && index < controller.getBlocks().size()) {
+                            events.changeBlockStrokeColor(controller.getBlock(selectedBlockIndex), Color.BLACK);
                             selectedBlockIndex = index;
+                            events.changeBlockStrokeColor(controller.getBlock(selectedBlockIndex), Color.YELLOW);
                         }
                     }
                     break;
