@@ -45,11 +45,24 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Group fx:id="block" GridPane.columnIndex="8" GridPane.rowIndex="10">
+      <Group fx:id="block1" GridPane.columnIndex="8" GridPane.rowIndex="10">
          <children>
             <Region cacheShape="false" centerShape="false" opacity="0.0" prefHeight="120.0" prefWidth="120.0" scaleShape="false" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" layoutX="40.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+         </children>
+      </Group>
+      <Group fx:id="block2" GridPane.columnIndex="7" GridPane.rowIndex="4">
+         <children>
+            <Region cacheShape="false" centerShape="false" opacity="0.0" prefHeight="120.0" prefWidth="120.0" scaleShape="false" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="40.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+         </children>
+      </Group>
+      <Group fx:id="block3" layoutX="290.0" layoutY="132.0" GridPane.columnIndex="4" GridPane.rowIndex="8">
+         <children>
+            <Region cacheShape="false" centerShape="false" opacity="0.0" prefHeight="120.0" prefWidth="120.0" scaleShape="false" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3aff21" height="40.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3aff21" height="41.0" stroke="BLACK" strokeType="INSIDE" width="40.0" />
          </children>
       </Group>
    </children>

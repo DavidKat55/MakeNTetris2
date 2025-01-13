@@ -4,15 +4,23 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.layout.GridPane;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Controller {
 
     @FXML
-    private Group block;
+    private List<Group> blocks;
     @FXML
     private GridPane spielFeld;
 
     @FXML
     public void initialize() {
+        blocks = new ArrayList<>();
+        blocks.add((Group) spielFeld.lookup("#block1"));
+        blocks.add((Group) spielFeld.lookup("#block2"));
+        blocks.add((Group) spielFeld.lookup("#block3"));
+
         KeyInputManager.setController(this);
     }
 
@@ -20,7 +28,11 @@ public class Controller {
         return spielFeld;
     }
 
-    public Group getBlock() {
-        return block;
+    public Group getBlock(int index) {
+        return blocks.get(index);
+    }
+
+    public List<Group> getBlocks() {
+        return blocks;
     }
 }
