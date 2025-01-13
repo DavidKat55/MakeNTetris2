@@ -44,32 +44,5 @@ public class Events {
 
     public void rotateBlock(Group block, GridPane spielFeld) {
         block.setRotate(block.getRotate() + 90);
-        adjustBlockPosition(block, spielFeld);
-    }
-
-    private void adjustBlockPosition(Group block, GridPane spielFeld) {
-        int[] position = getBlockPosition(block, spielFeld);
-        double rotate = block.getRotate() % 360;
-
-        switch ((int) rotate) {
-            case 90:
-                block.setTranslateX(21);
-                block.setTranslateY(-21);
-                break;
-            case 180:
-                block.setTranslateX(42);
-                block.setTranslateY(0);
-                break;
-            case 270:
-                block.setTranslateX(21);
-                block.setTranslateY(21);
-                break;
-            default:
-                block.setTranslateX(0);
-                block.setTranslateY(0);
-                break;
-        }
-
-        setBlockPosition(position[0], position[1], block, spielFeld);
     }
 }
