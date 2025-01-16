@@ -20,6 +20,9 @@ public class Controller {
         blocks.add((Group) spielFeld.lookup("#block1"));
         blocks.add((Group) spielFeld.lookup("#block2"));
         blocks.add((Group) spielFeld.lookup("#block3"));
+        blocks.add((Group) spielFeld.lookup("#block4"));
+        blocks.add((Group) spielFeld.lookup("#block5"));
+        blocks.add((Group) spielFeld.lookup("#block6"));
 
         KeyInputManager.setController(this);
     }

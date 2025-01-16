@@ -44,6 +44,9 @@ public class Events {
     }
 
     public void rotateBlock(Group block, GridPane spielFeld) {
+        if (block.getId() != null && block.getId().equals("block5")) {
+            return; // Do not rotate block5
+        }
         block.setRotate(block.getRotate() + 90);
     }
 
