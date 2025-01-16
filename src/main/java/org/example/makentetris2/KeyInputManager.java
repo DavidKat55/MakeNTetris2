@@ -1,14 +1,13 @@
 package org.example.makentetris2;
 
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import org.example.makentetris2.ControllerMappe.GameController;
 
 public class KeyInputManager {
 
     private Events events;
-    private static Controller controller;
+    private static GameController controller;
     private int selectedBlockIndex = 0;
 
     public KeyInputManager() {
@@ -47,7 +46,7 @@ public class KeyInputManager {
         });
     }
 
-    public static void setController(Controller _controller) {
+    public static void setController(GameController _controller) {
         controller = _controller;
     }
 }

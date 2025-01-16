@@ -13,4 +13,6 @@ module org.example.makentetris2 {
 
     opens org.example.makentetris2 to javafx.fxml;
     exports org.example.makentetris2;
+    exports org.example.makentetris2.ControllerMappe;
+    opens org.example.makentetris2.ControllerMappe to javafx.fxml;
 }

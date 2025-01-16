@@ -1,13 +1,15 @@
-package org.example.makentetris2;
+package org.example.makentetris2.ControllerMappe;
 
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.layout.GridPane;
+import org.example.makentetris2.BlockHitbox;
+import org.example.makentetris2.KeyInputManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Controller {
+public class GameController {
 
     @FXML
     private List<Group> blocks;
