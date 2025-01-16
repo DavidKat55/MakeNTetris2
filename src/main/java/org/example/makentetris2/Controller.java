@@ -24,6 +24,11 @@ public class Controller {
         blocks.add((Group) spielFeld.lookup("#block5"));
         blocks.add((Group) spielFeld.lookup("#block6"));
 
+        BlockHitbox blockHitbox = new BlockHitbox();
+        for (Group block : blocks) {
+            blockHitbox.addHitbox(block);
+        }
+
         KeyInputManager.setController(this);
     }
 

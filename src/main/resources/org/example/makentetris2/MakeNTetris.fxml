@@ -90,7 +90,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb521" height="40.0" layoutX="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" width="40.0" />
          </children>
       </Group>
-      <Group fx:id="block41" GridPane.columnIndex="10" GridPane.rowIndex="2">
+      <Group fx:id="block6" GridPane.columnIndex="10" GridPane.rowIndex="2">
          <children>
             <Region cacheShape="false" centerShape="false" layoutX="-10.0" opacity="0.0" prefHeight="120.0" prefWidth="120.0" scaleShape="false" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#21ffb6" height="40.0" layoutX="-10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" width="40.0" />
