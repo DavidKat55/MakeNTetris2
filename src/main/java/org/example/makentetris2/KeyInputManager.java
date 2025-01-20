@@ -1,6 +1,7 @@
 package org.example.makentetris2;
 
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import org.example.makentetris2.ControllerMappe.GameController;
 
@@ -33,13 +34,11 @@ public class KeyInputManager {
                     events.rotateBlock(controller.getBlock(selectedBlockIndex), controller.getSpielFeld());
                     break;
                 default:
-                    if (event.getCode().isDigitKey()) {
-                        int index = Integer.parseInt(event.getText()) - 1;
-                        if (index >= 0 && index < controller.getBlocks().size()) {
-                            events.changeBlockStrokeColor(controller.getBlock(selectedBlockIndex), Color.BLACK);
-                            selectedBlockIndex = index;
-                            events.changeBlockStrokeColor(controller.getBlock(selectedBlockIndex), Color.YELLOW);
-                        }
+                    if (event.getCode() == KeyCode.SHIFT) {
+                        int index = (selectedBlockIndex + 1) % controller.getBlocks().size();
+                        events.changeBlockStrokeColor(controller.getBlock(selectedBlockIndex), Color.BLACK);
+                        selectedBlockIndex = index;
+                        events.changeBlockStrokeColor(controller.getBlock(selectedBlockIndex), Color.YELLOW);
                     }
                     break;
             }
