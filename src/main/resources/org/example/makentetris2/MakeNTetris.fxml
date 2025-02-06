@@ -46,7 +46,7 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Group fx:id="block1" GridPane.columnIndex="8" GridPane.rowIndex="10">
+      <Group fx:id="block1" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <children>
             <Region cacheShape="false" centerShape="false" layoutX="-10.0" opacity="0.0" prefHeight="120.0" prefWidth="120.0" scaleShape="false" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2190ff" height="40.0" layoutX="-10.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" width="40.0" />
@@ -99,5 +99,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#21ffb6" height="40.0" layoutX="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" width="40.0" />
          </children>
       </Group>
+      <Rectangle fx:id="rectangle1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="40.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+      <Rectangle fx:id="rectangle2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="40.0" GridPane.columnIndex="11" GridPane.rowIndex="8" />
    </children>
 </GridPane>

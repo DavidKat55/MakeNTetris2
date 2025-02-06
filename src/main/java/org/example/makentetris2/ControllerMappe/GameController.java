@@ -3,7 +3,6 @@ package org.example.makentetris2.ControllerMappe;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.layout.GridPane;
-import org.example.makentetris2.BlockHitbox;
 import org.example.makentetris2.KeyInputManager;
 
 import java.util.ArrayList;
@@ -25,11 +24,6 @@ public class GameController {
         blocks.add((Group) spielFeld.lookup("#block4"));
         blocks.add((Group) spielFeld.lookup("#block5"));
         blocks.add((Group) spielFeld.lookup("#block6"));
-
-        BlockHitbox blockHitbox = new BlockHitbox();
-        for (Group block : blocks) {
-            blockHitbox.addHitbox(block);
-        }
 
         KeyInputManager.setController(this);
     }
