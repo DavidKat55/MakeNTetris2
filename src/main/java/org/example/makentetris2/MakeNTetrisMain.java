@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
 import org.example.makentetris2.Manager.GameManager;
 import org.example.makentetris2.Manager.KeyInputManager;
-//import org.example.makentetris2.AlterCode.KeyInputManager;
 
 import java.io.IOException;
 
@@ -24,10 +23,6 @@ public class MakeNTetrisMain extends Application {
         stage.setTitle("MakeNTetris - Hauptbildschirm");
         stage.setScene(scene);
         stage.show();
-
-
-        //KeyInputManager keyInputManager = new KeyInputManager();
-        //keyInputManager.addKeyHandler(scene);
     }
 
     public static void main(String[] args) {

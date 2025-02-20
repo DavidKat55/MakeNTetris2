@@ -1,9 +1,6 @@
 package org.example.makentetris2.Manager;
 
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
-import org.example.makentetris2.Blöcke.TetrisBlock;
 import org.example.makentetris2.ControllerMappe.GameController;
 
 public class KeyInputManager {
@@ -21,7 +18,6 @@ public class KeyInputManager {
             switch (event.getCode()) {
                 case UP:
                     gameManager.moveBlockUp(gameManager.getSelectedBlock());
-                    System.out.println("Up");
                     break;
                 case DOWN:
                     gameManager.moveBlockDown(gameManager.getSelectedBlock());
