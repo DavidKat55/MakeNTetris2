@@ -1,7 +1,5 @@
 package org.example.makentetris2.Manager;
 
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
