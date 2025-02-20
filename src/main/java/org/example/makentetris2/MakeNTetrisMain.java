@@ -4,22 +4,30 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.example.makentetris2.ControllerMappe.GameController;
+import org.example.makentetris2.Manager.GameManager;
+import org.example.makentetris2.Manager.KeyInputManager;
+//import org.example.makentetris2.AlterCode.KeyInputManager;
 
 import java.io.IOException;
 
 public class MakeNTetrisMain extends Application {
+    private static FXMLLoader fxmlLoader;
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MakeNTetrisMain.class.getResource("HauptBildschirm.fxml"));
+        fxmlLoader = new FXMLLoader(MakeNTetrisMain.class.getResource("HauptBildschirm.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
         stage.setScene(scene);
         stage.show();
 
-        KeyInputManager keyInputManager = new KeyInputManager();
-        keyInputManager.addKeyHandler(scene);
+
+        //KeyInputManager keyInputManager = new KeyInputManager();
+        //keyInputManager.addKeyHandler(scene);
     }
 
     public static void main(String[] args) {
@@ -29,15 +37,24 @@ public class MakeNTetrisMain extends Application {
     public static void szeneWechseln(int szene) throws IOException {
         switch (szene) {
             case 1:
-                Parent root = FXMLLoader.load(MakeNTetrisMain.class.getResource("MakeNTetris.fxml"));
+                FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("MakeNTetris.fxml"));
+                Parent root = loader.load();
+
+                GameController controller = loader.getController();
+                GridPane spielFeld = controller.getSpielFeld();
+                GameManager gameManager = new GameManager(spielFeld);
+
+                Scene s = new Scene(root);
+
+                KeyInputManager keyInputManager = new KeyInputManager(gameManager);
+                keyInputManager.addKeyHandler(s);
+
                 Stage stage = new Stage();
                 stage.setResizable(false);
                 stage.setTitle("MakeNTetris - Spiel");
-                stage.setScene(new Scene(root));
+                stage.setScene(s);
                 stage.show();
-
-                KeyInputManager keyInputManager = new KeyInputManager();
-                keyInputManager.addKeyHandler(stage.getScene());
+                gameManager.init();
                 break;
             case 2:
                 Parent root2 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Einstellungen.fxml"));
