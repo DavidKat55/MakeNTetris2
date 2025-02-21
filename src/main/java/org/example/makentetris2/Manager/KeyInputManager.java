@@ -25,19 +25,24 @@ public class KeyInputManager {
                     break;
                 case DOWN:
                     gameManager.moveBlockDown(gameManager.getSelectedBlock());
+                    System.out.println("Down");
                     break;
                 case LEFT:
                     gameManager.moveBlockLeft(gameManager.getSelectedBlock());
+                    System.out.println("Left");
                     break;
                 case RIGHT:
                     gameManager.moveBlockRight(gameManager.getSelectedBlock());
+                    System.out.println("Right");
                     break;
                 case SPACE:
                     gameManager.getSelectedBlock().rotate();
+                    System.out.println("Rotate");
                     gameManager.updatePane();
                     break;
                 case SHIFT:
                     gameManager.changeSelectedBlock();
+                    System.out.println("Change SelectedBlock");
                     break;
                 default:
                     break;

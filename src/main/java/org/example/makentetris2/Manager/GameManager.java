@@ -5,16 +5,14 @@ import javafx.geometry.VPos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import org.example.makentetris2.Blöcke.LBlock;
-import org.example.makentetris2.Blöcke.TBlock;
-import org.example.makentetris2.Blöcke.TetrisBlock;
+import org.example.makentetris2.Blöcke.*;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class GameManager {
     private GridPane gridPane;
-    private ArrayList<TetrisBlock> activeBlocks;
+    public static ArrayList<TetrisBlock> activeBlocks;
     private Random rand = new Random();
     private int selectedBlockIndex = 0;
     private boolean[][] grid;
@@ -44,7 +42,32 @@ public class GameManager {
             LBlock b = new LBlock(randomX, randomY);
             spawnBlock(b);
         }
-        changeStrokeColor(Color.GREY, 2);
+
+        for(int i = 0; i < 1; i++) {
+            int randomX = rand.nextInt(14);
+            int randomY = rand.nextInt(14);
+
+            IBlock ib = new IBlock(randomX, randomY);
+            spawnBlock(ib);
+        }
+
+        for(int i = 0; i < 1; i++) {
+            int randomX = rand.nextInt(14);
+            int randomY = rand.nextInt(14);
+
+            OBlock o = new OBlock(randomX, randomY);
+            spawnBlock(o);
+        }
+
+        for(int i = 0; i < 1; i++) {
+            int randomX = rand.nextInt(14);
+            int randomY = rand.nextInt(14);
+
+            ZBlock z = new ZBlock(randomX, randomY);
+            spawnBlock(z);
+        }
+
+        changeStrokeColor(Color.WHITE, 2);
     }
 
     public void spawnBlock(TetrisBlock block) {
@@ -94,7 +117,7 @@ public class GameManager {
 
     public void changeSelectedBlock() {
         selectedBlockIndex = (selectedBlockIndex + 1) % activeBlocks.size();
-        changeStrokeColor(Color.GREY, 2);
+        changeStrokeColor(Color.WHITE, 2);
     }
 
     public void changeStrokeColor(Color color, double strokeWidth) {
@@ -113,6 +136,20 @@ public class GameManager {
     }
 
     public boolean checkCollision(TetrisBlock block, int dx, int dy) {
+
+        // Überprüfen, ob der Block innerhalb der Spielfeldgrenzen bleibt
+        for (Rectangle rect : block.getBlocks()) {
+            double newX = rect.getBoundsInParent().getMinX() + dx * 10;
+            double newY = rect.getBoundsInParent().getMinY() + dy * 10;
+
+            if (newX < 0 || newX + rect.getWidth() > gridPane.getWidth() ||
+                    newY < 0 || newY + rect.getHeight() > gridPane.getHeight()) {
+                System.out.println("Collision am Spielfeldrand");
+                return true;
+            }
+        }
+
+        // Überprüfen auf Kollision mit anderen Blöcken
         for (TetrisBlock otherBlock : activeBlocks) {
             if (otherBlock == block) continue;
 
@@ -121,13 +158,13 @@ public class GameManager {
                 double newY = rect1.getBoundsInParent().getMinY() + dy * 10;
 
                 for (Rectangle rect2 : otherBlock.getBlocks()) {
-                    if (rect2.getBoundsInParent().intersects(newX, newY, rect2.getWidth(), rect2.getHeight())) {
+                    if (rect2.getBoundsInParent().intersects(newX, newY, rect1.getWidth(), rect1.getHeight())) {
+                        System.out.println("Collision mit einem Block");
                         return true;
                     }
                 }
             }
         }
-        return false;
+        return false; // Keine Kollision
     }
-
 }

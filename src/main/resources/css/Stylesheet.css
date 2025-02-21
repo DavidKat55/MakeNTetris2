@@ -1,0 +1,46 @@
+#hauptbildschirm {
+    -fx-background-image: url("../images/MakeNtetris.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+#bStart{
+    -fx-background-color: #4CAF50;
+    -fx-font-weight: bold;
+}
+
+#bStart:hover {
+    -fx-background-color: #45a049;
+    -fx-border-color: black;
+}
+
+
+#bEinstellungen {
+    -fx-background-color: #FFC107;
+    -fx-font-weight: bold;
+}
+
+#bEinstellungen:hover {
+    -fx-background-color: #ffb300;
+    -fx-border-color: black;
+}
+
+#bVerlassen {
+    -fx-background-color: #F44336;
+    -fx-font-weight: bold;
+}
+
+#bVerlassen:hover {
+    -fx-background-color: #d32f2f;
+    -fx-border-color: black;
+}
+
+#regulierer {
+    -jfx-default-thumb: grey;
+    -jfx-default-track: white;
+}
+
+
+#einstellungHintergrund{
+    -fx-background-color: black;
+}

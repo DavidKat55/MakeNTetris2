@@ -15,6 +15,8 @@ public class HauptBildschirmController {
     @FXML
     private Button bVerlassen;
 
+
+
     @FXML
     private void gameStarten() throws IOException {
         MakeNTetrisMain.szeneWechseln(1);

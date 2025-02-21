@@ -1,5 +1,4 @@
 module org.example.makentetris2 {
-    requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
 
@@ -10,6 +9,8 @@ module org.example.makentetris2 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires javafx.media;
+    requires com.jfoenix;
 
     opens org.example.makentetris2 to javafx.fxml;
     exports org.example.makentetris2;

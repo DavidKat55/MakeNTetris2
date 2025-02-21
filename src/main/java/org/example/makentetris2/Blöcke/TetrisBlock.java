@@ -8,12 +8,15 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
+import static org.example.makentetris2.Manager.GameManager.activeBlocks;
+
 public class TetrisBlock {
     protected ArrayList<Rectangle> blocks = new ArrayList<>();
     protected int[][] shape;
     protected int x, y;
     protected Color color;
     protected int rotationIndex;
+    protected boolean drehbar;
 
     public TetrisBlock(int[][] shape, Color color, int startX, int startY, int rotationIndex) {
         this.shape = shape;
@@ -21,6 +24,7 @@ public class TetrisBlock {
         this.x = startX;
         this.y = startY;
         this.rotationIndex = rotationIndex;
+        drehbar = true;
         init();
     }
 
@@ -54,17 +58,20 @@ public class TetrisBlock {
     }
 
     public void rotate() {
-        int centerX = shape[rotationIndex][0];
-        int centerY = shape[rotationIndex][1];
+        if (drehbar) {
+            int centerX = shape[rotationIndex][0];
+            int centerY = shape[rotationIndex][1];
 
-        for (int i = 0; i < shape.length; i++) {
-            int tX = shape[i][0] - centerX;
-            int tY = shape[i][1] - centerY;
+            for (int i = 0; i < shape.length; i++) {
+                int tX = shape[i][0] - centerX;
+                int tY = shape[i][1] - centerY;
 
-            shape[i][0] = centerX - tY;
-            shape[i][1] = centerY + tX;
+                shape[i][0] = centerX - tY;
+                shape[i][1] = centerY + tX;
+            }
         }
     }
+
 
     public int[][] getShape() {
         return shape;
@@ -76,5 +83,13 @@ public class TetrisBlock {
 
     public int getY() {
         return y;
+    }
+
+    public boolean isDrehbar() {
+        return drehbar;
+    }
+
+    public void setDrehbar(boolean drehbar) {
+        this.drehbar = drehbar;
     }
 }

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
 import org.example.makentetris2.Manager.GameManager;
 import org.example.makentetris2.Manager.KeyInputManager;
-//import org.example.makentetris2.AlterCode.KeyInputManager;
+import org.example.makentetris2.Manager.SoundManager;
 
 import java.io.IOException;
 
@@ -20,6 +20,9 @@ public class MakeNTetrisMain extends Application {
     public void start(Stage stage) throws IOException {
         fxmlLoader = new FXMLLoader(MakeNTetrisMain.class.getResource("HauptBildschirm.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+
+        SoundManager.playBackgroundMusic("/sounds/start2.mp3");
+
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
         stage.setScene(scene);
@@ -43,9 +46,9 @@ public class MakeNTetrisMain extends Application {
                 GameController controller = loader.getController();
                 GridPane spielFeld = controller.getSpielFeld();
                 GameManager gameManager = new GameManager(spielFeld);
+                SoundManager.playBackgroundMusic("/sounds/game.wav");
 
                 Scene s = new Scene(root);
-
                 KeyInputManager keyInputManager = new KeyInputManager(gameManager);
                 keyInputManager.addKeyHandler(s);
 
