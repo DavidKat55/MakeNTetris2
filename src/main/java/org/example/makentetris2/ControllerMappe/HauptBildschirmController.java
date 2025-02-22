@@ -28,6 +28,11 @@ public class HauptBildschirmController {
     }
 
     @FXML
+    private void minigameStarten() throws IOException {
+        MakeNTetrisMain.szeneWechseln(3);
+    }
+
+    @FXML
     private void verlassen() {
         System.exit(0);
     }

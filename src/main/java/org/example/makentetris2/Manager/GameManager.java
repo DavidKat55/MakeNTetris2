@@ -4,7 +4,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import org.example.makentetris2.Blöcke.*;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,6 +15,7 @@ public class GameManager {
     private boolean[][] grid;
     private static final int GRID_WIDTH = 15;
     private static final int GRID_HEIGHT = 15;
+    private static final int CELL_SIZE = 40;
 
 
     public GameManager(GridPane gridPane) {
@@ -164,5 +164,17 @@ public class GameManager {
             }
         }
         return false; // Keine Kollision
+    }
+
+    public void checkAllCells() {
+        System.out.println("Belegte Zellen:");
+
+        for (int row = 0; row < GRID_HEIGHT; row++) {
+            for (int col = 0; col < GRID_WIDTH; col++) {
+                if (grid[col][row]) { // Überprüfen, ob die Zelle belegt ist
+                    System.out.println("Zelle belegt: " + row + "," + col);
+                }
+            }
+        }
     }
 }

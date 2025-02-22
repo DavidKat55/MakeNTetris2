@@ -40,6 +40,8 @@ public class KeyInputManager {
                     gameManager.changeSelectedBlock();
                     System.out.println("Change SelectedBlock");
                     break;
+                    case ENTER:
+                        gameManager.checkAllCells();
                 default:
                     break;
             }

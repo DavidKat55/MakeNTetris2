@@ -44,3 +44,44 @@
 #einstellungHintergrund{
     -fx-background-color: black;
 }
+
+#casino {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#minigameHintergrund {
+    -fx-background-image: url("../images/pokerTisch.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+#rollButton{
+    -fx-background-color: white;
+}
+
+#kontostand{
+    -fx-background-color: white;
+}
+
+#bRot{
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+
+#bSchwarz{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#kontostand1{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#kontostand{
+    -fx-background-color: visible;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+

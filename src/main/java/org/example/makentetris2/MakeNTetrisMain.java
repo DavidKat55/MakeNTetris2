@@ -68,7 +68,15 @@ public class MakeNTetrisMain extends Application {
                 stage2.show();
                 break;
             case 3:
-                System.out.println("Szene 3");
+                Parent root3 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Minigame.fxml"));
+
+                SoundManager.playBackgroundMusic("/sounds/casino.mp3");
+                Stage stage3 = new Stage();
+                stage3.setResizable(false);
+                stage3.setTitle("MakeNTetris - Minigame");
+                stage3.setScene(new Scene(root3));
+                stage3.show();
+
                 break;
             case 4:
                 System.out.println("Szene 4");
