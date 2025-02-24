@@ -4,7 +4,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.net.URL;
 
-
 public class SoundManager {
     private static MediaPlayer mediaPlayer;
 

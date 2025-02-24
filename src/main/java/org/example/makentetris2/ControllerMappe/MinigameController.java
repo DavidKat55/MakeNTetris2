@@ -116,7 +116,7 @@ public class MinigameController {
 
             if (wette == resultColor) {
                 int neuEinsatz = Integer.parseInt(einsatz.getText());
-                startKontostand += neuEinsatz; // Gewinn
+                startKontostand += (neuEinsatz * 2); // Gewinn
                 updateKontostand(startKontostand);
                 System.out.println("Gewonnen! Neuer Kontostand: " + startKontostand);
             } else {
