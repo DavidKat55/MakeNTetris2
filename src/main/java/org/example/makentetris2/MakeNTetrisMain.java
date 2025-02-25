@@ -78,10 +78,14 @@ public class MakeNTetrisMain extends Application {
                 stage3.setTitle("MakeNTetris - Minigame");
                 stage3.setScene(new Scene(root3));
                 stage3.show();
-
                 break;
             case 4:
-                System.out.println("Szene 4");
+                Parent root4 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Gewonnen.fxml"));
+                Stage stage4 = new Stage();
+                stage4.setResizable(false);
+                stage4.setTitle("MakeNTetris - Einstellungen");
+                stage4.setScene(new Scene(root4));
+                stage4.show();
                 break;
             case 5:
                 System.out.println("Szene 5");

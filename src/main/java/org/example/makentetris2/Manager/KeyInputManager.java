@@ -3,6 +3,8 @@ package org.example.makentetris2.Manager;
 import javafx.scene.Scene;
 import org.example.makentetris2.ControllerMappe.GameController;
 
+import java.io.IOException;
+
 public class KeyInputManager {
 
     private static GameController controller;
@@ -41,7 +43,11 @@ public class KeyInputManager {
                     System.out.println("Change SelectedBlock");
                     break;
                     case ENTER:
-                        gameManager.checkAllCells();
+                        try {
+                            gameManager.onEnterPressed(); // Rufe die Methode auf, wenn Enter gedrückt wird
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                 default:
                     break;
             }

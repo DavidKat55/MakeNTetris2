@@ -3,8 +3,14 @@ package org.example.makentetris2.Manager;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Pair;
 import org.example.makentetris2.Blöcke.*;
+import org.example.makentetris2.LevelManager.Level;
+import org.example.makentetris2.MakeNTetrisMain;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class GameManager {
@@ -15,13 +21,16 @@ public class GameManager {
     private boolean[][] grid;
     private static final int GRID_WIDTH = 15;
     private static final int GRID_HEIGHT = 15;
-    private static final int CELL_SIZE = 40;
+    private Level level;
+    private List<Pair<Integer, Integer>> aktuellePositionen;
 
 
     public GameManager(GridPane gridPane) {
         this.gridPane = gridPane;
         this.activeBlocks = new ArrayList<>();
         this.grid = new boolean[GRID_WIDTH][GRID_HEIGHT];
+        this.level = new Level(); // Initialisiere das Level
+        this.aktuellePositionen = new ArrayList<>();
     }
 
     public void init() {
@@ -166,15 +175,32 @@ public class GameManager {
         return false; // Keine Kollision
     }
 
-    public void checkAllCells() {
-        System.out.println("Belegte Zellen:");
+    public void updateAktuellePositionen() {
+        aktuellePositionen.clear(); // Leere die Liste der aktuellen Positionen
 
-        for (int row = 0; row < GRID_HEIGHT; row++) {
-            for (int col = 0; col < GRID_WIDTH; col++) {
-                if (grid[col][row]) { // Überprüfen, ob die Zelle belegt ist
-                    System.out.println("Zelle belegt: " + row + "," + col);
-                }
+        for (TetrisBlock block : activeBlocks) {
+            for (Rectangle rect : block.getBlocks()) {
+                int col = GridPane.getColumnIndex(rect);
+                int row = GridPane.getRowIndex(rect);
+                aktuellePositionen.add(new Pair<>(col, row)); // Füge die Position zur Liste hinzu
             }
+        }
+    }
+
+    public boolean checkWinCondition() {
+        // Überprüfe, ob alle Zielpositionen in den aktuellen Positionen enthalten sind
+        return aktuellePositionen.containsAll(level.getZielPositionen());
+    }
+
+    public void onEnterPressed() throws IOException {
+        updateAktuellePositionen(); // Aktualisiere die aktuellen Positionen
+
+        if (checkWinCondition()) {
+            MakeNTetrisMain.szeneWechseln(4);
+            System.out.println("Gewonnen!");
+            // Hier kannst du weitere Aktionen ausführen, z.B. eine Gewinnmeldung anzeigen
+        } else {
+            System.out.println("Puzzle noch nicht gelöst.");
         }
     }
 }
