@@ -35,45 +35,60 @@ public class GameManager {
 
     public void init() {
         for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(14);
-            int randomY = rand.nextInt(14);
+            int randomX = rand.nextInt(12);
+            int randomY = rand.nextInt(12);
 
-            TBlock b = new TBlock(randomX, randomY);
-            spawnBlock(b);
+            TBlock tB = new TBlock(randomX, randomY);
+            spawnBlock(tB);
         }
 
         for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(14);
-            int randomY = rand.nextInt(14);
+            int randomX = rand.nextInt(12);
+            int randomY = rand.nextInt(12);
 
-            LBlock b = new LBlock(randomX, randomY);
-            spawnBlock(b);
+            LBlock lB = new LBlock(randomX, randomY);
+            spawnBlock(lB);
         }
 
         for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(14);
-            int randomY = rand.nextInt(14);
+            int randomX = rand.nextInt(12);
+            int randomY = rand.nextInt(12);
 
-            IBlock ib = new IBlock(randomX, randomY);
-            spawnBlock(ib);
+            IBlock iB = new IBlock(randomX, randomY);
+            spawnBlock(iB);
         }
 
         for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(14);
-            int randomY = rand.nextInt(14);
+            int randomX = rand.nextInt(12);
+            int randomY = rand.nextInt(12);
 
-            OBlock o = new OBlock(randomX, randomY);
-            spawnBlock(o);
+            OBlock oB = new OBlock(randomX, randomY);
+            spawnBlock(oB);
         }
 
         for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(14);
-            int randomY = rand.nextInt(14);
+            int randomX = rand.nextInt(12);
+            int randomY = rand.nextInt(12);
 
-            ZBlock z = new ZBlock(randomX, randomY);
-            spawnBlock(z);
+            ZBlock zB = new ZBlock(randomX, randomY);
+            spawnBlock(zB);
         }
 
+        for(int i = 0; i < 1; i++) {
+            int randomX = rand.nextInt(12);
+            int randomY = rand.nextInt(12);
+
+            JBlock jB = new JBlock(randomX, randomY);
+            spawnBlock(jB);
+        }
+
+        for(int i = 0; i < 1; i++) {
+            int randomX = rand.nextInt(12);
+            int randomY = rand.nextInt(12);
+
+            SBlock sB= new SBlock(randomX, randomY);
+            spawnBlock(sB);
+        }
         changeStrokeColor(Color.WHITE, 2);
     }
 

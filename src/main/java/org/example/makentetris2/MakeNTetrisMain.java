@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
@@ -29,10 +28,6 @@ public class MakeNTetrisMain extends Application {
         stage.setTitle("MakeNTetris - Hauptbildschirm");
         stage.setScene(scene);
         stage.show();
-
-
-        //KeyInputManager keyInputManager = new KeyInputManager();
-        //keyInputManager.addKeyHandler(scene);
     }
 
     public static void main(String[] args) {

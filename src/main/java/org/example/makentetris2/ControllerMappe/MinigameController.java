@@ -9,7 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import org.example.makentetris2.Manager.SoundManager;
 import javafx.scene.effect.Glow;
 
 import java.io.File;

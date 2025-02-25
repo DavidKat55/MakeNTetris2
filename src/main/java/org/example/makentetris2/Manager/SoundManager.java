@@ -2,7 +2,6 @@ package org.example.makentetris2.Manager;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import java.net.URL;
 import java.util.Objects;
 
 public class SoundManager {

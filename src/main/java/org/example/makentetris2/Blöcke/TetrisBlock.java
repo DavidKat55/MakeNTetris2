@@ -8,8 +8,6 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
-import static org.example.makentetris2.Manager.GameManager.activeBlocks;
-
 public class TetrisBlock {
     protected ArrayList<Rectangle> blocks = new ArrayList<>();
     protected int[][] shape;
