@@ -20,8 +20,8 @@ public class GameManager {
     private Random rand = new Random();
     private int selectedBlockIndex = 0;
     private boolean[][] grid;
-    private static final int GRID_WIDTH = 15;
-    private static final int GRID_HEIGHT = 15;
+    private static final int GRID_WIDTH = 12;
+    private static final int GRID_HEIGHT = 12;
     private Level level;
     private List<Pair<Integer, Integer>> aktuellePositionen;
 
