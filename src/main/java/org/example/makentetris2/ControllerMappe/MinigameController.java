@@ -15,6 +15,8 @@ import javafx.scene.effect.Glow;
 import java.io.File;
 import java.util.Random;
 
+import static org.example.makentetris2.MakeNTetrisMain.soundManager;
+
 public class MinigameController {
     Random rand = new Random();
 
@@ -52,7 +54,7 @@ public class MinigameController {
          System.out.println("Fehler bei der Wette");
      } else {
          rollButton.setDisable(true);
-         SoundManager.playSound("/sounds/gamble.mp3");
+         soundManager.playSound("/sounds/gamble.mp3");
          Thread thread = new Thread() {
              public void run() {
                  System.out.println("Thread Running");
@@ -66,7 +68,7 @@ public class MinigameController {
                      checkWinOrLose(wette);
                      rollButton.setDisable(false);
                      Thread.sleep(900);
-                     SoundManager.playBackgroundMusic("/sounds/casino.mp3");
+                     soundManager.playBackgroundMusic("/sounds/casino.mp3");
                  } catch (InterruptedException e) {
                      e.printStackTrace();
                  }

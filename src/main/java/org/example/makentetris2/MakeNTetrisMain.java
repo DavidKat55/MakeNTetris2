@@ -15,13 +15,14 @@ import java.io.IOException;
 
 public class MakeNTetrisMain extends Application {
     private static FXMLLoader fxmlLoader;
+    public final static SoundManager soundManager = new SoundManager();
 
     @Override
     public void start(Stage stage) throws IOException {
         fxmlLoader = new FXMLLoader(MakeNTetrisMain.class.getResource("HauptBildschirm.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        SoundManager.playBackgroundMusic("/sounds/start2.mp3");
+        soundManager.playBackgroundMusic("/sounds/start2.mp3");
 
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
@@ -46,7 +47,7 @@ public class MakeNTetrisMain extends Application {
                 GameController controller = loader.getController();
                 GridPane spielFeld = controller.getSpielFeld();
                 GameManager gameManager = new GameManager(spielFeld);
-                SoundManager.playBackgroundMusic("/sounds/game.wav");
+                soundManager.playBackgroundMusic("/sounds/game.wav");
 
                 Scene s = new Scene(root);
                 KeyInputManager keyInputManager = new KeyInputManager(gameManager);
@@ -70,7 +71,7 @@ public class MakeNTetrisMain extends Application {
             case 3:
                 Parent root3 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Minigame.fxml"));
 
-                SoundManager.playBackgroundMusic("/sounds/casino.mp3");
+                soundManager.playBackgroundMusic("/sounds/casino.mp3");
                 Stage stage3 = new Stage();
                 stage3.setResizable(false);
                 stage3.setTitle("MakeNTetris - Minigame");

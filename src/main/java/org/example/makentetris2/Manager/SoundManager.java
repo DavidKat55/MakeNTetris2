@@ -3,33 +3,37 @@ package org.example.makentetris2.Manager;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.net.URL;
+import java.util.Objects;
 
 public class SoundManager {
     private static MediaPlayer mediaPlayer;
 
-    public static void playBackgroundMusic(String fileName) {
-        stopMusic();
-        URL path = SoundManager.class.getResource(fileName);
-        System.out.println(path);
-        assert path != null;
-        Media media = new Media(path.toExternalForm());
+    public void playBackgroundMusic(String fileName) {
+        if(mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
+
+        Media media = new Media(Objects.requireNonNull(getClass().getResource(fileName)).toExternalForm());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setVolume(0.5);
-        mediaPlayer.setCycleCount (MediaPlayer.INDEFINITE);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         mediaPlayer.play();
     }
 
-    public static void playSound(String fileName) {
-        URL path = SoundManager.class.getResource(fileName);
-        System.out.println(path);
-        assert path != null;
-        Media media = new Media(path.toExternalForm());
+    public void playSound(String fileName) {
+        if(mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
+
+        Media media = new Media(Objects.requireNonNull(getClass().getResource(fileName)).toExternalForm());
         mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setVolume(0.7);
+        mediaPlayer.setVolume(0.5);
         mediaPlayer.play();
     }
 
-    public static void stopMusic() {
+
+
+    public void stopMusic() {
         if (mediaPlayer != null) {
             mediaPlayer.stop();
         }
