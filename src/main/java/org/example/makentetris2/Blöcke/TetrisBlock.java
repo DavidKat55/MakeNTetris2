@@ -70,7 +70,6 @@ public class TetrisBlock {
         }
     }
 
-
     public int[][] getShape() {
         return shape;
     }
@@ -89,5 +88,10 @@ public class TetrisBlock {
 
     public void setDrehbar(boolean drehbar) {
         this.drehbar = drehbar;
+    }
+
+    public void setPosition(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class GameManager {
     private GridPane gridPane;
@@ -33,63 +34,47 @@ public class GameManager {
         this.aktuellePositionen = new ArrayList<>();
     }
 
+    private boolean isPositionFree(TetrisBlock block) {
+        for (int[] shapePart : block.getShape()) {
+            int blockX = block.getX() + shapePart[0];
+            int blockY = block.getY() + shapePart[1];
+            if (blockX < 0 || blockX >= GRID_WIDTH || blockY < 0 || blockY >= GRID_HEIGHT) {
+                return false;
+            }
+            for (TetrisBlock otherBlock : activeBlocks) {
+                for (int[] otherShapePart : otherBlock.getShape()) {
+                    int otherBlockX = otherBlock.getX() + otherShapePart[0];
+                    int otherBlockY = otherBlock.getY() + otherShapePart[1];
+                    if (blockX == otherBlockX && blockY == otherBlockY) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
     public void init() {
-        for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(12);
-            int randomY = rand.nextInt(12);
-
-            TBlock tB = new TBlock(randomX, randomY);
-            spawnBlock(tB);
-        }
-
-        for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(12);
-            int randomY = rand.nextInt(12);
-
-            LBlock lB = new LBlock(randomX, randomY);
-            spawnBlock(lB);
-        }
-
-        for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(12);
-            int randomY = rand.nextInt(12);
-
-            IBlock iB = new IBlock(randomX, randomY);
-            spawnBlock(iB);
-        }
-
-        for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(12);
-            int randomY = rand.nextInt(12);
-
-            OBlock oB = new OBlock(randomX, randomY);
-            spawnBlock(oB);
-        }
-
-        for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(12);
-            int randomY = rand.nextInt(12);
-
-            ZBlock zB = new ZBlock(randomX, randomY);
-            spawnBlock(zB);
-        }
-
-        for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(12);
-            int randomY = rand.nextInt(12);
-
-            JBlock jB = new JBlock(randomX, randomY);
-            spawnBlock(jB);
-        }
-
-        for(int i = 0; i < 1; i++) {
-            int randomX = rand.nextInt(12);
-            int randomY = rand.nextInt(12);
-
-            SBlock sB= new SBlock(randomX, randomY);
-            spawnBlock(sB);
-        }
+        spawnBlockAtRandomPosition(() -> new TBlock(0, 0));
+        spawnBlockAtRandomPosition(() -> new LBlock(0, 0));
+        spawnBlockAtRandomPosition(() -> new IBlock(0, 0));
+        spawnBlockAtRandomPosition(() -> new OBlock(0, 0));
+        spawnBlockAtRandomPosition(() -> new ZBlock(0, 0));
+        spawnBlockAtRandomPosition(() -> new JBlock(0, 0));
+        spawnBlockAtRandomPosition(() -> new SBlock(0, 0));
         changeStrokeColor(Color.WHITE, 2);
+    }
+
+    private void spawnBlockAtRandomPosition(Supplier<TetrisBlock> blockSupplier) {
+        int randomX, randomY;
+        TetrisBlock block;
+        do {
+            randomX = rand.nextInt(GRID_WIDTH);
+            randomY = rand.nextInt(GRID_HEIGHT);
+            block = blockSupplier.get();
+            block.setPosition(randomX, randomY);
+        } while (!isPositionFree(block));
+        spawnBlock(block);
     }
 
     public void spawnBlock(TetrisBlock block) {
