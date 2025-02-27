@@ -34,7 +34,7 @@ public class MinigameController {
     @FXML
     AnchorPane tippfarbe;
 
-    private int startKontostand = 1000;
+    private int startKontostand = 0;
 
     Glow glowEffect = new Glow();
 
@@ -127,5 +127,9 @@ public class MinigameController {
                 System.out.println("Verloren! Neuer Kontostand: " + startKontostand);
             }
         }
+    }
+
+    public int getStartKontostand(){
+        return startKontostand;
     }
 }

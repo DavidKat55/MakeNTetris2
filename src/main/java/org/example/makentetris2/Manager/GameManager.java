@@ -5,9 +5,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Pair;
 import org.example.makentetris2.Blöcke.*;
-import org.example.makentetris2.LevelManager.Level;
+import org.example.makentetris2.ControllerMappe.MinigameController;
+import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,17 +24,18 @@ public class GameManager {
     private static final int GRID_HEIGHT = 12;
     private Level level;
     private List<Pair<Integer, Integer>> aktuellePositionen;
+    private MinigameController minigameController;
 
 
     public GameManager(GridPane gridPane) {
         this.gridPane = gridPane;
         this.activeBlocks = new ArrayList<>();
         this.grid = new boolean[GRID_WIDTH][GRID_HEIGHT];
-        this.level = new Level(); // Initialisiere das Level
         this.aktuellePositionen = new ArrayList<>();
+
     }
 
-    private boolean isPositionFree(TetrisBlock block) {
+    public boolean isPositionFree(TetrisBlock block) {
         for (int[] shapePart : block.getShape()) {
             int blockX = block.getX() + shapePart[0];
             int blockY = block.getY() + shapePart[1];
@@ -198,6 +199,7 @@ public class GameManager {
         if (checkWinCondition()) {
             MakeNTetrisMain.szeneWechseln(4);
             System.out.println("Gewonnen!");
+            minigameController.updateKontostand(minigameController.getStartKontostand() + 100);
             // Hier kannst du weitere Aktionen ausführen, z.B. eine Gewinnmeldung anzeigen
         } else {
             System.out.println("Puzzle noch nicht gelöst.");

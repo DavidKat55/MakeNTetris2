@@ -19,7 +19,7 @@
             <Image url="@../../../images/Würfel/dice1.png" />
          </image>
       </ImageView>
-      <Label fx:id="kontostand" layoutX="6.0" layoutY="85.0" prefHeight="37.0" prefWidth="289.0" text="Punktestand: 1000">
+      <Label fx:id="kontostand" layoutX="6.0" layoutY="85.0" prefHeight="37.0" prefWidth="289.0" text="Punktestand: 0">
          <font>
             <Font size="30.0" />
          </font></Label>

@@ -5,6 +5,7 @@ import javafx.geometry.VPos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import org.example.makentetris2.Manager.GameManager;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class TetrisBlock {
     protected Color color;
     protected int rotationIndex;
     protected boolean drehbar;
+    private GameManager gameManager;
 
     public TetrisBlock(int[][] shape, Color color, int startX, int startY, int rotationIndex) {
         this.shape = shape;
@@ -56,6 +58,7 @@ public class TetrisBlock {
     }
 
     public void rotate() {
+
         if (drehbar) {
             int centerX = shape[rotationIndex][0];
             int centerY = shape[rotationIndex][1];
@@ -94,4 +97,9 @@ public class TetrisBlock {
         this.x = x;
         this.y = y;
     }
+
+    public void setShape(int[][] shape) {
+        this.shape = shape;
+    }
+
 }

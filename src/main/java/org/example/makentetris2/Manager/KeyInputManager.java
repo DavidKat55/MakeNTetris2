@@ -48,6 +48,8 @@ public class KeyInputManager {
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
+                        case ESCAPE:
+
                 default:
                     break;
             }

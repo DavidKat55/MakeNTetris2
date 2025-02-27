@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="hauptbildschirm" prefHeight="598.0" prefWidth="456.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.HauptBildschirmController">
    <children>
-      <Button fx:id="bEinstellungen" layoutX="166.0" layoutY="195.0" mnemonicParsing="false" onAction="#einstellungenStarten" prefHeight="30.0" prefWidth="125.0" text="Einstellungen" />
-      <Button fx:id="bVerlassen" layoutX="168.0" layoutY="326.0" mnemonicParsing="false" onAction="#verlassen" prefHeight="45.0" prefWidth="120.0" text="Verlassen" />
-      <Button fx:id="bStart" layoutX="156.0" layoutY="254.0" mnemonicParsing="false" onAction="#gameStarten" prefHeight="45.0" prefWidth="145.0" text="Start" />
       <JFXButton fx:id="casino" layoutX="374.0" layoutY="558.0" onAction="#minigameStarten" text="Minigame" />
+      <JFXButton fx:id="bEinstellungen" layoutX="163.0" layoutY="195.0" onAction="#einstellungenStarten" prefHeight="40.0" prefWidth="130.0" text="Einstellungen" />
+      <JFXButton fx:id="bStart" layoutX="153.0" layoutY="254.0" onAction="#gameStarten" prefHeight="45.0" prefWidth="150.0" text="Starten" />
+      <JFXButton fx:id="bVerlassen" layoutX="163.0" layoutY="314.0" onAction="#verlassen" prefHeight="40.0" prefWidth="130.0" text="Verlassen" />
    </children>
 </AnchorPane>

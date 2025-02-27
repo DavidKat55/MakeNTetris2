@@ -3,10 +3,12 @@ package org.example.makentetris2.ControllerMappe;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import org.example.makentetris2.MakeNTetrisMain;
+import org.example.makentetris2.Manager.GameManager;
 
 import java.io.IOException;
 
 public class HauptBildschirmController {
+    GameManager gameManager;
 
     @FXML
     private Button bStart;

@@ -85,3 +85,22 @@
     -fx-font-weight: bold;
 }
 
+#gLabel{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#gPane{
+    -fx-background-color: green;
+}
+
+#spielFeld{
+    -fx-background-color: black;
+}
+
+#bLevel2 {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
