@@ -34,7 +34,7 @@ public class MinigameController {
     @FXML
     AnchorPane tippfarbe;
 
-    private int startKontostand = 0;
+    private int startKontostand = 100;
 
     Glow glowEffect = new Glow();
 
@@ -53,7 +53,7 @@ public class MinigameController {
          System.out.println("Fehler bei der Wette");
      } else {
          rollButton.setDisable(true);
-         soundManager.playSound("/sounds/gamble.mp3");
+         soundManager.playSound("/sounds/MinigameWin.mp3");
          Thread thread = new Thread() {
              public void run() {
                  System.out.println("Thread Running");
@@ -67,7 +67,7 @@ public class MinigameController {
                      checkWinOrLose(wette);
                      rollButton.setDisable(false);
                      Thread.sleep(900);
-                     soundManager.playBackgroundMusic("/sounds/casino.mp3");
+                     soundManager.playBackgroundMusic("/sounds/MinigameStart.mp3");
                  } catch (InterruptedException e) {
                      e.printStackTrace();
                  }

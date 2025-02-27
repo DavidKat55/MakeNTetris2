@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Pair;
 import org.example.makentetris2.Blöcke.*;
+import org.example.makentetris2.ControllerMappe.GameController;
 import org.example.makentetris2.ControllerMappe.MinigameController;
 import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
@@ -24,7 +25,6 @@ public class GameManager {
     private static final int GRID_HEIGHT = 12;
     private Level level;
     private List<Pair<Integer, Integer>> aktuellePositionen;
-    private MinigameController minigameController;
 
 
     public GameManager(GridPane gridPane) {
@@ -32,7 +32,7 @@ public class GameManager {
         this.activeBlocks = new ArrayList<>();
         this.grid = new boolean[GRID_WIDTH][GRID_HEIGHT];
         this.aktuellePositionen = new ArrayList<>();
-
+        this.level = new Level();
     }
 
     public boolean isPositionFree(TetrisBlock block) {
@@ -177,19 +177,19 @@ public class GameManager {
     }
 
     public void updateAktuellePositionen() {
-        aktuellePositionen.clear(); // Leere die Liste der aktuellen Positionen
+        aktuellePositionen.clear(); // Leert die Liste der aktuellen Positionen
 
         for (TetrisBlock block : activeBlocks) {
             for (Rectangle rect : block.getBlocks()) {
                 int col = GridPane.getColumnIndex(rect);
                 int row = GridPane.getRowIndex(rect);
-                aktuellePositionen.add(new Pair<>(col, row)); // Füge die Position zur Liste hinzu
+                aktuellePositionen.add(new Pair<>(col, row)); // Fügt die Position zur Liste hinzu
             }
         }
     }
 
     public boolean checkWinCondition() {
-        // Überprüfe, ob alle Zielpositionen in den aktuellen Positionen enthalten sind
+        // Überprüft ob aktuellePositionen mit den ZielPositionen übereinstimmen
         return aktuellePositionen.containsAll(level.getZielPositionen());
     }
 
@@ -199,10 +199,8 @@ public class GameManager {
         if (checkWinCondition()) {
             MakeNTetrisMain.szeneWechseln(4);
             System.out.println("Gewonnen!");
-            minigameController.updateKontostand(minigameController.getStartKontostand() + 100);
-            // Hier kannst du weitere Aktionen ausführen, z.B. eine Gewinnmeldung anzeigen
         } else {
-            System.out.println("Puzzle noch nicht gelöst.");
+            System.out.println("Noch nicht gelöst.");
         }
     }
 }

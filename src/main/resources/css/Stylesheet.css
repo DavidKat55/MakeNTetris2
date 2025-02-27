@@ -51,7 +51,7 @@
 }
 
 #minigameHintergrund {
-    -fx-background-image: url("../images/pokerTisch.png");
+    -fx-background-image: url("../images/Minigame.png");
     -fx-background-size: cover;
     -fx-background-position: center;
 }
@@ -102,5 +102,25 @@
 #bLevel2 {
     -fx-background-color: black;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#vLabel{
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#vPane{
+    -fx-background-color: red;
+}
+
+#vNeu {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#timer{
     -fx-font-weight: bold;
 }

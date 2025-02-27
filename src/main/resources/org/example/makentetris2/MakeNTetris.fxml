@@ -6,6 +6,8 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="hinterspielfeld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.GameController">
    <children>
@@ -49,8 +51,12 @@
       </GridPane>
       <ImageView fitHeight="650.0" fitWidth="650.0" layoutX="715.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/Level1.png" />
+            <Image url="@../../../images/Level/Level1.png" />
          </image>
       </ImageView>
+      <Text fx:id="timer" layoutX="35.0" layoutY="741.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="137.33069610595703">
+         <font>
+            <Font size="50.0" />
+         </font></Text>
    </children>
 </AnchorPane>

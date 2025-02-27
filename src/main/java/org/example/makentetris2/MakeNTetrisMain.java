@@ -1,7 +1,6 @@
 package org.example.makentetris2;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,7 +22,7 @@ public class MakeNTetrisMain extends Application {
         fxmlLoader = new FXMLLoader(MakeNTetrisMain.class.getResource("HauptBildschirm.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        soundManager.playBackgroundMusic("/sounds/start2.mp3");
+        soundManager.playBackgroundMusic("/sounds/Start.mp3");
 
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
@@ -67,7 +66,7 @@ public class MakeNTetrisMain extends Application {
                 break;
             case 3:
                 Parent root3 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Minigame.fxml"));
-                soundManager.playBackgroundMusic("/sounds/casino.mp3");
+                soundManager.playBackgroundMusic("/sounds/MinigameStart.mp3");
                 Stage stage3 = new Stage();
                 stage3.setResizable(false);
                 stage3.setTitle("MakeNTetris - Minigame");
@@ -85,6 +84,13 @@ public class MakeNTetrisMain extends Application {
                 break;
             case 5:
                 System.out.println("Szene 5");
+                Parent root5 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Verloren.fxml"));
+                soundManager.playSound("/sounds/verloren.mp3");
+                Stage stage5 = new Stage();
+                stage5.setResizable(false);
+                stage5.setTitle("MakeNTetris - Verloren");
+                stage5.setScene(new Scene(root5));
+                stage5.show();
                 break;
         }
     }

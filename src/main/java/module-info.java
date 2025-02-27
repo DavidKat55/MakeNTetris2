@@ -20,4 +20,6 @@ module org.example.makentetris2 {
     opens org.example.makentetris2.Manager to javafx.fxml;
     exports org.example.makentetris2.LevelManager;
     opens org.example.makentetris2.LevelManager to javafx.fxml;
+    exports org.example.makentetris2.Timer;
+    opens org.example.makentetris2.Timer to javafx.fxml;
 }

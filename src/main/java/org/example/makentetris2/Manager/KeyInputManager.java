@@ -7,8 +7,6 @@ import java.io.IOException;
 
 public class KeyInputManager {
 
-    private static GameController controller;
-    private int selectedBlockIndex = 0;
     private final GameManager gameManager;
 
     public KeyInputManager(GameManager gameManager) {
@@ -44,7 +42,7 @@ public class KeyInputManager {
                     break;
                     case ENTER:
                         try {
-                            gameManager.onEnterPressed(); // Rufe die Methode auf, wenn Enter gedrückt wird
+                            gameManager.onEnterPressed();
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
