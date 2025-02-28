@@ -12,7 +12,7 @@ public class Level {
         // Beispiel für Zielpositionen
 
         zielPositionen.add(new Pair<>(0, 0));
-//        // O-Block
+        // O-Block
 //        zielPositionen.add(new Pair<>(9, 15));
 //        zielPositionen.add(new Pair<>(8, 15));
 //        zielPositionen.add(new Pair<>(9, 14));

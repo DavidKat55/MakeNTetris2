@@ -5,8 +5,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Pair;
 import org.example.makentetris2.Blöcke.*;
-import org.example.makentetris2.ControllerMappe.GameController;
-import org.example.makentetris2.ControllerMappe.MinigameController;
 import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
 import java.io.IOException;
@@ -202,5 +200,9 @@ public class GameManager {
         } else {
             System.out.println("Noch nicht gelöst.");
         }
+    }
+
+    public ArrayList<TetrisBlock> getActiveBlocks() {
+        return activeBlocks;
     }
 }

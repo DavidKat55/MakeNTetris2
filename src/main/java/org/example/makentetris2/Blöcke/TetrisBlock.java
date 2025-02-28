@@ -9,6 +9,8 @@ import org.example.makentetris2.Manager.GameManager;
 
 import java.util.ArrayList;
 
+import static org.example.makentetris2.Manager.GameManager.activeBlocks;
+
 public class TetrisBlock {
     protected ArrayList<Rectangle> blocks = new ArrayList<>();
     protected int[][] shape;
@@ -59,7 +61,11 @@ public class TetrisBlock {
 
     public void rotate() {
 
-        if (drehbar) {
+        if (drehbar == false) {
+            return;
+        }
+
+        if (istPositionDrehbar(this)) {
             int centerX = shape[rotationIndex][0];
             int centerY = shape[rotationIndex][1];
 
@@ -102,4 +108,40 @@ public class TetrisBlock {
         this.shape = shape;
     }
 
+    public boolean istPositionDrehbar(TetrisBlock block) {
+        int centerX = block.getShape()[block.rotationIndex][0];
+        int centerY = block.getShape()[block.rotationIndex][1];
+
+        int[][] newShape = new int[block.getShape().length][2];
+        for (int i = 0; i < block.getShape().length; i++) {
+            int tX = block.getShape()[i][0] - centerX;
+            int tY = block.getShape()[i][1] - centerY;
+
+            newShape[i][0] = centerX - tY;
+            newShape[i][1] = centerY + tX;
+        }
+
+        for (int[] part : newShape) {
+            int newX = block.getX() + part[0];
+            int newY = block.getY() + part[1];
+
+            if (newX < 0 || newX >= 16 || newY < 0 || newY >= 16) {
+                return false; // Out of bounds
+            }
+
+            for (TetrisBlock otherBlock : activeBlocks) {
+                if (otherBlock == block) continue;
+
+                for (int[] otherPart : otherBlock.getShape()) {
+                    int otherX = otherBlock.getX() + otherPart[0];
+                    int otherY = otherBlock.getY() + otherPart[1];
+
+                    if (newX == otherX && newY == otherY) {
+                        return false; // Collision detected
+                    }
+                }
+            }
+        }
+        return true;
+    }
 }

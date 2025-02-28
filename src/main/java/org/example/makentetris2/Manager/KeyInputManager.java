@@ -1,7 +1,6 @@
 package org.example.makentetris2.Manager;
 
 import javafx.scene.Scene;
-import org.example.makentetris2.ControllerMappe.GameController;
 
 import java.io.IOException;
 
