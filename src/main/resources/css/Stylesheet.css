@@ -57,7 +57,9 @@
 }
 
 #rollButton{
-    -fx-background-color: white;
+    -fx-background-color: grey;
+    -fx-text-fill: white ;
+    -fx-font-weight: bold;
 }
 
 #kontostand{

@@ -49,9 +49,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <ImageView fitHeight="650.0" fitWidth="650.0" layoutX="715.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="levelView" fitHeight="650.0" fitWidth="650.0" layoutX="715.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/Level/Level1.png" />
+
          </image>
       </ImageView>
       <Text fx:id="timer" layoutX="35.0" layoutY="741.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="137.33069610595703">

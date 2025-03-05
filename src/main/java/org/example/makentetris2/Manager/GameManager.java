@@ -5,6 +5,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Pair;
 import org.example.makentetris2.Blöcke.*;
+import org.example.makentetris2.ControllerMappe.GameController;
+import org.example.makentetris2.ControllerMappe.MinigameController;
 import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
 import java.io.IOException;
@@ -23,6 +25,8 @@ public class GameManager {
     private static final int GRID_HEIGHT = 12;
     private Level level;
     private List<Pair<Integer, Integer>> aktuellePositionen;
+    private GameController gameController;
+    private MinigameController minigameController;
 
 
     public GameManager(GridPane gridPane) {
@@ -30,7 +34,7 @@ public class GameManager {
         this.activeBlocks = new ArrayList<>();
         this.grid = new boolean[GRID_WIDTH][GRID_HEIGHT];
         this.aktuellePositionen = new ArrayList<>();
-        this.level = new Level();
+        level = MakeNTetrisMain.getLevelManager().getCurrentLevel();
     }
 
     public boolean isPositionFree(TetrisBlock block) {
@@ -195,6 +199,9 @@ public class GameManager {
         updateAktuellePositionen(); // Aktualisiere die aktuellen Positionen
 
         if (checkWinCondition()) {
+            if (gameController != null) {
+                gameController.stopTimer(); // Timer stoppen
+            }
             MakeNTetrisMain.szeneWechseln(4);
             System.out.println("Gewonnen!");
         } else {
@@ -204,5 +211,9 @@ public class GameManager {
 
     public ArrayList<TetrisBlock> getActiveBlocks() {
         return activeBlocks;
+    }
+
+    public void setGameController(GameController controller) {
+        this.gameController = controller;
     }
 }

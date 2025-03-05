@@ -3,10 +3,13 @@ package org.example.makentetris2.ControllerMappe;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import javafx.fxml.Initializable;
+import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
 import org.example.makentetris2.Timer.Time;
 
@@ -17,10 +20,10 @@ import java.util.ResourceBundle;
 public class GameController implements Initializable {
     @FXML
     private GridPane spielFeld;
-
     @FXML
-    public void initialize() {
-    }
+    private ImageView levelView;
+
+    private LevelManager levelManager;
 
     public GridPane getSpielFeld() {
         return spielFeld;
@@ -35,6 +38,9 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        levelManager = MakeNTetrisMain.getLevelManager();
+        updateLevelImage();
+
         timer.setText(time.getCurrentTime());
 
         timeline = new Timeline(
@@ -56,4 +62,21 @@ public class GameController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
+
+    public void stopTimer() {
+        if (timeline != null) {
+            timeline.stop();
+        }
+    }
+
+    public void updateLevelImage() {
+        int currentLevel = levelManager.getCurrentLevelIndex() + 1;
+        String imagePath = "/images/Level/Level" + currentLevel + ".png";
+
+        Image levelImage = new Image(getClass().getResourceAsStream(imagePath));
+        levelView.setImage(levelImage);
+    }
+
+
+
 }

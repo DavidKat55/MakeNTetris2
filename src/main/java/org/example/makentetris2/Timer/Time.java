@@ -1,5 +1,5 @@
-package org.example.makentetris2.Timer;
 
+package org.example.makentetris2.Timer;
 public class Time {
     private int minute;
     private int second;
@@ -10,7 +10,7 @@ public class Time {
     }
 
     public String getCurrentTime() {
-        return minute + ":" + second;
+        return String.format("%02d:%02d", minute, second);
     }
 
     public void oneSecondPassed() {

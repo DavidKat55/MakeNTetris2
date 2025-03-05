@@ -34,7 +34,7 @@ public class MinigameController {
     @FXML
     AnchorPane tippfarbe;
 
-    private int startKontostand = 100;
+    private int startKontostand = 0;
 
     Glow glowEffect = new Glow();
 
@@ -81,9 +81,9 @@ public class MinigameController {
     void setzeRot(ActionEvent event) {
         wette = true;
         test = true;
-        tippfarbe.setStyle("-fx-background-color: red");
-        glowEffect.setLevel(0.8);
-        tippfarbe.setEffect(glowEffect);
+        rollButton.setStyle("-fx-background-color: red");
+        glowEffect.setLevel(0.7);
+        rollButton.setEffect(glowEffect);
 
     }
 
@@ -91,9 +91,9 @@ public class MinigameController {
     void setzeSchwarz(ActionEvent event) {
         wette = false;
         test = true;
-        tippfarbe.setStyle("-fx-background-color: black");
-        glowEffect.setLevel(0.8);
-        tippfarbe.setEffect(glowEffect);
+        rollButton.setStyle("-fx-background-color: black");
+        glowEffect.setLevel(0.7);
+        rollButton.setEffect(glowEffect);
 
     }
 

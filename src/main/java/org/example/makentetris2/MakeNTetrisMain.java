@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
+import org.example.makentetris2.LevelManager.LevelManager;
 import org.example.makentetris2.Manager.GameManager;
 import org.example.makentetris2.Manager.KeyInputManager;
 import org.example.makentetris2.Manager.SoundManager;
@@ -16,9 +17,12 @@ import java.io.IOException;
 public class MakeNTetrisMain extends Application {
     private static FXMLLoader fxmlLoader;
     public final static SoundManager soundManager = new SoundManager();
+    private static LevelManager levelManager;
+    private static Stage currentStage;
 
     @Override
     public void start(Stage stage) throws IOException {
+        levelManager = new LevelManager();
         fxmlLoader = new FXMLLoader(MakeNTetrisMain.class.getResource("HauptBildschirm.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
@@ -35,6 +39,14 @@ public class MakeNTetrisMain extends Application {
     }
 
     public static void szeneWechseln(int szene) throws IOException {
+
+        if (currentStage != null) {
+            currentStage.close();
+        }
+
+        Stage newStage = new Stage();
+        setCurrentStage(newStage);
+
         switch (szene) {
             case 1:
                 FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("MakeNTetris.fxml"));
@@ -43,55 +55,62 @@ public class MakeNTetrisMain extends Application {
                 GameController controller = loader.getController();
                 GridPane spielFeld = controller.getSpielFeld();
                 GameManager gameManager = new GameManager(spielFeld);
+                gameManager.setGameController(controller);
                 soundManager.playBackgroundMusic("/sounds/game.wav");
 
                 Scene s = new Scene(root);
                 KeyInputManager keyInputManager = new KeyInputManager(gameManager);
                 keyInputManager.addKeyHandler(s);
 
-                Stage stage = new Stage();
-                stage.setResizable(false);
-                stage.setTitle("MakeNTetris - Spiel");
-                stage.setScene(s);
-                stage.show();
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Spiel");
+                newStage.setScene(s);
+                newStage.show();
                 gameManager.init();
                 break;
             case 2:
                 Parent root2 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Einstellungen.fxml"));
-                Stage stage2 = new Stage();
-                stage2.setResizable(false);
-                stage2.setTitle("MakeNTetris - Einstellungen");
-                stage2.setScene(new Scene(root2));
-                stage2.show();
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Einstellungen");
+                newStage.setScene(new Scene(root2));
+                newStage.show();
                 break;
             case 3:
                 Parent root3 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Minigame.fxml"));
                 soundManager.playBackgroundMusic("/sounds/MinigameStart.mp3");
-                Stage stage3 = new Stage();
-                stage3.setResizable(false);
-                stage3.setTitle("MakeNTetris - Minigame");
-                stage3.setScene(new Scene(root3));
-                stage3.show();
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Minigame");
+                newStage.setScene(new Scene(root3));
+                newStage.show();
                 break;
             case 4:
                 Parent root4 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Gewonnen.fxml"));
                 soundManager.playSound("/sounds/gewonnen.mp3");
-                Stage stage4 = new Stage();
-                stage4.setResizable(false); 
-                stage4.setTitle("MakeNTetris - Gewonnen");
-                stage4.setScene(new Scene(root4));
-                stage4.show();
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Gewonnen");
+                newStage.setScene(new Scene(root4));
+                newStage.show();
                 break;
             case 5:
                 System.out.println("Szene 5");
                 Parent root5 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Verloren.fxml"));
                 soundManager.playSound("/sounds/verloren.mp3");
-                Stage stage5 = new Stage();
-                stage5.setResizable(false);
-                stage5.setTitle("MakeNTetris - Verloren");
-                stage5.setScene(new Scene(root5));
-                stage5.show();
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Verloren");
+                newStage.setScene(new Scene(root5));
+                newStage.show();
                 break;
         }
+    }
+    public static LevelManager getLevelManager() {
+        return levelManager;
+    }
+
+    public static void setCurrentStage(Stage stage) {
+        currentStage = stage;
+    }
+
+    public static Stage getCurrentStage() {
+        return currentStage;
     }
 }
