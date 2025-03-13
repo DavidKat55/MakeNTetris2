@@ -2,11 +2,11 @@ package org.example.makentetris2.ControllerMappe;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import org.example.makentetris2.LevelManager.LevelManager;
 import org.example.makentetris2.MakeNTetrisMain;
-import org.example.makentetris2.ControllerMappe.GameController;
 
 import java.io.IOException;
 
@@ -20,21 +20,24 @@ public class GewonnenController {
     private Label gLabel;
 
     @FXML
-    private JFXButton bLevel2;
+    private JFXButton bNext;
 
     private LevelManager levelManager;
 
     public void initialize() {
         levelManager = MakeNTetrisMain.getLevelManager();
 
-        bLevel2.setOnAction(event -> {
+        bNext.setOnAction(event -> {
             try {
-                levelManager.nextLevel();
-                MakeNTetrisMain.szeneWechseln(1);
+                if (levelManager.getCurrentLevelIndex() == levelManager.getNumberOfLevels() - 1) {
+                    gLabel.setText("Alle Level geschafft!");
+                } else {
+                    levelManager.nextLevel();
+                    MakeNTetrisMain.szeneWechseln(1);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
     }
-
 }

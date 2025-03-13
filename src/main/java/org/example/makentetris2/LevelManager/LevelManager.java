@@ -17,12 +17,20 @@ public class LevelManager {
     }
 
     public Level getCurrentLevel() {
+        // Ensure the currentLevelIndex is within valid bounds
+        if (currentLevelIndex < 0) {
+            currentLevelIndex = 0;
+        } else if (currentLevelIndex >= availableLevels.size()) {
+            currentLevelIndex = availableLevels.size() - 1;
+        }
         return availableLevels.get(currentLevelIndex);
     }
 
     public void nextLevel() {
         if (currentLevelIndex < availableLevels.size() - 1) {
             currentLevelIndex++;
+        } else {
+            System.out.println("No more levels available.");
         }
     }
 
@@ -38,5 +46,13 @@ public class LevelManager {
 
     public int getCurrentLevelIndex() {
         return currentLevelIndex;
+    }
+
+    public int getNumberOfLevels() {
+        return availableLevels.size();
+    }
+
+    public void setCurrentLevelIndex(int currentLevelIndex) {
+        this.currentLevelIndex = currentLevelIndex;
     }
 }

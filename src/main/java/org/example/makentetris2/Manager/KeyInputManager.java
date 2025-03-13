@@ -17,27 +17,28 @@ public class KeyInputManager {
             switch (event.getCode()) {
                 case UP:
                     gameManager.moveBlockUp(gameManager.getSelectedBlock());
+//                    System.out.println("Up");
                     break;
                 case DOWN:
                     gameManager.moveBlockDown(gameManager.getSelectedBlock());
-                    System.out.println("Down");
+//                    System.out.println("Down");
                     break;
                 case LEFT:
                     gameManager.moveBlockLeft(gameManager.getSelectedBlock());
-                    System.out.println("Left");
+//                    System.out.println("Left");
                     break;
                 case RIGHT:
                     gameManager.moveBlockRight(gameManager.getSelectedBlock());
-                    System.out.println("Right");
+//                    System.out.println("Right");
                     break;
                 case SPACE:
                     gameManager.getSelectedBlock().rotate();
-                    System.out.println("Rotate");
+//                    System.out.println("Rotate");
                     gameManager.updatePane();
                     break;
                 case SHIFT:
                     gameManager.changeSelectedBlock();
-                    System.out.println("Change SelectedBlock");
+//                    System.out.println("Change SelectedBlock");
                     break;
                     case ENTER:
                         try {

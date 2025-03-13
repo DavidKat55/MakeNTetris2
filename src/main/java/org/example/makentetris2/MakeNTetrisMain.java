@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
+import org.example.makentetris2.ControllerMappe.LevelController;
 import org.example.makentetris2.LevelManager.LevelManager;
 import org.example.makentetris2.Manager.GameManager;
 import org.example.makentetris2.Manager.KeyInputManager;
@@ -19,6 +20,7 @@ public class MakeNTetrisMain extends Application {
     public final static SoundManager soundManager = new SoundManager();
     private static LevelManager levelManager;
     private static Stage currentStage;
+    private static LevelController levelController;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -100,6 +102,13 @@ public class MakeNTetrisMain extends Application {
                 newStage.setScene(new Scene(root5));
                 newStage.show();
                 break;
+            case 6:
+                Parent root6 = FXMLLoader.load(MakeNTetrisMain.class.getResource("LevelAuswahl.fxml"));
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Level");
+                newStage.setScene(new Scene(root6));
+                newStage.show();
+
         }
     }
     public static LevelManager getLevelManager() {
@@ -108,6 +117,14 @@ public class MakeNTetrisMain extends Application {
 
     public static void setCurrentStage(Stage stage) {
         currentStage = stage;
+    }
+
+    public static LevelController getLevelController() {
+        return levelController;
+    }
+
+    public static void setLevelController(LevelController controller) {
+        levelController = controller;
     }
 
     public static Stage getCurrentStage() {

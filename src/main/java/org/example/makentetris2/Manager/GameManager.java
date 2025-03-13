@@ -6,6 +6,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Pair;
 import org.example.makentetris2.Blöcke.*;
 import org.example.makentetris2.ControllerMappe.GameController;
+import org.example.makentetris2.ControllerMappe.LevelController;
 import org.example.makentetris2.ControllerMappe.MinigameController;
 import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
@@ -27,7 +28,6 @@ public class GameManager {
     private List<Pair<Integer, Integer>> aktuellePositionen;
     private GameController gameController;
     private MinigameController minigameController;
-
 
     public GameManager(GridPane gridPane) {
         this.gridPane = gridPane;
@@ -154,7 +154,7 @@ public class GameManager {
 
             if (newX < 0 || newX + rect.getWidth() > gridPane.getWidth() ||
                     newY < 0 || newY + rect.getHeight() > gridPane.getHeight()) {
-                System.out.println("Collision am Spielfeldrand");
+//                System.out.println("Collision am Spielfeldrand");
                 return true;
             }
         }
@@ -204,6 +204,11 @@ public class GameManager {
             }
             MakeNTetrisMain.szeneWechseln(4);
             System.out.println("Gewonnen!");
+
+            LevelController levelController = MakeNTetrisMain.getLevelController();
+            int currentLevelIndex = MakeNTetrisMain.getLevelManager().getCurrentLevelIndex();
+            System.out.println("Current Level Index: " + currentLevelIndex);
+            levelController.enableLevelButtons(currentLevelIndex + 1);
         } else {
             System.out.println("Noch nicht gelöst.");
         }

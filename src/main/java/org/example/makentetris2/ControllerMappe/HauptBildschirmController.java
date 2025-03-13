@@ -19,7 +19,7 @@ public class HauptBildschirmController {
 
     @FXML
     private void gameStarten() throws IOException {
-        MakeNTetrisMain.szeneWechseln(1);
+        MakeNTetrisMain.szeneWechseln(6);
     }
 
     @FXML

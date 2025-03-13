@@ -11,6 +11,7 @@ module org.example.makentetris2 {
     requires com.almasb.fxgl.all;
     requires javafx.media;
     requires com.jfoenix;
+    requires java.prefs;
 
     opens org.example.makentetris2 to javafx.fxml;
     exports org.example.makentetris2;

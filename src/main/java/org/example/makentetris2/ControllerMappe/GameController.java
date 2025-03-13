@@ -14,6 +14,7 @@ import org.example.makentetris2.MakeNTetrisMain;
 import org.example.makentetris2.Timer.Time;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -72,11 +73,14 @@ public class GameController implements Initializable {
     public void updateLevelImage() {
         int currentLevel = levelManager.getCurrentLevelIndex() + 1;
         String imagePath = "/images/Level/Level" + currentLevel + ".png";
+        InputStream imageStream = getClass().getResourceAsStream(imagePath);
 
-        Image levelImage = new Image(getClass().getResourceAsStream(imagePath));
-        levelView.setImage(levelImage);
+        if (imageStream == null) {
+            System.err.println("Image not found: " + imagePath);
+            return;
+        }
+
+        Image image = new Image(imageStream);
+        levelView.setImage(image);
     }
-
-
-
 }
