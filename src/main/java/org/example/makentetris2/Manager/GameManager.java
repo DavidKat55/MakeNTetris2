@@ -27,7 +27,6 @@ public class GameManager {
     private Level level;
     private List<Pair<Integer, Integer>> aktuellePositionen;
     private GameController gameController;
-    private MinigameController minigameController;
 
     public GameManager(GridPane gridPane) {
         this.gridPane = gridPane;
@@ -209,6 +208,16 @@ public class GameManager {
             int currentLevelIndex = MakeNTetrisMain.getLevelManager().getCurrentLevelIndex();
             System.out.println("Current Level Index: " + currentLevelIndex);
             levelController.enableLevelButtons(currentLevelIndex + 1);
+
+            MinigameController minigameController = MakeNTetrisMain.getMinigameController();
+
+            if (minigameController != null) {
+                minigameController.aktualisiereKontostand(minigameController.getStartKontostand() + 100);
+                System.out.println("Kontostand aktualisiert neuer Kontostand: " + minigameController.getStartKontostand());
+            } else {
+                System.out.println("MinigameController is null");
+            }
+
         } else {
             System.out.println("Noch nicht gelöst.");
         }

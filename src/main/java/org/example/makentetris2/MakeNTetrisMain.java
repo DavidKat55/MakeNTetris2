@@ -8,6 +8,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
 import org.example.makentetris2.ControllerMappe.LevelController;
+import org.example.makentetris2.ControllerMappe.MinigameController;
 import org.example.makentetris2.LevelManager.LevelManager;
 import org.example.makentetris2.Manager.GameManager;
 import org.example.makentetris2.Manager.KeyInputManager;
@@ -21,6 +22,7 @@ public class MakeNTetrisMain extends Application {
     private static LevelManager levelManager;
     private static Stage currentStage;
     private static LevelController levelController;
+    private static MinigameController minigameController;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -29,6 +31,8 @@ public class MakeNTetrisMain extends Application {
         Scene scene = new Scene(fxmlLoader.load());
 
         soundManager.playBackgroundMusic("/sounds/Start.mp3");
+
+        initializeMinigameController();
 
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
@@ -111,6 +115,20 @@ public class MakeNTetrisMain extends Application {
 
         }
     }
+
+    public static void initializeMinigameController() {
+        try {
+            FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("Minigame.fxml"));
+            loader.load();
+            minigameController = loader.getController();
+            minigameController.initialize();
+            minigameController.loadBalance();
+            minigameController.updateKontostand();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static LevelManager getLevelManager() {
         return levelManager;
     }
@@ -125,6 +143,15 @@ public class MakeNTetrisMain extends Application {
 
     public static void setLevelController(LevelController controller) {
         levelController = controller;
+    }
+
+    public static  MinigameController getMinigameController() {
+        return minigameController;
+    }
+
+    public static void setMinigameController(MinigameController controller) {
+        minigameController = controller;
+        System.out.println("MinigameController set");
     }
 
     public static Stage getCurrentStage() {
