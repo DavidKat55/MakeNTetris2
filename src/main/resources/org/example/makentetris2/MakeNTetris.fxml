@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="hinterspielfeld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.GameController">
+<AnchorPane fx:id="hintergrundSpielfeld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="860.0" prefWidth="1401.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.GameController">
    <children>
       <GridPane fx:id="spielFeld" alignment="CENTER" gridLinesVisible="true" layoutX="35.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="640.0" stylesheets="@../../../css/Stylesheet.css">
          <columnConstraints>
@@ -53,328 +54,523 @@
 
          </image>
       </ImageView>
-      <Text fx:id="timer" layoutX="35.0" layoutY="759.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="137.33069610595703">
+      <Text fx:id="timer" fill="GOLD" layoutX="15.0" layoutY="829.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="289.2781448364258">
          <font>
-            <Font size="50.0" />
-         </font></Text>
-      <Text layoutX="18.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER">
-         <font>
-            <Font size="14.0" />
-         </font></Text>
-      <Text layoutX="18.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER">
+            <Font size="96.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect></Text>
+      <Text fill="WHITE" layoutX="18.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect></Text>
+      <Text fill="WHITE" layoutX="17.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="18.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="17.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="18.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="18.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="18.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="18.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="18.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="18.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="18.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="18.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="18.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="18.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="18.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="12.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="12.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="12.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="12.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="12.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="12.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="12.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="12.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="12.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="12.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="12.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="12.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="12.0" layoutY="656.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="12.0" layoutY="656.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="51.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="51.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="91.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="91.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="130.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="130.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="170.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="170.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="212.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="212.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="252.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="252.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="291.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="291.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="330.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="330.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="373.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="373.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="412.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="J" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="412.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="J" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="451.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="451.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="491.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="491.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="529.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="529.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="571.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="571.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="610.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="610.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="651.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="651.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="736.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="736.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="776.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="776.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="815.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="815.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="855.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="855.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="897.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="897.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="937.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="937.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="976.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="976.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1015.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1015.0" layoutY="691.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1058.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1058.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1097.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="J" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1097.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="J" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1136.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1136.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1176.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1176.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1214.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1214.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1256.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1256.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1295.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1295.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1336.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="1336.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1367.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1367.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1367.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1368.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1369.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1371.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow />
+         </effect>
       </Text>
-      <Text layoutX="698.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="692.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="692.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="692.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="692.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="615.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="0.95" />
+         </effect>
       </Text>
-      <Text layoutX="692.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1370.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="692.0" layoutY="615.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="1372.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
-      <Text layoutX="692.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" textAlignment="CENTER">
+      <Text fill="WHITE" layoutX="18.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
       </Text>
    </children>
 </AnchorPane>

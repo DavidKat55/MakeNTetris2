@@ -8,7 +8,7 @@ public class Level1 extends Level{
     protected void initializeZielPositionen() {
         // Beispiel für Zielpositionen
         zielPositionen.add(new Pair<>(0, 0));
-
+//
 //        //O-Block
 //        zielPositionen.add(new Pair<>(9, 15));
 //        zielPositionen.add(new Pair<>(8, 15));
@@ -49,7 +49,7 @@ public class Level1 extends Level{
 //        zielPositionen.add(new Pair<>(9, 8));
 //        zielPositionen.add(new Pair<>(8, 8));
 //        zielPositionen.add(new Pair<>(10, 9));
-
+//
 
     }
 }

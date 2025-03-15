@@ -69,7 +69,7 @@ public class MinigameController {
                     System.out.println("Thread Running");
                     try {
                         for (int i = 0; i < 15; i++) {
-                            File file = new File("src/main/resources/images/Würfel/dice" + (rand.nextInt(6) + 1) + ".png");
+                            File file = new File("src/main/resources/images/Würfel/dice" + (rand.nextInt(7)) + ".png");
                             würfel.setImage(new Image(file.toURI().toString()));
                             Thread.sleep(93);
                         }
@@ -106,13 +106,10 @@ public class MinigameController {
     }
 
     private int getRolledValue(String imageUrl) {
-        if (imageUrl.contains("dice1.png")) return 1;
-        if (imageUrl.contains("dice2.png")) return 2;
-        if (imageUrl.contains("dice3.png")) return 3;
-        if (imageUrl.contains("dice4.png")) return 4;
-        if (imageUrl.contains("dice5.png")) return 5;
-        if (imageUrl.contains("dice6.png")) return 6;
-        return 0;
+        for (int i = 0; i <= 6; i++) {  // Jetzt auch dice0.png
+            if (imageUrl.contains("dice" + i + ".png")) return i;
+        }
+        return -1;
     }
 
     private void checkWinOrLose(boolean wette) {
@@ -122,15 +119,18 @@ public class MinigameController {
             int rolledValue = getRolledValue(imageUrl);
 
             boolean resultColor = (rolledValue % 2 != 0);
-
             int neuEinsatz = Integer.parseInt(einsatz.getText());
-            if (wette == resultColor) {
-                startKontostand += (neuEinsatz * 2); // Gewinn
-            } else {
+            if (rolledValue == 0) {
+                // Bei dice0 immer verlieren
                 startKontostand -= neuEinsatz; // Verlust
+            } else {
+                if (wette == resultColor) {
+                    startKontostand += (neuEinsatz); // Gewinn
+                } else {
+                    startKontostand -= neuEinsatz; // Verlust
+                }
             }
             aktualisiereKontostand(startKontostand);
-            System.out.println((wette == resultColor ? "Gewonnen!" : "Verloren!") + " Neuer Kontostand: " + startKontostand);
         }
     }
 

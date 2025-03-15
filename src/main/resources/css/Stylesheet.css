@@ -1,90 +1,136 @@
+/* Hauptbildschirm im Tetris 99-Stil */
 #hauptbildschirm {
-    -fx-background-image: url("../images/MakeNtetris.png");
-    -fx-background-size: cover;
-    -fx-background-position: center;
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 3px;
+    -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
+    dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
+    -fx-padding: 10px;
 }
 
-#bStart{
-    -fx-background-color: #4CAF50;
+/* Angepasste Button-Stile für Tetris 99-Look */
+#bStart, #bEinstellungen, #bVerlassen, #bShop, #casino {
+    -fx-background-color: rgba(0, 17, 68, 0.8);
+    -fx-text-fill: #aaccff;
+    -fx-font-family: "Arial", sans-serif;
     -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-padding: 10px 25px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
 }
 
-#bStart:hover {
-    -fx-background-color: #45a049;
-    -fx-border-color: black;
+#bStart:hover, #bEinstellungen:hover, #bVerlassen:hover, #bShop:hover, #casino:hover {
+    -fx-background-color: #112255;
+    -fx-border-color: #5577dd;
+    -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0);
 }
 
-
-#bEinstellungen {
-    -fx-background-color: #FFC107;
-    -fx-font-weight: bold;
+/* Einstellungen-Hintergrund im Tetris 99-Stil */
+#einstellungHintergrund {
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 3px;
+    -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
+    dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
+    -fx-padding: 10px;
 }
 
-#bEinstellungen:hover {
-    -fx-background-color: #ffb300;
-    -fx-border-color: black;
-}
-
-#bVerlassen {
-    -fx-background-color: #F44336;
-    -fx-font-weight: bold;
-}
-
-#bVerlassen:hover {
-    -fx-background-color: #d32f2f;
-    -fx-border-color: black;
-}
-
+/* Regler im Tetris 99-Stil */
 #regulierer {
-    -jfx-default-thumb: grey;
-    -jfx-default-track: white;
+    -jfx-default-thumb: #3355aa;
+    -jfx-default-track: #001133;
+    -fx-background-color: transparent;
+    -fx-text-fill: #aaccff;
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 1px;
 }
 
-
-#einstellungHintergrund{
-    -fx-background-color: black;
+#regulierer.thumb {
+    -fx-background-color: #3355aa;
+    -fx-background-radius: 3px;
+    -fx-effect: dropshadow(gaussian, #00aaff, 10, 0.5, 0, 0);
 }
 
-#casino {
-    -fx-background-color: black;
-    -fx-text-fill: white;
+#regulierer.track {
+    -fx-background-color: #001133;
+    -fx-background-radius: 0;
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 1px;
 }
 
+/* Minispiel-Hintergrund */
 #minigameHintergrund {
-    -fx-background-image: url("../images/Minigame.png");
-    -fx-background-size: cover;
-    -fx-background-position: center;
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #3333aa;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, #0066ff, 10, 0, 0, 0);
+    -fx-padding: 5px;
 }
 
-#rollButton{
-    -fx-background-color: grey;
-    -fx-text-fill: white ;
+/* Roll-Button im Casino */
+#rollButton {
+    -fx-background-color: rgba(0, 17, 68, 0.8);
+    -fx-text-fill: #aaccff;
+    -fx-font-family: "Arial", sans-serif;
     -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
 }
 
-#kontostand{
-    -fx-background-color: white;
+#rollButton:hover {
+    -fx-background-color: #112255;
+    -fx-border-color: #5577dd;
+    -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0);
 }
 
-#bRot{
-    -fx-background-color: red;
-    -fx-text-fill: white;
-}
-
-#bSchwarz{
-    -fx-background-color: black;
-    -fx-text-fill: white;
-}
-
-#kontostand1{
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-#kontostand{
-    -fx-background-color: visible;
+/* Rot und Schwarz Buttons mit Tetris 99-Stil */
+#bRot {
+    -fx-background-color: #aa0000;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+    -fx-border-color: #ff3333;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+#bRot:hover {
+    -fx-background-color: #cc0000;
+    -fx-effect: innershadow(gaussian, #ff6666, 10, 0.5, 0, 0);
+}
+
+#bSchwarz {
+    -fx-background-color: #000000;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #444444;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+#bSchwarz:hover {
+    -fx-background-color: #222222;
+    -fx-effect: innershadow(gaussian, #666666, 10, 0.5, 0, 0);
+}
+
+/* Kontostand im Casino */
+#kontostand, #kontostand1 {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+    -fx-text-fill: #aaccff;
+    -fx-font-family: "Arial", sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 1px;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
 }
 
 #gLabel{
@@ -95,10 +141,6 @@
 
 #gPane{
     -fx-background-color: green;
-}
-
-#spielFeld{
-    -fx-background-color: black;
 }
 
 #bNext {
@@ -123,6 +165,112 @@
     -fx-font-weight: bold;
 }
 
-#timer{
+#spielFeld {
+    -fx-background-color: black;
+    -fx-background-size: cover;
+    -fx-border-color: #3333aa;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, #0066ff, 10, 0, 0, 0);
+}
+#hintergrundSpielfeld {
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 3px;
+    -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
+    dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
+    -fx-padding: 10px;
+}
+/* Level-Auswahl Hauptcontainer */
+#levelAuswahl {
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 3px;
+    -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
+    dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
+    -fx-padding: 10px;
+}
+
+/* Grid für Level-Auswahl */
+#levelauswahlHintergrund {
+    -fx-background-color: black;
+    -fx-border-color: #3333aa;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, #0066ff, 10, 0, 0, 0);
+    -fx-padding: 5px;
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+}
+
+/* Standard Level-Button */
+#bLevel1, #bLevel2, #bLevel3 {
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-effect: innershadow(gaussian, #004488, 5, 0.5, 0, 0);
+    -fx-min-width: 80px;
+    -fx-min-height: 80px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+/* Hover-Effekt für Level-Button */
+#bLevel1:hover, #bLevel2:hover, #bLevel3:hover {
+    -fx-background-color: #112255;
+    -fx-border-color: #5577dd;
+    -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0),
+    dropshadow(gaussian, #33aaff, 10, 0.5, 0, 0);
+}
+
+/* Aktives/Ausgewähltes Level */
+#bLevel1-active, #bLevel2-active, #bLevel3-active {
+    -fx-background-color: #002288;
+    -fx-text-fill: #ffcc00;
+    -fx-border-color: #ffaa00;
+    -fx-effect: innershadow(gaussian, #004488, 5, 0.5, 0, 0),
+    dropshadow(gaussian, #ffdd44, 15, 0.7, 0, 0);
+}
+
+/* Gesperrtes Level */
+#bLevel1-locked, #bLevel2-locked, #bLevel3-locked {
+    -fx-background-color: #222222;
+    -fx-text-fill: #777777;
+    -fx-border-color: #444444;
+    -fx-effect: innershadow(gaussian, #111111, 5, 0.5, 0, 0);
+    -fx-opacity: 0.8;
+}
+
+/* Zurück-Button */
+#backButton {
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+#backButton:hover {
+    -fx-background-color: #112255;
+    -fx-border-color: #5577dd;
+}
+/* Titel im Tetris 99 Pixel-Retro-Stil */
+#title {
+    -fx-font-family: "Press Start 2P", "Consolas", monospace;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00ccff;
+    -fx-effect: dropshadow(gaussian, #0033ff, 8, 0.8, 0, 0),
+    innershadow(gaussian, #99eeff, 1, 0.2, 0, 0);
+    -fx-padding: 10px;
+    -fx-border-width: 3px;
+    -fx-border-color: #0066aa;
+    -fx-border-style: solid;
+    -fx-background-color: rgba(0, 10, 40, 0.7);
+    -fx-background-radius: 2px;
+    -fx-border-radius: 2px;
+    -fx-letter-spacing: 2px;
 }

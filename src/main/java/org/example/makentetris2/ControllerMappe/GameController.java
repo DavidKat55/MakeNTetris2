@@ -30,7 +30,7 @@ public class GameController implements Initializable {
         return spielFeld;
     }
 
-    Time time = new Time(1, 0);
+    Time time = new Time(10, 0);
 
     @FXML
     private Text timer;

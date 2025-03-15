@@ -1,6 +1,7 @@
 package org.example.makentetris2;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -68,7 +69,8 @@ public class MakeNTetrisMain extends Application {
                 KeyInputManager keyInputManager = new KeyInputManager(gameManager);
                 keyInputManager.addKeyHandler(s);
 
-                newStage.setResizable(false);
+                newStage.setFullScreen(true);
+                newStage.setResizable(true);
                 newStage.setTitle("MakeNTetris - Spiel");
                 newStage.setScene(s);
                 newStage.show();
@@ -112,8 +114,17 @@ public class MakeNTetrisMain extends Application {
                 newStage.setTitle("MakeNTetris - Level");
                 newStage.setScene(new Scene(root6));
                 newStage.show();
+                break;
+            case 7:
+                Parent root7 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Shop.fxml"));
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Shop");
+                newStage.setScene(new Scene(root7));
+                newStage.show();
+                break;
 
         }
+
     }
 
     public static void initializeMinigameController() {

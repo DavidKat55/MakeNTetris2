@@ -2,12 +2,20 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="hauptbildschirm" prefHeight="598.0" prefWidth="456.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.HauptBildschirmController">
+<AnchorPane fx:id="hauptbildschirm" prefHeight="500.0" prefWidth="400.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.HauptBildschirmController">
    <children>
-      <JFXButton fx:id="casino" layoutX="374.0" layoutY="558.0" onAction="#minigameStarten" text="Minigame" />
-      <JFXButton fx:id="bEinstellungen" layoutX="163.0" layoutY="195.0" onAction="#einstellungenStarten" prefHeight="40.0" prefWidth="130.0" text="Einstellungen" />
-      <JFXButton fx:id="bStart" layoutX="153.0" layoutY="254.0" onAction="#gameStarten" prefHeight="45.0" prefWidth="150.0" text="Starten" />
-      <JFXButton fx:id="bVerlassen" layoutX="163.0" layoutY="314.0" onAction="#verlassen" prefHeight="40.0" prefWidth="130.0" text="Verlassen" />
+      <JFXButton fx:id="casino" layoutX="125.0" layoutY="270.0" onAction="#minigameStarten" prefHeight="45.0" prefWidth="150.0" text="Minigame" />
+      <JFXButton fx:id="bEinstellungen" layoutX="125.0" layoutY="120.0" onAction="#einstellungenStarten" prefHeight="45.0" prefWidth="150.0" text="Einstellungen" />
+      <JFXButton fx:id="bStart" layoutX="125.0" layoutY="200.0" onAction="#gameStarten" prefHeight="45.0" prefWidth="150.0" text="Level" />
+      <JFXButton fx:id="bVerlassen" layoutX="126.0" layoutY="441.0" onAction="#verlassen" prefHeight="45.0" prefWidth="150.0" text="Verlassen" />
+      <JFXButton fx:id="bShop" layoutX="125.0" layoutY="340.0" onAction="#shopStarten" prefHeight="45.0" prefWidth="150.0" text="shop" />
+      <Text fx:id="title" layoutX="67.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAKE'N'TETRIS" textAlignment="CENTER" wrappingWidth="268.44775390625">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
