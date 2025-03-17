@@ -30,7 +30,7 @@ public class GameController implements Initializable {
         return spielFeld;
     }
 
-    Time time = new Time(0, 10);
+    Time time = new Time(3, 10);
 
     @FXML
     private Text timer;
@@ -86,4 +86,9 @@ public class GameController implements Initializable {
         Image image = new Image(imageStream);
         levelView.setImage(image);
     }
+
+    public void zurueckButton() throws IOException {
+        MakeNTetrisMain.szeneWechseln(6);
+    }
+
 }

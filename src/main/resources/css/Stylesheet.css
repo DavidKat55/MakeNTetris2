@@ -133,36 +133,58 @@
     -fx-border-radius: 3px;
 }
 
-#gLabel{
-    -fx-background-color: green;
-    -fx-text-fill: white;
+#gLabel {
+    -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
+    -fx-font-size: 36px;
+    -fx-alignment: center;
 }
 
-#gPane{
-    -fx-background-color: green;
+#gPane {
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 3px;
+    -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
+    dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
+    -fx-padding: 10px;
 }
 
 #bNext {
-    -fx-background-color: black;
-    -fx-text-fill: white;
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
 }
 
-#vLabel{
-    -fx-background-color: red;
-    -fx-text-fill: white;
+#vLabel {
+    -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
+    -fx-font-size: 36px;
+    -fx-alignment: center;
 }
 
-#vPane{
-    -fx-background-color: red;
+#vPane {
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 3px;
+    -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
+    dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
+    -fx-padding: 10px;
 }
 
 #vNeu {
-    -fx-background-color: black;
-    -fx-text-fill: white;
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
 }
 
 #spielFeld {
@@ -273,4 +295,24 @@
     -fx-background-radius: 2px;
     -fx-border-radius: 2px;
     -fx-letter-spacing: 2px;
+}
+
+#bZurueck1 {
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+#bZurueck2 {
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
 }

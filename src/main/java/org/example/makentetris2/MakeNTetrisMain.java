@@ -1,14 +1,11 @@
 package org.example.makentetris2;
 
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import org.example.makentetris2.ControllerMappe.GameController;
 import org.example.makentetris2.ControllerMappe.LevelController;
 import org.example.makentetris2.ControllerMappe.MinigameController;
@@ -74,7 +71,7 @@ public class MakeNTetrisMain extends Application {
                 keyInputManager.addKeyHandler(s);
 
                 newStage.setFullScreen(true);
-                newStage.setResizable(true);
+                newStage.setResizable(false);
                 newStage.setTitle("MakeNTetris - Spiel");
                 newStage.setScene(s);
 
@@ -104,7 +101,6 @@ public class MakeNTetrisMain extends Application {
                 newStage.setOnCloseRequest(event -> {
                     soundManager.stopMusic();
                     soundManager.playBackgroundMusic("/sounds/Start.mp3");
-
                 });
                 break;
             case 4:
@@ -138,9 +134,7 @@ public class MakeNTetrisMain extends Application {
                 newStage.setScene(new Scene(root7));
                 newStage.show();
                 break;
-
         }
-
     }
 
     public static void initializeMinigameController() {

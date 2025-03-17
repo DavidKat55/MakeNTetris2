@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="vPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.VerlorenController">
+<AnchorPane fx:id="vPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.VerlorenController">
    <children>
-      <Label fx:id="vLabel" layoutX="181.0" layoutY="155.0" prefHeight="115.0" prefWidth="239.0" text="Game Over">
+      <Label fx:id="vLabel" layoutX="181.0" layoutY="101.0" prefHeight="115.0" prefWidth="239.0" text="Game Over">
          <font>
             <Font size="42.0" />
          </font>
       </Label>
-      <JFXButton fx:id="vNeu" layoutX="250.0" layoutY="270.0" onAction="#NeuStarten" prefHeight="40.0" prefWidth="100.0" text="Neuerversuch" />
+      <JFXButton fx:id="vNeu" layoutX="220.0" layoutY="268.0" onAction="#NeuStarten" prefHeight="40.0" prefWidth="160.0" text="Neuerversuch" />
    </children>
 </AnchorPane>

@@ -2,6 +2,7 @@ package org.example.makentetris2.ControllerMappe;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import org.example.makentetris2.LevelManager.LevelManager;
 import org.example.makentetris2.LevelManager.LevelState;
 import org.example.makentetris2.MakeNTetrisMain;
@@ -67,6 +68,11 @@ public class LevelController {
                 levelState.setLevel3Unlocked(true);
                 break;
         }
+    }
+
+    public void zurueckButton() throws IOException {
+        Stage stage = (Stage) bLevel1.getScene().getWindow();
+        stage.close();
     }
 }
 
