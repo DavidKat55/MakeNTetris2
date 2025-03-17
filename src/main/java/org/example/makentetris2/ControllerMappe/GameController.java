@@ -30,7 +30,7 @@ public class GameController implements Initializable {
         return spielFeld;
     }
 
-    Time time = new Time(10, 0);
+    Time time = new Time(0, 10);
 
     @FXML
     private Text timer;
@@ -39,6 +39,9 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        MakeNTetrisMain.setGameController(this);
+
         levelManager = MakeNTetrisMain.getLevelManager();
         updateLevelImage();
 

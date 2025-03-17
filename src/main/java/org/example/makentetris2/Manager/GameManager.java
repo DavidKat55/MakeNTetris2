@@ -64,7 +64,7 @@ public class GameManager {
         spawnBlockAtRandomPosition(() -> new ZBlock(0, 0));
         spawnBlockAtRandomPosition(() -> new JBlock(0, 0));
         spawnBlockAtRandomPosition(() -> new SBlock(0, 0));
-        changeStrokeColor(Color.WHITE, 2);
+        changeStrokeColor(Color.WHITE, 1);
     }
 
     private void spawnBlockAtRandomPosition(Supplier<TetrisBlock> blockSupplier) {
@@ -126,14 +126,14 @@ public class GameManager {
 
     public void changeSelectedBlock() {
         selectedBlockIndex = (selectedBlockIndex + 1) % activeBlocks.size();
-        changeStrokeColor(Color.WHITE, 2);
+        changeStrokeColor(Color.WHITE, 1);
     }
 
     public void changeStrokeColor(Color color, double strokeWidth) {
         for (TetrisBlock block : activeBlocks) {
             for (Rectangle r : block.getBlocks()) {
                 r.setStroke(Color.BLACK);
-                r.setStrokeWidth(2);
+                r.setStrokeWidth(1);
             }
         }
 

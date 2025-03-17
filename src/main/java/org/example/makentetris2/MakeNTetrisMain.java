@@ -2,11 +2,13 @@ package org.example.makentetris2;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import org.example.makentetris2.ControllerMappe.GameController;
 import org.example.makentetris2.ControllerMappe.LevelController;
 import org.example.makentetris2.ControllerMappe.MinigameController;
@@ -17,6 +19,7 @@ import org.example.makentetris2.Manager.SoundManager;
 
 import java.io.IOException;
 
+
 public class MakeNTetrisMain extends Application {
     private static FXMLLoader fxmlLoader;
     public final static SoundManager soundManager = new SoundManager();
@@ -24,6 +27,7 @@ public class MakeNTetrisMain extends Application {
     private static Stage currentStage;
     private static LevelController levelController;
     private static MinigameController minigameController;
+    private static GameController gameController;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -73,6 +77,13 @@ public class MakeNTetrisMain extends Application {
                 newStage.setResizable(true);
                 newStage.setTitle("MakeNTetris - Spiel");
                 newStage.setScene(s);
+
+                newStage.setOnCloseRequest(event -> {
+                        getGameController().stopTimer();
+                        soundManager.stopMusic();
+                        soundManager.playBackgroundMusic("/sounds/Start.mp3");
+                });
+
                 newStage.show();
                 gameManager.init();
                 break;
@@ -90,6 +101,11 @@ public class MakeNTetrisMain extends Application {
                 newStage.setTitle("MakeNTetris - Minigame");
                 newStage.setScene(new Scene(root3));
                 newStage.show();
+                newStage.setOnCloseRequest(event -> {
+                    soundManager.stopMusic();
+                    soundManager.playBackgroundMusic("/sounds/Start.mp3");
+
+                });
                 break;
             case 4:
                 Parent root4 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Gewonnen.fxml"));
@@ -163,6 +179,14 @@ public class MakeNTetrisMain extends Application {
     public static void setMinigameController(MinigameController controller) {
         minigameController = controller;
         System.out.println("MinigameController set");
+    }
+
+    public static GameController getGameController() {
+        return gameController;
+    }
+
+    public static void setGameController(GameController controller) {
+        gameController = controller;
     }
 
     public static Stage getCurrentStage() {
