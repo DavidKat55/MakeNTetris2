@@ -1,4 +1,3 @@
-/* Hauptbildschirm im Tetris 99-Stil */
 #hauptbildschirm {
     -fx-background-color: linear-gradient(to bottom, #000033, #000022);
     -fx-border-color: #1a1a7a;
@@ -8,7 +7,6 @@
     -fx-padding: 10px;
 }
 
-/* Angepasste Button-Stile für Tetris 99-Look */
 #bStart, #bEinstellungen, #bVerlassen, #bShop, #casino {
     -fx-background-color: rgba(0, 17, 68, 0.8);
     -fx-text-fill: #aaccff;
@@ -27,7 +25,6 @@
     -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0);
 }
 
-/* Einstellungen-Hintergrund im Tetris 99-Stil */
 #einstellungHintergrund {
     -fx-background-color: linear-gradient(to bottom, #000033, #000022);
     -fx-border-color: #1a1a7a;
@@ -37,14 +34,11 @@
     -fx-padding: 10px;
 }
 
-/* Regler im Tetris 99-Stil */
 #regulierer {
     -jfx-default-thumb: #3355aa;
     -jfx-default-track: #001133;
     -fx-background-color: transparent;
     -fx-text-fill: #aaccff;
-    -fx-border-color: #1a1a7a;
-    -fx-border-width: 1px;
 }
 
 #regulierer.thumb {
@@ -60,16 +54,14 @@
     -fx-border-width: 1px;
 }
 
-/* Minispiel-Hintergrund */
 #minigameHintergrund {
-    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-background-image: url("../images/Hintergrund/CasinoBackground.png");
     -fx-border-color: #3333aa;
     -fx-border-width: 2px;
     -fx-effect: dropshadow(three-pass-box, #0066ff, 10, 0, 0, 0);
     -fx-padding: 5px;
 }
 
-/* Roll-Button im Casino */
 #rollButton {
     -fx-background-color: rgba(0, 17, 68, 0.8);
     -fx-text-fill: #aaccff;
@@ -88,7 +80,6 @@
     -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0);
 }
 
-/* Rot und Schwarz Buttons mit Tetris 99-Stil */
 #bRot {
     -fx-background-color: #aa0000;
     -fx-text-fill: white;
@@ -119,18 +110,11 @@
     -fx-effect: innershadow(gaussian, #666666, 10, 0.5, 0, 0);
 }
 
-/* Kontostand im Casino */
 #kontostand, #kontostand1 {
-    -fx-background-color: rgba(0, 0, 0, 0.7);
     -fx-text-fill: #aaccff;
     -fx-font-family: "Arial", sans-serif;
     -fx-font-weight: bold;
     -fx-font-size: 16px;
-    -fx-border-color: #3355aa;
-    -fx-border-width: 1px;
-    -fx-padding: 5px 10px;
-    -fx-background-radius: 3px;
-    -fx-border-radius: 3px;
 }
 
 #gLabel {
@@ -315,4 +299,54 @@
     -fx-padding: 8px 15px;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
+}
+
+#mKauf {
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-padding: 6px 12px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+#mKauf:hover {
+    -fx-background-color: #112255;
+    -fx-border-color: #5577dd;
+    -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0);
+}
+
+#mAuswahl.radio {
+    -fx-background-color: #001133;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+}
+
+#mAuswahl.dot {
+    -fx-background-color: #00aaff;
+    -fx-effect: dropshadow(gaussian, #00aaff, 8, 0.8, 0, 0);
+}
+
+#mAuswahl {
+    -fx-text-fill: #aaccff;
+}
+
+#MLable {
+    -fx-text-fill: #00ccff;
+    -fx-font-family: "Arial", sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-effect: dropshadow(gaussian, #0033ff, 5, 0.6, 0, 0);
+}
+
+/* Shop AnchorPane Hauptcontainer */
+#shopHintergrund {
+    -fx-background-color: linear-gradient(to bottom, #000033, #000022);
+    -fx-border-color: #1a1a7a;
+    -fx-border-width: 3px;
+    -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
+    dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
+    -fx-padding: 10px;
 }

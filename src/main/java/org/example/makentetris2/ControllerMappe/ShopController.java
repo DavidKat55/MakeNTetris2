@@ -1,5 +1,5 @@
 package org.example.makentetris2.ControllerMappe;
 
-public class ShopController
-{
+public class ShopController {
+
 }

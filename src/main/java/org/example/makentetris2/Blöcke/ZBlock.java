@@ -12,7 +12,7 @@ public class ZBlock extends TetrisBlock {
     @Override
     public void init() {
         super.init();
-        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/ZBlock.png"));
+        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/Minecraft/Obsidian.png"));
         ImagePattern pattern = new ImagePattern(image);
         for (Rectangle block : blocks) {
             block.setFill(pattern);

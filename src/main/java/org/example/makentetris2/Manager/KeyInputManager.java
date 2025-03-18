@@ -15,19 +15,19 @@ public class KeyInputManager {
     public void addKeyHandler(Scene scene) {
         scene.setOnKeyPressed(event -> {
             switch (event.getCode()) {
-                case UP:
+                case W, UP:
                     gameManager.moveBlockUp(gameManager.getSelectedBlock());
 //                    System.out.println("Up");
                     break;
-                case DOWN:
+                case S, DOWN:
                     gameManager.moveBlockDown(gameManager.getSelectedBlock());
 //                    System.out.println("Down");
                     break;
-                case LEFT:
+                case A, LEFT:
                     gameManager.moveBlockLeft(gameManager.getSelectedBlock());
 //                    System.out.println("Left");
                     break;
-                case RIGHT:
+                case D, RIGHT:
                     gameManager.moveBlockRight(gameManager.getSelectedBlock());
 //                    System.out.println("Right");
                     break;
@@ -40,14 +40,13 @@ public class KeyInputManager {
                     gameManager.changeSelectedBlock();
 //                    System.out.println("Change SelectedBlock");
                     break;
-                    case ENTER:
+                case ENTER:
                         try {
                             gameManager.onEnterPressed();
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        case ESCAPE:
-
+                        break;
                 default:
                     break;
             }

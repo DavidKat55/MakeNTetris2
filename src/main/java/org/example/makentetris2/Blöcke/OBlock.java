@@ -13,7 +13,7 @@ public class OBlock extends TetrisBlock {
     @Override
     public void init() {
         super.init();
-        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/OBlock.png"));
+        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/Minecraft/Erde.png"));
         ImagePattern pattern = new ImagePattern(image);
         for (Rectangle block : blocks) {
             block.setFill(pattern);

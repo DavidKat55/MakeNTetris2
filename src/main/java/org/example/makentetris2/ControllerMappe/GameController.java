@@ -3,6 +3,7 @@ package org.example.makentetris2.ControllerMappe;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -65,6 +66,16 @@ public class GameController implements Initializable {
 
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+
+        javafx.application.Platform.runLater(() -> {
+            Button bZurueck1 = (Button) spielFeld.getScene().lookup("#bZurueck1");
+            if (bZurueck1 != null) {
+                bZurueck1.setFocusTraversable(false);
+            }
+
+            // Optional: Das Spielfeld fokussieren
+            spielFeld.requestFocus();
+        });
     }
 
     public void stopTimer() {

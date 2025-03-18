@@ -10,6 +10,7 @@ import org.example.makentetris2.ControllerMappe.LevelController;
 import org.example.makentetris2.ControllerMappe.MinigameController;
 import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,14 @@ public class GameManager {
         this.grid = new boolean[GRID_WIDTH][GRID_HEIGHT];
         this.aktuellePositionen = new ArrayList<>();
         level = MakeNTetrisMain.getLevelManager().getCurrentLevel();
+
+        String imageUrl = getClass().getResource("/images/Hintergrund/Minecraftbackground.png").toExternalForm();
+        gridPane.setStyle("-fx-background-image: url('" + imageUrl + "'); " +
+                "-fx-background-size: 100% 100%; " +  // Passt das Bild an die gesamte Größe an
+                "-fx-background-position: center; " +
+                "-fx-background-repeat: no-repeat;");
     }
+
 
     public boolean isPositionFree(TetrisBlock block) {
         for (int[] shapePart : block.getShape()) {
@@ -65,6 +73,7 @@ public class GameManager {
         spawnBlockAtRandomPosition(() -> new JBlock(0, 0));
         spawnBlockAtRandomPosition(() -> new SBlock(0, 0));
         changeStrokeColor(Color.WHITE, 1);
+
     }
 
     private void spawnBlockAtRandomPosition(Supplier<TetrisBlock> blockSupplier) {

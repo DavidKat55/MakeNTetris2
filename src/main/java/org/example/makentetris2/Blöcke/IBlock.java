@@ -12,7 +12,7 @@ public class IBlock extends TetrisBlock {
     @Override
     public void init() {
         super.init();
-        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/IBlock.png"));
+        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/Minecraft/Bricks.png"));
         ImagePattern pattern = new ImagePattern(image);
         for (Rectangle block : blocks) {
             block.setFill(pattern);

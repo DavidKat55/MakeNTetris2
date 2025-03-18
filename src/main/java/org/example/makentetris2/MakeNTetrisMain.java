@@ -1,6 +1,8 @@
 package org.example.makentetris2;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -71,7 +73,7 @@ public class MakeNTetrisMain extends Application {
                 keyInputManager.addKeyHandler(s);
 
                 newStage.setFullScreen(true);
-                newStage.setResizable(false);
+                newStage.setResizable(true);
                 newStage.setTitle("MakeNTetris - Spiel");
                 newStage.setScene(s);
 

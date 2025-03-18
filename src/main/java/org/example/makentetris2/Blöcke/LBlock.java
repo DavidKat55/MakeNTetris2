@@ -12,7 +12,7 @@ public class LBlock extends TetrisBlock {
     @Override
     public void init() {
         super.init();
-        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/LBlock.png"));
+        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/Minecraft/Wood.png"));
         ImagePattern pattern = new ImagePattern(image);
         for (Rectangle block : blocks) {
             block.setFill(pattern);

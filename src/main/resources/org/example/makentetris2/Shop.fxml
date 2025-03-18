@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.ShopController">
+<AnchorPane fx:id="shopHintergrund" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.ShopController">
    <children>
-      <JFXButton layoutX="14.0" layoutY="361.0" />
+      <JFXButton fx:id="mKauf" layoutX="14.0" layoutY="176.0" text="Kaufen" />
+      <ImageView fitHeight="140.0" fitWidth="145.0" layoutX="14.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Bloecke/Minecraft/Minecraft-set.png" />
+         </image></ImageView>
+      <Label fx:id="MLable" layoutX="27.0" layoutY="9.0" text="Minecraft-Set" />
+      <JFXRadioButton fx:id="mAuswahl" layoutX="98.0" layoutY="184.0" text="Auswählen" />
    </children>
 </AnchorPane>
