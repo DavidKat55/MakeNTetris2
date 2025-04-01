@@ -30,5 +30,6 @@
          <font>
             <Font size="30.0" />
          </font></Label>
+      <JFXButton fx:id="zMinigame" layoutX="507.0" layoutY="360.0" onAction="#back" prefHeight="26.0" prefWidth="79.0" text="Zurück" />
    </children>
 </AnchorPane>

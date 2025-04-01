@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.effect.Glow;
+import javafx.stage.Stage;
 import org.example.makentetris2.MakeNTetrisMain;
 
 import java.io.*;
@@ -21,19 +22,19 @@ public class MinigameController {
     Random rand = new Random();
 
     @FXML
-    JFXButton rollButton;
+    private JFXButton zMinigame;
     @FXML
-    ImageView würfel;
+    private JFXButton rollButton;
     @FXML
-    Label kontostand;
+    private ImageView würfel;
     @FXML
-    JFXButton bSchwarz;
+    private Label kontostand;
     @FXML
-    JFXButton bRot;
+    private JFXButton bSchwarz;
     @FXML
-    TextField einsatz;
+    private JFXButton bRot;
     @FXML
-    AnchorPane tippfarbe;
+    private TextField einsatz;
 
     private int startKontostand = 1000;
     private static final String BALANCE_FILE = "src/main/resources/texts/balance.txt";
@@ -163,5 +164,11 @@ public class MinigameController {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void back() throws IOException {
+        // Hier wird die Szene gewechselt, wenn der Shop geschlossen wird
+        Stage stage = (Stage) zMinigame.getScene().getWindow();
+        stage.close();
     }
 }

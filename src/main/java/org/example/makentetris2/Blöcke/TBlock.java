@@ -7,15 +7,7 @@ import javafx.scene.shape.Rectangle;
 
 public class TBlock extends TetrisBlock {
     public TBlock(int startX, int startY) {
-        super(new int[][]{{0,0}, {1,0}, {2,0}, {1,-1}}, Color.PURPLE, startX, startY, 1);
+        super(new int[][]{{0,0}, {1,0}, {2,0}, {1,-1}}, Color.PURPLE, startX, startY, 1, "TBlock.png");
     }
-    @Override
-    public void init() {
-        super.init();
-        Image image = new Image(getClass().getResourceAsStream("/images/Bloecke/Minecraft/Stein.png"));
-        ImagePattern pattern = new ImagePattern(image);
-        for (Rectangle block : blocks) {
-            block.setFill(pattern);
-        }
-    }
+
 }

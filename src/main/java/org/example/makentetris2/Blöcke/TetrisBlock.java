@@ -2,8 +2,10 @@ package org.example.makentetris2.Blöcke;
 
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import org.example.makentetris2.Manager.GameManager;
 
@@ -17,15 +19,17 @@ public class TetrisBlock {
     protected int x, y;
     protected Color color;
     protected int rotationIndex;
+    protected String blockType;
     protected boolean drehbar;
-    private GameManager gameManager;
+    protected GameManager gameManager;
 
-    public TetrisBlock(int[][] shape, Color color, int startX, int startY, int rotationIndex) {
+    public TetrisBlock(int[][] shape, Color color, int startX, int startY, int rotationIndex, String blockType) {
         this.shape = shape;
         this.color = color;
         this.x = startX;
         this.y = startY;
         this.rotationIndex = rotationIndex;
+        this.blockType = blockType;
         drehbar = true;
         init();
     }
@@ -37,7 +41,25 @@ public class TetrisBlock {
             b.setStrokeWidth(2);
             blocks.add(b);
         }
+        applySkin(); // Skin direkt setzen
     }
+
+    public void applySkin() {
+        String skin = GameManager.getCurrentSkin(); // Aktuellen Skin holen
+        String path = "/images/Bloecke/" + skin + "/" + blockType; // Dynamischer Bildpfad
+
+        try {
+            Image image = new Image(getClass().getResourceAsStream(path));
+            ImagePattern pattern = new ImagePattern(image);
+
+            for (Rectangle block : blocks) {
+                block.setFill(pattern); // Skin auf Block anwenden
+            }
+        } catch (Exception e) {
+            System.out.println("Skin konnte nicht geladen werden, verwende Standardfarbe." + path);
+        }
+    }
+
 
     public void addToPane(GridPane pane) {
         pane.getChildren().removeAll(blocks);

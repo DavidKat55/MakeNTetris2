@@ -3,18 +3,43 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="shopHintergrund" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.ShopController">
    <children>
-      <JFXButton fx:id="mKauf" layoutX="14.0" layoutY="176.0" text="Kaufen" />
-      <ImageView fitHeight="140.0" fitWidth="145.0" layoutX="14.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+      <!-- Kauf-Button -->
+      <JFXButton fx:id="mKauf" layoutX="236.0" layoutY="176.0" onAction="#KaufMinecraft" text="Kaufen" />
+      <JFXButton fx:id="lKauf" layoutX="446.0" layoutY="176.0" onAction="#KaufLego" text="Kaufen" />
+
+      <!-- Bild für Minecraft-Set -->
+      <ImageView fx:id="mImage" fitHeight="140.0" fitWidth="145.0" layoutX="236.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/Bloecke/Minecraft/Minecraft-set.png" />
-         </image></ImageView>
-      <Label fx:id="MLable" layoutX="27.0" layoutY="9.0" text="Minecraft-Set" />
-      <JFXRadioButton fx:id="mAuswahl" layoutX="98.0" layoutY="184.0" text="Auswählen" />
+            <Image url="@../../../images/Bloecke/Minecraft-set.png" />
+         </image>
+      </ImageView>
+
+      <!-- Label für Minecraft-Set -->
+      <Label fx:id="MLable" layoutX="236.0" layoutY="9.0" text="Minecraft-Set" />
+      <Label fx:id="kontostandLabel" layoutX="14.0" layoutY="11.0" text="Kontostand: 0" />
+
+      <JFXRadioButton fx:id="mClassicSkin" layoutX="14.0" layoutY="368.0" selected="true" text="Classic">
+         <toggleGroup>
+            <ToggleGroup fx:id="skinGroup" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="mMinecraftSkin" layoutX="321.0" layoutY="183.0" text="Minecraft" toggleGroup="$skinGroup" />
+      <JFXRadioButton fx:id="mLegoSkin" layoutX="528.0" layoutY="183.0" text="Lego" toggleGroup="$skinGroup" />
+      <Label fx:id="LLable" layoutX="446.0" layoutY="9.0" text="Lego-Set" />
+      <ImageView fx:id="lImage" fitHeight="140.0" fitWidth="145.0" layoutX="446.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Bloecke/Lego-set.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="zShop" layoutX="524.0" layoutY="363.0" onAction="#back" text="Zurück" />
+      <Label fx:id="preisLable" layoutX="274.0" layoutY="240.0" text="ANGEBOT: 500 Punkte für ein Set" />
+
    </children>
 </AnchorPane>

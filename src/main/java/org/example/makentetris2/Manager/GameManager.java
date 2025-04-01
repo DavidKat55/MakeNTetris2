@@ -1,6 +1,7 @@
 package org.example.makentetris2.Manager;
 
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Pair;
@@ -12,13 +13,11 @@ import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Supplier;
 
 public class GameManager {
-    private GridPane gridPane;
+    private static GridPane gridPane;
     public static ArrayList<TetrisBlock> activeBlocks;
     private Random rand = new Random();
     private int selectedBlockIndex = 0;
@@ -28,21 +27,43 @@ public class GameManager {
     private Level level;
     private List<Pair<Integer, Integer>> aktuellePositionen;
     private GameController gameController;
+    private static String currentSkin = "Classic";
+    private static final Set<String> purchasedSkins = new HashSet<>();
+
+    public static String getCurrentSkin() {
+        return currentSkin;
+    }
+
+    public static void setCurrentSkin(String skin) {
+        currentSkin = skin;
+    }
+
+    public static boolean isSkinPurchased(String skin) {
+        return purchasedSkins.contains(skin);
+    }
+
+    public static void addPurchasedSkin(String skin) {
+        purchasedSkins.add(skin);
+    }
+
+    public static void updateGameSkin() {
+        if (activeBlocks == null) {
+            System.out.println("Fehler: activeBlocks ist null!");
+            return;
+        }
+        for (TetrisBlock block : activeBlocks) {
+            block.applySkin(); // Alle aktiven Blöcke aktualisieren
+        }
+    }
+
 
     public GameManager(GridPane gridPane) {
-        this.gridPane = gridPane;
+        GameManager.gridPane = gridPane;
         this.activeBlocks = new ArrayList<>();
         this.grid = new boolean[GRID_WIDTH][GRID_HEIGHT];
         this.aktuellePositionen = new ArrayList<>();
         level = MakeNTetrisMain.getLevelManager().getCurrentLevel();
-
-        String imageUrl = getClass().getResource("/images/Hintergrund/Minecraftbackground.png").toExternalForm();
-        gridPane.setStyle("-fx-background-image: url('" + imageUrl + "'); " +
-                "-fx-background-size: 100% 100%; " +  // Passt das Bild an die gesamte Größe an
-                "-fx-background-position: center; " +
-                "-fx-background-repeat: no-repeat;");
     }
-
 
     public boolean isPositionFree(TetrisBlock block) {
         for (int[] shapePart : block.getShape()) {
@@ -72,7 +93,8 @@ public class GameManager {
         spawnBlockAtRandomPosition(() -> new ZBlock(0, 0));
         spawnBlockAtRandomPosition(() -> new JBlock(0, 0));
         spawnBlockAtRandomPosition(() -> new SBlock(0, 0));
-        changeStrokeColor(Color.WHITE, 1);
+        //changeStrokeColor(Color.WHITE, 1);
+        applyBackgroundSkin();
 
     }
 
@@ -135,7 +157,7 @@ public class GameManager {
 
     public void changeSelectedBlock() {
         selectedBlockIndex = (selectedBlockIndex + 1) % activeBlocks.size();
-        changeStrokeColor(Color.WHITE, 1);
+        //changeStrokeColor(Color.WHITE, 1);
     }
 
     public void changeStrokeColor(Color color, double strokeWidth) {
@@ -239,4 +261,18 @@ public class GameManager {
     public void setGameController(GameController controller) {
         this.gameController = controller;
     }
+
+    public void applyBackgroundSkin() {
+        String skin = GameManager.getCurrentSkin(); // Aktuellen Skin holen
+        String path = "/images/Hintergrund/" + skin + "background.png"; // Dynamischer Bildpfad
+
+        // Hintergrundbild dynamisch mit CSS anwenden
+        gridPane.setStyle("-fx-background-image: url('" + getClass().getResource(path).toExternalForm() + "'); " +
+                "-fx-background-size: 100% 100%; " +
+                "-fx-background-position: center; " +
+                "-fx-background-repeat: no-repeat;");
+    }
+
+
+
 }
