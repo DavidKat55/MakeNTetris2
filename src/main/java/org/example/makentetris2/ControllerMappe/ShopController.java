@@ -22,6 +22,9 @@ public class ShopController {
     private JFXButton lKauf;
 
     @FXML
+    private JFXButton gKauf;
+
+    @FXML
     private JFXRadioButton mClassicSkin;
 
     @FXML
@@ -31,7 +34,7 @@ public class ShopController {
     private JFXRadioButton mLegoSkin;
 
     @FXML
-    private ToggleGroup skinGroup; // Falls in FXML definiert, NICHT überschreiben!
+    private JFXRadioButton mGameBoySkin;
 
     @FXML
     private ImageView mImage;
@@ -57,15 +60,19 @@ public class ShopController {
             mMinecraftSkin.setSelected(true);
         } else if (currentSkin.equals("Lego")) {
             mLegoSkin.setSelected(true);
+        } else if (currentSkin.equals("GameBoy")) {
+            mGameBoySkin.setSelected(true);
         }
         // Event-Handler für die RadioButtons (damit Auswahl sofort angewendet wird)
         mClassicSkin.setOnAction(this::handleAuswahl);
         mMinecraftSkin.setOnAction(this::handleAuswahl);
         mLegoSkin.setOnAction(this::handleAuswahl);
+        mGameBoySkin.setOnAction(this::handleAuswahl);
 
         // Event-Handler für Kauf-Button
         mKauf.setOnAction(this::KaufMinecraft);
         lKauf.setOnAction(this::KaufLego);
+        gKauf.setOnAction(this::KaufGameBoy);
 
         // Kontostand laden
         loadBalance();
@@ -111,16 +118,45 @@ public class ShopController {
     }
 
     @FXML
+    public void KaufGameBoy(ActionEvent event) {
+        String skin = "GameBoy";
+
+        if (!GameManager.isSkinPurchased(skin)) {
+            if (kontostand >= 500) {
+                kontostand -= 500;
+                GameManager.addPurchasedSkin(skin);
+                saveBalance();
+                updateKontostandLabel();
+                System.out.println("Skin gekauft: " + skin);
+            } else {
+                System.out.println("Nicht genug Punkte!");
+            }
+        } else {
+            System.out.println("Skin bereits gekauft!");
+        }
+    }
+
+    @FXML
     private void handleAuswahl(ActionEvent event) {
         applySelectedSkin();
     }
 
     private void applySelectedSkin() {
         String selectedSkin = getSelectedSkin();
+        String currentSkin = GameManager.getCurrentSkin();
 
         if (!GameManager.isSkinPurchased(selectedSkin) && !selectedSkin.equals("Classic")) {
             System.out.println("Skin nicht gekauft!");
-            mClassicSkin.setSelected(true); // Zurücksetzen
+            // Setze den RadioButton auf den aktuellen Skin zurück
+            if (currentSkin.equals("Classic")) {
+                mClassicSkin.setSelected(true);
+            } else if (currentSkin.equals("Minecraft")) {
+                mMinecraftSkin.setSelected(true);
+            } else if (currentSkin.equals("Lego")) {
+                mLegoSkin.setSelected(true);
+            } else if (currentSkin.equals("GameBoy")) {
+                mGameBoySkin.setSelected(true);
+            }
             return;
         }
 
@@ -136,6 +172,8 @@ public class ShopController {
             return "Minecraft";
         } else if (mLegoSkin.isSelected()) {
             return "Lego";
+        } else if (mGameBoySkin.isSelected()) {
+            return "GameBoy";
         }
         return "Classic"; // Standardwert, falls nichts ausgewählt ist
     }

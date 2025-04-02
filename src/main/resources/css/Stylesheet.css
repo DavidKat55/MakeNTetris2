@@ -301,7 +301,7 @@
     -fx-border-radius: 5px;
 }
 
-#mKauf, #lKauf, #zShop, #zMinigame, #zEinstellungen {
+#mKauf, #lKauf, #gKauf, #zShop, #zMinigame, #zEinstellungen {
     -fx-background-color: #001144;
     -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
@@ -312,7 +312,7 @@
     -fx-border-radius: 3px;
 }
 
-#mKauf:hover, #lKauf:hover, #zShop:hover, #zMinigame:hover, #zEinstellungen:hover {
+#mKauf:hover, #lKauf:hover, #gKauf:hover, #zShop:hover, #zMinigame:hover, #zEinstellungen:hover {
     -fx-background-color: #112255;
     -fx-border-color: #5577dd;
     -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0);
@@ -333,7 +333,7 @@
     -fx-text-fill: #aaccff;
 }
 
-#MLable, #LLable, #kontostandLabel, #mMinecraftSkin, #mLegoSkin, #mClassicSkin, #preisLable {
+#MLable, #LLable, #GLable, #kontostandLabel, #mMinecraftSkin, #mLegoSkin, #mClassicSkin, #mGameBoySkin, #preisLable {
     -fx-text-fill: #00ccff;
     -fx-font-family: "Arial", sans-serif;
     -fx-font-weight: bold;
