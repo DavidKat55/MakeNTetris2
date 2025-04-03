@@ -36,7 +36,7 @@ public class MinigameController {
     @FXML
     private TextField einsatz;
 
-    private int startKontostand = 1000;
+    private int startKontostand = 0;
     private static final String BALANCE_FILE = "src/main/resources/texts/balance.txt";
 
     Glow glowEffect = new Glow();

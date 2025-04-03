@@ -120,6 +120,13 @@
 #gLabel {
     -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
+    -fx-font-size: 40px;
+    -fx-alignment: center;
+}
+
+#gLabel1 {
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
     -fx-font-size: 36px;
     -fx-alignment: center;
 }
@@ -158,6 +165,16 @@
     -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
     dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
     -fx-padding: 10px;
+}
+
+#bReset {
+    -fx-background-color: #001144;
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
 }
 
 #vNeu {

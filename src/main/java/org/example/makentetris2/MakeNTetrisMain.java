@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
+import org.example.makentetris2.ControllerMappe.GewonnenController;
 import org.example.makentetris2.ControllerMappe.LevelController;
 import org.example.makentetris2.ControllerMappe.MinigameController;
 import org.example.makentetris2.LevelManager.LevelManager;
@@ -18,7 +19,6 @@ import org.example.makentetris2.Manager.SoundManager;
 
 import java.io.IOException;
 
-
 public class MakeNTetrisMain extends Application {
     private static FXMLLoader fxmlLoader;
     public final static SoundManager soundManager = new SoundManager();
@@ -27,6 +27,8 @@ public class MakeNTetrisMain extends Application {
     private static LevelController levelController;
     private static MinigameController minigameController;
     private static GameController gameController;
+    private static KeyInputManager keyInputManager;
+    private static GewonnenController gewonnenController;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -70,10 +72,11 @@ public class MakeNTetrisMain extends Application {
 
                 Scene s = new Scene(root);
                 KeyInputManager keyInputManager = new KeyInputManager(gameManager);
+                keyInputManager.initialize();
                 keyInputManager.addKeyHandler(s);
 
-                newStage.setFullScreen(true);
-                newStage.setResizable(true);
+                newStage.setFullScreen(false);
+                newStage.setResizable(false);
                 newStage.setTitle("MakeNTetris - Spiel");
                 newStage.setScene(s);
 
@@ -152,6 +155,14 @@ public class MakeNTetrisMain extends Application {
         }
     }
 
+    public static GewonnenController getGewonnenController() {
+        return gewonnenController;
+    }
+
+    public static void setGewonnenController(GewonnenController controller) {
+        gewonnenController = controller;
+    }
+
     public static LevelManager getLevelManager() {
         return levelManager;
     }
@@ -175,6 +186,14 @@ public class MakeNTetrisMain extends Application {
     public static void setMinigameController(MinigameController controller) {
         minigameController = controller;
         System.out.println("MinigameController set");
+    }
+
+    public static KeyInputManager getKeyInputManager() {
+        return keyInputManager;
+    }
+
+    public static void setKeyInputManager(KeyInputManager keyInputManager) {
+        MakeNTetrisMain.keyInputManager = keyInputManager;
     }
 
     public static GameController getGameController() {

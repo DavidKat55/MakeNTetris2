@@ -7,10 +7,15 @@
 
 <AnchorPane fx:id="gPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.GewonnenController">
    <children>
-      <Label fx:id="gLabel" layoutX="55.0" layoutY="147.0" prefHeight="52.0" prefWidth="506.0" text="Gewonnen + 100 Punkte">
+      <Label fx:id="gLabel" layoutX="47.0" layoutY="105.0" prefHeight="52.0" prefWidth="506.0" text="Gewonnen">
          <font>
             <Font size="42.0" />
          </font></Label>
       <JFXButton fx:id="bNext" layoutX="250.0" layoutY="270.0" prefHeight="40.0" prefWidth="100.0" text="Next" />
+      <Label fx:id="gLabel1" layoutX="47.0" layoutY="169.0" prefHeight="52.0" prefWidth="506.0" text="Punkte">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

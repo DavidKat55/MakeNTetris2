@@ -234,16 +234,17 @@ public class GameManager {
             }
             MakeNTetrisMain.szeneWechseln(4);
             System.out.println("Gewonnen!");
-
             LevelController levelController = MakeNTetrisMain.getLevelController();
             int currentLevelIndex = MakeNTetrisMain.getLevelManager().getCurrentLevelIndex();
             System.out.println("Current Level Index: " + currentLevelIndex);
             levelController.enableLevelButtons(currentLevelIndex + 1);
 
+            KeyInputManager keyInputManager = MakeNTetrisMain.getKeyInputManager();
+
             MinigameController minigameController = MakeNTetrisMain.getMinigameController();
 
             if (minigameController != null) {
-                minigameController.aktualisiereKontostand(minigameController.getStartKontostand() + 100);
+                minigameController.aktualisiereKontostand(minigameController.getStartKontostand() + keyInputManager.getGewonnenePunkte());
                 System.out.println("Kontostand aktualisiert neuer Kontostand: " + minigameController.getStartKontostand());
             } else {
                 System.out.println("MinigameController is null");
