@@ -12,6 +12,7 @@ import javafx.util.Duration;
 import javafx.fxml.Initializable;
 import org.example.makentetris2.LevelManager.*;
 import org.example.makentetris2.MakeNTetrisMain;
+import org.example.makentetris2.Manager.KeyInputManager;
 import org.example.makentetris2.Timer.Time;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
+    private KeyInputManager keyInputManager = MakeNTetrisMain.getKeyInputManager();
     @FXML
     private GridPane spielFeld;
     @FXML
@@ -31,12 +33,17 @@ public class GameController implements Initializable {
         return spielFeld;
     }
 
-    Time time = new Time(3, 10);
+    Time time = new Time(10, 10);
 
     @FXML
     private Text timer;
 
+    @FXML
+    private Text punkte;
+    private int points = keyInputManager.getGewonnenePunkte();
+
     private Timeline timeline;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -45,6 +52,8 @@ public class GameController implements Initializable {
 
         levelManager = MakeNTetrisMain.getLevelManager();
         updateLevelImage();
+
+        punkte.setText(String.valueOf(points));
 
         timer.setText(time.getCurrentTime());
 
@@ -102,4 +111,12 @@ public class GameController implements Initializable {
         MakeNTetrisMain.szeneWechseln(6);
     }
 
+    public void setPoints(int points) {
+        this.points = points;
+        punkte.setText(String.valueOf(points));
+    }
+
+    public int getPoints() {
+        return points;
+    }
 }

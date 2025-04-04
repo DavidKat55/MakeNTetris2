@@ -55,7 +55,7 @@
 
          </image>
       </ImageView>
-      <Text fx:id="timer" fill="GOLD" layoutX="542.0" layoutY="811.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="289.2781448364258">
+      <Text fx:id="timer" fill="GOLD" layoutX="880.0" layoutY="808.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="289.2781448364258">
          <font>
             <Font size="96.0" />
          </font>
@@ -574,5 +574,13 @@
          </effect>
       </Text>
       <Button fx:id="bZurueck1" layoutX="25.0" layoutY="796.0" mnemonicParsing="false" onAction="#zurueckButton" prefHeight="39.0" prefWidth="88.0" text="Zurück" />
+      <Text fx:id="punkte" fill="GOLD" layoutX="195.0" layoutY="809.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="289.2781448364258">
+         <font>
+            <Font size="96.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Text>
    </children>
 </AnchorPane>

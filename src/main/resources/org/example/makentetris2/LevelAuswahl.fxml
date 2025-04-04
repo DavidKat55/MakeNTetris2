@@ -10,5 +10,9 @@
       <Button fx:id="bLevel3" layoutX="436.0" layoutY="14.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 3" />
       <Button fx:id="bZurueck2" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#zurueckButton" text="Zurück" />
       <Button fx:id="bReset" layoutX="533.0" layoutY="366.0" mnemonicParsing="false" onAction="#zurueckButton" text=" Reset" />
+      <Button fx:id="bLevel4" layoutX="14.0" layoutY="126.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 4" />
+      <Button fx:id="bLevel5" layoutX="225.0" layoutY="126.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 5" />
+      <Button fx:id="bLevel6" layoutX="436.0" layoutY="126.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 6" />
+      <Button fx:id="bUnlock" layoutX="276.0" layoutY="371.0" mnemonicParsing="false" onAction="#zurueckButton" text="Unlock" />
    </children>
 </AnchorPane>

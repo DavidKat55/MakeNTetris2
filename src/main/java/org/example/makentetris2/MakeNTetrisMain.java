@@ -40,6 +40,8 @@ public class MakeNTetrisMain extends Application {
 
         initializeMinigameController();
 
+        initializeKeyInputManager();
+
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
         stage.setScene(scene);
@@ -153,6 +155,11 @@ public class MakeNTetrisMain extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void initializeKeyInputManager() {
+        KeyInputManager keyInputManager = new KeyInputManager(new GameManager(new GridPane()));
+        setKeyInputManager(keyInputManager);
     }
 
     public static GewonnenController getGewonnenController() {

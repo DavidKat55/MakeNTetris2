@@ -48,6 +48,4 @@ public class Level2 extends Level {
         zielPositionen.add(new Pair<>(1, 14));
         zielPositionen.add(new Pair<>(1, 13));
     }
-
-
 }
