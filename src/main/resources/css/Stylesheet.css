@@ -225,7 +225,7 @@
 }
 
 /* Standard Level-Button */
-#bLevel1, #bLevel2, #bLevel3, #bLevel4, #bLevel5, #bLevel6{
+#bLevel1, #bLevel2, #bLevel3, #bLevel4, #bLevel5, #bLevel6, #bLevel7, #bLevel8{
     -fx-background-color: #001144;
     -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
@@ -240,7 +240,7 @@
 }
 
 /* Hover-Effekt für Level-Button */
-#bLevel1:hover, #bLevel2:hover, #bLevel3:hover , #bLevel4:hover, #bLevel5:hover, #bLevel6:hover {
+#bLevel1:hover, #bLevel2:hover, #bLevel3:hover , #bLevel4:hover, #bLevel5:hover, #bLevel6:hover, #bLevel7:hover, #bLevel8:hover{
     -fx-background-color: #112255;
     -fx-border-color: #5577dd;
     -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0),
@@ -248,7 +248,7 @@
 }
 
 /* Aktives/Ausgewähltes Level */
-#bLevel1-active, #bLevel2-active, #bLevel3-active, #bLevel4-active, #bLevel5-active, #bLevel6-active {
+#bLevel1-active, #bLevel2-active, #bLevel3-active, #bLevel4-active, #bLevel5-active, #bLevel6-active, #bLevel7-active, #bLevel8-active{
     -fx-background-color: #002288;
     -fx-text-fill: #ffcc00;
     -fx-border-color: #ffaa00;
@@ -257,7 +257,7 @@
 }
 
 /* Gesperrtes Level */
-#bLevel1-locked, #bLevel2-locked, #bLevel3-locked, #bLevel4-locked, #bLevel5-locked, #bLevel6-locked{
+#bLevel1-locked, #bLevel2-locked, #bLevel3-locked, #bLevel4-locked, #bLevel5-locked, #bLevel6-locked, #bLevel7-locked, #bLevel8-locked{
     -fx-background-color: #222222;
     -fx-text-fill: #777777;
     -fx-border-color: #444444;

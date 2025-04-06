@@ -15,7 +15,9 @@ public class LevelManager {
         availableLevels.add(new Level3());
         availableLevels.add(new Level4());
         availableLevels.add(new Level5());
-        //availableLevels.add(new Level6());
+        availableLevels.add(new Level6());
+        availableLevels.add(new Level7());
+        availableLevels.add(new Level8());
         // Weitere Level hier hinzufügen
     }
 

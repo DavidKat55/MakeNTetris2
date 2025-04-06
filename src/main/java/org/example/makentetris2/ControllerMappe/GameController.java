@@ -55,6 +55,8 @@ public class GameController implements Initializable {
 
         punkte.setText(String.valueOf(points));
 
+        setLevelTime();
+
         timer.setText(time.getCurrentTime());
 
         timeline = new Timeline(
@@ -91,6 +93,15 @@ public class GameController implements Initializable {
         if (timeline != null) {
             timeline.stop();
         }
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public void setLevelTime() {
+        int levelZeit = levelManager.getCurrentLevel().getLevelZeit();
+        setTime(new Time(levelZeit / 60, levelZeit % 60));
     }
 
     public void updateLevelImage() {

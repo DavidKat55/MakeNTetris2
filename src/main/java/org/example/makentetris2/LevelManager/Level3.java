@@ -46,4 +46,9 @@ public class Level3 extends Level {
         zielPositionen.add(new Pair<>(12, 14));
         zielPositionen.add(new Pair<>(11, 14));
     }
+
+    @Override
+    protected void setLevelZeit() {
+        levelZeit = 100;
+    }
 }

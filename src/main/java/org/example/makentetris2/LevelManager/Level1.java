@@ -1,8 +1,11 @@
 package org.example.makentetris2.LevelManager;
 
 import javafx.util.Pair;
+import org.example.makentetris2.ControllerMappe.GameController;
 
 public class Level1 extends Level{
+    protected GameController gameController;
+
 
     @Override
     protected void initializeZielPositionen() {
@@ -51,5 +54,10 @@ public class Level1 extends Level{
 //        zielPositionen.add(new Pair<>(10, 9));
 
 
+    }
+
+    @Override
+    protected void setLevelZeit() {
+        levelZeit = 100;
     }
 }

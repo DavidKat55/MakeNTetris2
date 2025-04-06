@@ -14,7 +14,7 @@ public class SoundManager {
 
         Media media = new Media(Objects.requireNonNull(getClass().getResource(fileName)).toExternalForm());
         mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setVolume(0.5);
+        mediaPlayer.setVolume(0);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         mediaPlayer.play();
     }

@@ -11,7 +11,7 @@ import java.util.prefs.Preferences;
 public class LevelController {
 
     @FXML
-    private Button bLevel1, bLevel2, bLevel3, bLevel4, bLevel5, bLevel6;
+    private Button bLevel1, bLevel2, bLevel3, bLevel4, bLevel5, bLevel6, bLevel7, bLevel8;
     @FXML
     private Button bReset;
     @FXML
@@ -30,6 +30,8 @@ public class LevelController {
         bLevel4.setDisable(!prefs.getBoolean("level4Unlocked", false));
         bLevel5.setDisable(!prefs.getBoolean("level5Unlocked", false));
         bLevel6.setDisable(!prefs.getBoolean("level6Unlocked", false));
+        bLevel7.setDisable(!prefs.getBoolean("level7Unlocked", false));
+        bLevel8.setDisable(!prefs.getBoolean("level8Unlocked", false));
 
         levelManager = MakeNTetrisMain.getLevelManager();
 
@@ -89,6 +91,24 @@ public class LevelController {
                 ex.printStackTrace();
             }
         });
+
+        bLevel7.setOnAction(e -> {
+            try {
+                levelManager.selectLevel(6);
+                MakeNTetrisMain.szeneWechseln(1);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        bLevel8.setOnAction(e -> {
+            try {
+                levelManager.selectLevel(7);
+                MakeNTetrisMain.szeneWechseln(1);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 
     public void enableLevelButtons(int levelIndex) {
@@ -114,6 +134,14 @@ public class LevelController {
                 bLevel6.setDisable(false);
                 prefs.putBoolean("level6Unlocked", true);
                 break;
+            case 6:
+                bLevel7.setDisable(false);
+                prefs.putBoolean("level7Unlocked", true);
+                break;
+            case 7:
+                bLevel8.setDisable(false);
+                prefs.putBoolean("level8Unlocked", true);
+                break;
             default:
                 System.out.println("Invalid level index: " + levelIndex);
         }
@@ -125,11 +153,15 @@ public class LevelController {
         bLevel4.setDisable(true);
         bLevel5.setDisable(true);
         bLevel6.setDisable(true);
+        bLevel7.setDisable(true);
+        bLevel8.setDisable(true);
         prefs.putBoolean("level2Unlocked", false);
         prefs.putBoolean("level3Unlocked", false);
         prefs.putBoolean("level4Unlocked", false);
         prefs.putBoolean("level5Unlocked", false);
         prefs.putBoolean("level6Unlocked", false);
+        prefs.putBoolean("level7Unlocked", false);
+        prefs.putBoolean("level8Unlocked", false);
     }
 
     public void unlockLevel() {
@@ -138,11 +170,15 @@ public class LevelController {
         bLevel4.setDisable(false);
         bLevel5.setDisable(false);
         bLevel6.setDisable(false);
+        bLevel7.setDisable(false);
+        bLevel8.setDisable(false);
         prefs.putBoolean("level2Unlocked", true);
         prefs.putBoolean("level3Unlocked", true);
         prefs.putBoolean("level4Unlocked", true);
         prefs.putBoolean("level5Unlocked", true);
         prefs.putBoolean("level6Unlocked", true);
+        prefs.putBoolean("level7Unlocked", true);
+        prefs.putBoolean("level8Unlocked", true);
     }
 
     public void zurueckButton() throws IOException {
