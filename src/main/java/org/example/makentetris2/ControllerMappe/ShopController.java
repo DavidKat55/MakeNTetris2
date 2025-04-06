@@ -14,6 +14,8 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.example.makentetris2.MakeNTetrisMain.soundManager;
+
 public class ShopController {
 
     @FXML private JFXButton mKauf, lKauf, gKauf, zShop;
@@ -163,11 +165,13 @@ public class ShopController {
     }
 
     public void back() throws IOException {
+        soundManager.stopMusic();
+        soundManager.playBackgroundMusic("/sounds/Start.mp3");
         Stage stage = (Stage) zShop.getScene().getWindow();
         stage.close();
     }
 
-    // 📂 Skin speichern / laden
+    // Skin speichern / laden
     private void ladeSkins() {
         File file = new File(SKINS_FILE);
         if (file.exists()) {
@@ -198,5 +202,14 @@ public class ShopController {
         } catch (IOException e) {
             System.out.println("Fehler beim Speichern der Skins.");
         }
+    }
+
+    public void resetSkins() {
+        gekaufteSkins.clear();
+        aktuellerSkin = "Classic";
+        speichereSkins();
+        setSkinRadioButton(aktuellerSkin);
+        updateKontostandLabel();
+        MakeNTetrisMain.initializeShopController();
     }
 }

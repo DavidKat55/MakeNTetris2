@@ -20,6 +20,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static org.example.makentetris2.MakeNTetrisMain.soundManager;
+
 public class GameController implements Initializable {
     private KeyInputManager keyInputManager = MakeNTetrisMain.getKeyInputManager();
     @FXML
@@ -119,6 +121,8 @@ public class GameController implements Initializable {
     }
 
     public void zurueckButton() throws IOException {
+        soundManager.stopMusic();
+        soundManager.playBackgroundMusic("/sounds/Start.mp3");
         MakeNTetrisMain.szeneWechseln(6);
     }
 

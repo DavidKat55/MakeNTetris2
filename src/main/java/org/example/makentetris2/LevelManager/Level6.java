@@ -5,46 +5,46 @@ public class Level6 extends Level {
     @Override
     protected void initializeZielPositionen() {
         // O-Block
-        zielPositionen.add(new Pair<>(4, 12));
-        zielPositionen.add(new Pair<>(5, 12));
-        zielPositionen.add(new Pair<>(4, 11));
-        zielPositionen.add(new Pair<>(5, 11));
+        zielPositionen.add(new Pair<>(8, 8));
+        zielPositionen.add(new Pair<>(9, 8));
+        zielPositionen.add(new Pair<>(8, 7));
+        zielPositionen.add(new Pair<>(9, 7));
 
         // I-Block
-        zielPositionen.add(new Pair<>(3, 9));
-        zielPositionen.add(new Pair<>(4, 9));
-        zielPositionen.add(new Pair<>(5, 9));
-        zielPositionen.add(new Pair<>(6, 9));
+        zielPositionen.add(new Pair<>(3, 6));
+        zielPositionen.add(new Pair<>(4, 6));
+        zielPositionen.add(new Pair<>(5, 6));
+        zielPositionen.add(new Pair<>(6, 6));
 
         // T-Block
-        zielPositionen.add(new Pair<>(8, 13));
-        zielPositionen.add(new Pair<>(8, 12));
-        zielPositionen.add(new Pair<>(8, 11));
-        zielPositionen.add(new Pair<>(9, 12));
+        zielPositionen.add(new Pair<>(4, 4));
+        zielPositionen.add(new Pair<>(5, 4));
+        zielPositionen.add(new Pair<>(6, 4));
+        zielPositionen.add(new Pair<>(5, 5));
 
         // L-Block (orange)
-        zielPositionen.add(new Pair<>(2, 13));
-        zielPositionen.add(new Pair<>(3, 13));
-        zielPositionen.add(new Pair<>(2, 12));
-        zielPositionen.add(new Pair<>(2, 11));
+        zielPositionen.add(new Pair<>(8, 9));
+        zielPositionen.add(new Pair<>(9, 9));
+        zielPositionen.add(new Pair<>(9, 10));
+        zielPositionen.add(new Pair<>(9, 11));
 
         // L-Block (blue)
-        zielPositionen.add(new Pair<>(3, 12));
-        zielPositionen.add(new Pair<>(3, 11));
-        zielPositionen.add(new Pair<>(3, 10));
-        zielPositionen.add(new Pair<>(4, 10));
+        zielPositionen.add(new Pair<>(8, 5));
+        zielPositionen.add(new Pair<>(9, 5));
+        zielPositionen.add(new Pair<>(9, 4));
+        zielPositionen.add(new Pair<>(9, 3));
 
         // Z-Block (green)
-        zielPositionen.add(new Pair<>(5, 13));
-        zielPositionen.add(new Pair<>(6, 13));
-        zielPositionen.add(new Pair<>(6, 12));
-        zielPositionen.add(new Pair<>(7, 12));
+        zielPositionen.add(new Pair<>(11, 5));
+        zielPositionen.add(new Pair<>(10, 5));
+        zielPositionen.add(new Pair<>(10, 6));
+        zielPositionen.add(new Pair<>(9, 6));
 
         // Z-Block (red)
-        zielPositionen.add(new Pair<>(5, 10));
-        zielPositionen.add(new Pair<>(6, 10));
-        zielPositionen.add(new Pair<>(6, 11));
-        zielPositionen.add(new Pair<>(7, 11));
+        zielPositionen.add(new Pair<>(6, 5));
+        zielPositionen.add(new Pair<>(7, 5));
+        zielPositionen.add(new Pair<>(7, 6));
+        zielPositionen.add(new Pair<>(8, 6));
     }
 
     @Override

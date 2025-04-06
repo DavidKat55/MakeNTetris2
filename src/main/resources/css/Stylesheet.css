@@ -7,7 +7,7 @@
     -fx-padding: 10px;
 }
 
-#bStart, #bVerlassen, #bShop, #casino, #bUnlock, #bReset, #bGewonnen, #bVerloren {
+#bStart, #bVerlassen, #bShop, #casino, #bUnlock, #bReset, #bGewonnen, #bVerloren, #bReset2 {
     -fx-background-color: rgba(0, 17, 68, 0.8);
     -fx-text-fill: #aaccff;
     -fx-font-family: "Arial", sans-serif;
@@ -241,9 +241,39 @@
 }
 
 /* Standard Level-Button */
-#bLevel1, #bLevel2, #bLevel3, #bLevel4, #bLevel5, #bLevel6, #bLevel7, #bLevel8{
+#bLevel1, #bLevel2, #bLevel3{
     -fx-background-color: #001144;
-    -fx-text-fill: #aaccff;
+    -fx-text-fill: green;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-effect: innershadow(gaussian, #004488, 5, 0.5, 0, 0);
+    -fx-min-width: 80px;
+    -fx-min-height: 80px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+/* Orange Level-Button */
+#bLevel4, #bLevel5, #bLevel6{
+    -fx-background-color: #001144;
+    -fx-text-fill: orange;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-effect: innershadow(gaussian, #004488, 5, 0.5, 0, 0);
+    -fx-min-width: 80px;
+    -fx-min-height: 80px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+/* Rot Level-Button */
+#bLevel7, #bLevel8, #bLevel9, #bLevel10{
+    -fx-background-color: #001144;
+    -fx-text-fill: red;
     -fx-font-weight: bold;
     -fx-font-size: 18px;
     -fx-border-color: #3355aa;
@@ -256,7 +286,7 @@
 }
 
 /* Hover-Effekt für Level-Button */
-#bLevel1:hover, #bLevel2:hover, #bLevel3:hover , #bLevel4:hover, #bLevel5:hover, #bLevel6:hover, #bLevel7:hover, #bLevel8:hover{
+#bLevel1:hover, #bLevel2:hover, #bLevel3:hover , #bLevel4:hover, #bLevel5:hover, #bLevel6:hover, #bLevel7:hover, #bLevel8:hover, #bLevel9:hover, #bLevel10:hover{
     -fx-background-color: #112255;
     -fx-border-color: #5577dd;
     -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0),

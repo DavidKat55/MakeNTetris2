@@ -1,5 +1,6 @@
 package org.example.makentetris2.Manager;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -48,7 +49,6 @@ public class GameManager {
 
     public static void updateGameSkin() {
         if (activeBlocks == null) {
-            System.out.println("Fehler: activeBlocks ist null!");
             return;
         }
         for (TetrisBlock block : activeBlocks) {
@@ -93,9 +93,8 @@ public class GameManager {
         spawnBlockAtRandomPosition(() -> new ZBlock(0, 0));
         spawnBlockAtRandomPosition(() -> new JBlock(0, 0));
         spawnBlockAtRandomPosition(() -> new SBlock(0, 0));
-        //changeStrokeColor(Color.WHITE, 1);
+        changeStrokeColor(Color.WHITE, 1);
         applyBackgroundSkin();
-
     }
 
     private void spawnBlockAtRandomPosition(Supplier<TetrisBlock> blockSupplier) {
@@ -157,7 +156,7 @@ public class GameManager {
 
     public void changeSelectedBlock() {
         selectedBlockIndex = (selectedBlockIndex + 1) % activeBlocks.size();
-        //changeStrokeColor(Color.WHITE, 1);
+        changeStrokeColor(Color.WHITE, 1);
     }
 
     public void changeStrokeColor(Color color, double strokeWidth) {
@@ -184,7 +183,6 @@ public class GameManager {
 
             if (newX < 0 || newX + rect.getWidth() > gridPane.getWidth() ||
                     newY < 0 || newY + rect.getHeight() > gridPane.getHeight()) {
-//                System.out.println("Collision am Spielfeldrand");
                 return true;
             }
         }
@@ -199,7 +197,6 @@ public class GameManager {
 
                 for (Rectangle rect2 : otherBlock.getBlocks()) {
                     if (rect2.getBoundsInParent().intersects(newX, newY, rect1.getWidth(), rect1.getHeight())) {
-                        System.out.println("Collision mit einem Block");
                         return true;
                     }
                 }
@@ -233,10 +230,8 @@ public class GameManager {
                 gameController.stopTimer(); // Timer stoppen
             }
             MakeNTetrisMain.szeneWechseln(4);
-            System.out.println("Gewonnen!");
             LevelController levelController = MakeNTetrisMain.getLevelController();
             int currentLevelIndex = MakeNTetrisMain.getLevelManager().getCurrentLevelIndex();
-            System.out.println("Current Level Index: " + currentLevelIndex);
             levelController.enableLevelButtons(currentLevelIndex + 1);
 
             KeyInputManager keyInputManager = MakeNTetrisMain.getKeyInputManager();
@@ -245,13 +240,28 @@ public class GameManager {
 
             if (minigameController != null) {
                 minigameController.aktualisiereKontostand(minigameController.getStartKontostand() + keyInputManager.getGewonnenePunkte());
-                System.out.println("Kontostand aktualisiert neuer Kontostand: " + minigameController.getStartKontostand());
             } else {
-                System.out.println("MinigameController is null");
             }
-
         } else {
-            System.out.println("Noch nicht gelöst.");
+            falseIndicator();
+        }
+    }
+
+    public void falseIndicator() {
+        PauseTransition delay = new PauseTransition(javafx.util.Duration.seconds(1.5));
+        changeAllBlocksColor(Color.RED, 1.0);
+        delay.setOnFinished(event -> {
+            changeStrokeColor(Color.WHITE, 1.0);
+        });
+        delay.play();
+    }
+
+    private void changeAllBlocksColor(Color color, double strokeWidth) {
+        for (TetrisBlock block : activeBlocks) {
+            for (Rectangle r : block.getBlocks()) {
+                r.setStroke(color);
+                r.setStrokeWidth(strokeWidth);
+            }
         }
     }
 

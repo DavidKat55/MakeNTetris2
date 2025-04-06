@@ -7,6 +7,8 @@ import org.example.makentetris2.MakeNTetrisMain;
 
 import java.io.IOException;
 
+import static org.example.makentetris2.MakeNTetrisMain.soundManager;
+
 public class VerlorenController {
 
     @FXML
@@ -20,6 +22,8 @@ public class VerlorenController {
     }
 
     public void back() throws IOException {
+        soundManager.stopMusic();
+        soundManager.playBackgroundMusic("/sounds/Start.mp3");
         // Hier wird die Szene gewechselt, wenn der Shop geschlossen wird
         Stage stage = (Stage) bVerloren.getScene().getWindow();
         stage.close();

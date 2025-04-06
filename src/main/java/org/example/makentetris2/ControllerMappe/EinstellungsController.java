@@ -27,15 +27,23 @@ public class EinstellungsController implements Initializable, ChangeListener<Num
     private TextField tPassword;
 
     LevelController levelController = MakeNTetrisMain.getLevelController();
+    ShopController shopController = MakeNTetrisMain.getShopController();
 
     SoundManager soundManager = new SoundManager();
 
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
         regulierer.valueProperty().addListener(this);
+
+        // Setze die Lautstärke beim Start des Spiels
+        regulierer.setValue(soundManager.loadVolume() * 100);  // Lade die Lautstärke und setze den Slider
     }
 
+    @Override
     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-        soundManager.getMediaPlayer().setVolume(regulierer.getValue() / 100.0);
+        double volume = regulierer.getValue() / 100.0;
+        soundManager.getMediaPlayer().setVolume(volume);
+        soundManager.saveVolume(volume);  // Speichere die neue Lautstärke
     }
 
     public void back() throws IOException {
@@ -47,6 +55,11 @@ public class EinstellungsController implements Initializable, ChangeListener<Num
     @FXML
     public void resetLevels() {
         levelController.resetLevels();
+    }
+
+    @FXML
+    private void resetSkins() {
+        shopController.resetSkins();
     }
 
     @FXML

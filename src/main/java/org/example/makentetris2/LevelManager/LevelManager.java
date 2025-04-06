@@ -18,6 +18,8 @@ public class LevelManager {
         availableLevels.add(new Level6());
         availableLevels.add(new Level7());
         availableLevels.add(new Level8());
+        availableLevels.add(new Level9());
+        availableLevels.add(new Level10());
         // Weitere Level hier hinzufügen
     }
 
@@ -35,7 +37,7 @@ public class LevelManager {
         if (currentLevelIndex < availableLevels.size() - 1) {
             currentLevelIndex++;
         } else {
-            System.out.println("No more levels available.");
+            // Wenn das letzte Level erreicht ist, gehe zurück zum ersten Level
         }
     }
 

@@ -14,5 +14,7 @@
       <Button fx:id="bLevel6" layoutX="225.0" layoutY="127.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 6" />
       <Button fx:id="bLevel7" layoutX="436.0" layoutY="126.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 7" />
       <Button fx:id="bLevel8" layoutX="636.0" layoutY="127.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 8" />
+      <Button fx:id="bLevel9" layoutX="225.0" layoutY="243.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 9" />
+      <Button fx:id="bLevel10" layoutX="436.0" layoutY="243.0" minHeight="65.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Level 10" />
    </children>
 </AnchorPane>

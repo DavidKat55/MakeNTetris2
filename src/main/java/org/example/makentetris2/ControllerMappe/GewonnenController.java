@@ -12,6 +12,8 @@ import org.example.makentetris2.Manager.KeyInputManager;
 
 import java.io.IOException;
 
+import static org.example.makentetris2.MakeNTetrisMain.soundManager;
+
 public class GewonnenController {
     private GameController gameController;
     private KeyInputManager keyInputManager;
@@ -67,6 +69,8 @@ public class GewonnenController {
     public void setPoints(int points) {}
 
     public void back() throws IOException {
+        soundManager.stopMusic();
+        soundManager.playBackgroundMusic("/sounds/Start.mp3");
         // Hier wird die Szene gewechselt, wenn der Shop geschlossen wird
         Stage stage = (Stage) bGewonnen.getScene().getWindow();
         stage.close();

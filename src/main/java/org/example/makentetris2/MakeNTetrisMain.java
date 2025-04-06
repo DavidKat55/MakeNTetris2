@@ -135,6 +135,7 @@ public class MakeNTetrisMain extends Application {
                 newStage.show();
                 break;
             case 7:
+                soundManager.playBackgroundMusic("/sounds/MinigameStart.mp3");
                 Parent root7 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Shop.fxml"));
                 newStage.setResizable(false);
                 newStage.setTitle("MakeNTetris - Shop");
@@ -186,7 +187,7 @@ public class MakeNTetrisMain extends Application {
         }
     }
 
-    public ShopController getShopController() {
+    public static ShopController getShopController() {
         return shopController;
     }
 
