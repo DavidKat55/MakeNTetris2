@@ -2,6 +2,11 @@ module org.example.makentetris2 {
     requires javafx.fxml;
     requires javafx.web;
 
+    requires javafx.graphics;
+    requires javafx.controls;
+    requires javafx.media;
+    requires javafx.base;
+    requires javafx.swing;
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
@@ -9,7 +14,6 @@ module org.example.makentetris2 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
-    requires javafx.media;
     requires com.jfoenix;
     requires java.prefs;
 
