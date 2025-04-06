@@ -41,8 +41,8 @@ public class MakeNTetrisMain extends Application {
         initializeLevelController();
         initializeKeyInputManager();
 
-        Image icon = new Image("src/main/resources/images/Icons/Icon.png");
-        stage.getIcons().add(icon);
+//        Image icon = new Image("src/main/resources/images/Icons/Icon.png");
+//        stage.getIcons().add(icon);
 
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
