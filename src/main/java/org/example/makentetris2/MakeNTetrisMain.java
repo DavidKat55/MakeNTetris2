@@ -7,10 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import org.example.makentetris2.ControllerMappe.GameController;
-import org.example.makentetris2.ControllerMappe.GewonnenController;
-import org.example.makentetris2.ControllerMappe.LevelController;
-import org.example.makentetris2.ControllerMappe.MinigameController;
+import org.example.makentetris2.ControllerMappe.*;
 import org.example.makentetris2.LevelManager.LevelManager;
 import org.example.makentetris2.Manager.GameManager;
 import org.example.makentetris2.Manager.KeyInputManager;
@@ -28,6 +25,7 @@ public class MakeNTetrisMain extends Application {
     private static GameController gameController;
     private static KeyInputManager keyInputManager;
     private static GewonnenController gewonnenController;
+    private static ShopController shopController;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -40,9 +38,10 @@ public class MakeNTetrisMain extends Application {
         initializeMinigameController();
         initializeLevelController();
         initializeKeyInputManager();
+        initializeShopController();
 
-//        Image icon = new Image("src/main/resources/images/Icons/Icon.png");
-//        stage.getIcons().add(icon);
+        Image icon = new Image(getClass().getResourceAsStream("/images/Icons/Icon.png"));
+        stage.getIcons().add(icon);
 
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
@@ -174,6 +173,25 @@ public class MakeNTetrisMain extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void initializeShopController() {
+        try {
+            FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("Shop.fxml"));
+            loader.load();
+            shopController = loader.getController();
+            shopController.initialize();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ShopController getShopController() {
+        return shopController;
+    }
+
+    public static void setShopController (ShopController controller) {
+        shopController = controller;
     }
 
     public void initializeKeyInputManager() {
