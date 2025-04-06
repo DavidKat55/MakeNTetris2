@@ -2,7 +2,6 @@ package org.example.makentetris2.ControllerMappe;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -36,6 +35,7 @@ public class GewonnenController {
     private LevelManager levelManager;
     private int points = 0;
 
+    // Initialisiert den GewonnenController und die Buttons
     public void initialize() {
         MakeNTetrisMain.setGewonnenController(this);
 
@@ -66,8 +66,10 @@ public class GewonnenController {
         });
     }
 
+    // Setzt die Punkte
     public void setPoints(int points) {}
 
+    // Zurück zur Startseite
     public void back() throws IOException {
         soundManager.stopMusic();
         soundManager.playBackgroundMusic("/sounds/Start.mp3");

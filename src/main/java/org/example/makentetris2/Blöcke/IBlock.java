@@ -1,9 +1,6 @@
 package org.example.makentetris2.Blöcke;
 
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Rectangle;
 
 // Klasse für den I-Block, der von TetrisBlock erbt
 public class IBlock extends TetrisBlock {

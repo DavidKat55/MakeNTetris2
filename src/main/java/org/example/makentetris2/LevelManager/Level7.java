@@ -43,6 +43,6 @@ public class Level7 extends Level {
 
     @Override
     protected void setLevelZeit() {
-        levelZeit = 100;
+        levelZeit = 60;
     }
 }

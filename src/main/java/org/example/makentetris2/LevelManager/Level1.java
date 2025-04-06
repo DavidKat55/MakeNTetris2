@@ -48,16 +48,15 @@ public class Level1 extends Level{
         zielPositionen.add(new Pair<>(5, 8));
         zielPositionen.add(new Pair<>(6, 8));
         //Z-Block (rot)
+
         zielPositionen.add(new Pair<>(9, 9));
         zielPositionen.add(new Pair<>(9, 8));
         zielPositionen.add(new Pair<>(8, 8));
         zielPositionen.add(new Pair<>(10, 9));
-
-
     }
 
     @Override
     protected void setLevelZeit() {
-        levelZeit = 100;
+        levelZeit = 270;
     }
 }

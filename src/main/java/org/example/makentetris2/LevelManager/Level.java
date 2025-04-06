@@ -10,6 +10,7 @@ public abstract class Level {
     protected List<Pair<Integer, Integer>> zielPositionen;
     protected int levelZeit;
 
+    // Konstruktor
     public Level() {
         zielPositionen = new ArrayList<>();
         initializeZielPositionen();

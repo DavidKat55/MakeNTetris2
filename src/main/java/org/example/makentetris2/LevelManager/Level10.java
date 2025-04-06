@@ -6,8 +6,8 @@ public class Level10 extends Level {
     protected void initializeZielPositionen() {
         // O-Block
         zielPositionen.add(new Pair<>(7, 5));
-        zielPositionen.add(new Pair<>(8, 6));
         zielPositionen.add(new Pair<>(7, 6));
+        zielPositionen.add(new Pair<>(8, 6));
         zielPositionen.add(new Pair<>(8, 5));
 
         // I-Block
@@ -23,10 +23,10 @@ public class Level10 extends Level {
         zielPositionen.add(new Pair<>(2, 8));
 
         // L-Block (orange)
-        zielPositionen.add(new Pair<>(4, 3));
-        zielPositionen.add(new Pair<>(5, 3));
-        zielPositionen.add(new Pair<>(6, 3));
+        zielPositionen.add(new Pair<>(4, 4));
+        zielPositionen.add(new Pair<>(5, 4));
         zielPositionen.add(new Pair<>(6, 4));
+        zielPositionen.add(new Pair<>(6, 3));
 
         // J-Block (blue)
         zielPositionen.add(new Pair<>(6, 3));
@@ -49,6 +49,6 @@ public class Level10 extends Level {
 
     @Override
     protected void setLevelZeit() {
-        levelZeit = 60;
+        levelZeit = 35;
     }
 }

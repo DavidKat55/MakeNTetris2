@@ -23,6 +23,7 @@ public class LevelManager {
         // Weitere Level hier hinzufügen
     }
 
+    // Diese Methode gibt das aktuelle Level zurück
     public Level getCurrentLevel() {
         // Ensure the currentLevelIndex is within valid bounds
         if (currentLevelIndex < 0) {
@@ -33,14 +34,16 @@ public class LevelManager {
         return availableLevels.get(currentLevelIndex);
     }
 
+    // Diese Methode wird aufgerufen, wenn der Spieler das aktuelle Level abschließt
     public void nextLevel() {
         if (currentLevelIndex < availableLevels.size() - 1) {
             currentLevelIndex++;
         } else {
-            // Wenn das letzte Level erreicht ist, gehe zurück zum ersten Level
+
         }
     }
 
+    // Diese Methode wird aufgerufen, wenn der Spieler ein Level auswählt
     public void selectLevel(int index) {
         if (index >= 0 && index < availableLevels.size()) {
             currentLevelIndex = index;

@@ -8,7 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.effect.Glow;
 import javafx.stage.Stage;
 import org.example.makentetris2.MakeNTetrisMain;
@@ -44,18 +43,21 @@ public class MinigameController {
     boolean wette;
     boolean test = false;
 
+    // Initialisiert den MinigameController und setzt die Szene
     public void initialize() {
         MakeNTetrisMain.setMinigameController(this);
         loadBalance();
         updateKontostand();
     }
 
+    // Update der Punktestand-Anzeige
     public void updateKontostand() {
         Platform.runLater(() -> {
             kontostand.setText("Punktestand: " + startKontostand);
         });
     }
 
+    // Rollen des Würfels
     @FXML
     void roll(ActionEvent event) {
         if (!test || startKontostand <= 0 || startKontostand < Integer.parseInt(einsatz.getText()) || Integer.parseInt(einsatz.getText()) <= 0) {
@@ -86,6 +88,7 @@ public class MinigameController {
         }
     }
 
+    // Setzt die Wette auf Rot oder Schwarz
     @FXML
     void setzeRot(ActionEvent event) {
         wette = true;
@@ -95,6 +98,7 @@ public class MinigameController {
         rollButton.setEffect(glowEffect);
     }
 
+    // Setzt die Wette auf Schwarz
     @FXML
     void setzeSchwarz(ActionEvent event) {
         wette = false;
@@ -104,6 +108,7 @@ public class MinigameController {
         rollButton.setEffect(glowEffect);
     }
 
+    // Gibt den geworfenen Wert zurück
     private int getRolledValue(String imageUrl) {
         for (int i = 0; i <= 6; i++) {  // Jetzt auch dice0.png
             if (imageUrl.contains("dice" + i + ".png")) return i;
@@ -111,6 +116,7 @@ public class MinigameController {
         return -1;
     }
 
+    // Überprüft, ob gewonnen oder verloren wurde
     private void checkWinOrLose(boolean wette) {
         Image currentImage = würfel.getImage();
         if (currentImage != null) {
@@ -133,6 +139,7 @@ public class MinigameController {
         }
     }
 
+    // Aktualisiert den Kontostand
     public void aktualisiereKontostand(int neuerKontostand) {
         this.startKontostand = neuerKontostand;
         saveBalance();
@@ -141,10 +148,12 @@ public class MinigameController {
         });
     }
 
+    // Gibt den Kontostand zurück
     public int getStartKontostand() {
         return startKontostand;
     }
 
+    // Speichert den Kontostand in die Datei
     private void saveBalance() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(BALANCE_FILE))) {
             writer.write(String.valueOf(startKontostand));
@@ -153,6 +162,7 @@ public class MinigameController {
         }
     }
 
+    // Lädt den Kontostand aus der Datei
     public void loadBalance() {
         File file = new File(BALANCE_FILE);
         if (file.exists()) {
@@ -163,8 +173,10 @@ public class MinigameController {
             }
         }
     }
-
-    public void back() throws IOException {
+ // Geht zurück zur Startseite
+    public void back1() throws IOException {
+        soundManager.stopMusic();
+        soundManager.playBackgroundMusic("/sounds/Start.mp3");
         // Hier wird die Szene gewechselt, wenn der Shop geschlossen wird
         Stage stage = (Stage) zMinigame.getScene().getWindow();
         stage.close();

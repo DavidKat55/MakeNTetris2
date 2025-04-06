@@ -27,6 +27,7 @@ public class MakeNTetrisMain extends Application {
     private static GewonnenController gewonnenController;
     private static ShopController shopController;
 
+    // Initialisiert den Hauptbildschirm und die Szene
     @Override
     public void start(Stage stage) throws IOException {
         levelManager = new LevelManager();
@@ -49,10 +50,12 @@ public class MakeNTetrisMain extends Application {
         stage.show();
     }
 
+    // Startet das Spiel
     public static void main(String[] args) {
         launch();
     }
 
+    // Wechselt die Szene
     public static void szeneWechseln(int szene) throws IOException {
 
         if (currentStage != null) {
@@ -152,6 +155,7 @@ public class MakeNTetrisMain extends Application {
         }
     }
 
+    // Initialisiert den MinigameController
     public static void initializeMinigameController() {
         try {
             FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("Minigame.fxml"));
@@ -165,6 +169,7 @@ public class MakeNTetrisMain extends Application {
         }
     }
 
+    // Initialisiert den LevelController
     public static void initializeLevelController() {
         try {
             FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("LevelAuswahl.fxml"));
@@ -176,6 +181,7 @@ public class MakeNTetrisMain extends Application {
         }
     }
 
+    // Initialisiert den ShopController
     public static void initializeShopController() {
         try {
             FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("Shop.fxml"));
@@ -186,6 +192,9 @@ public class MakeNTetrisMain extends Application {
             e.printStackTrace();
         }
     }
+
+    // Getter und Setter für die Controller
+
 
     public static ShopController getShopController() {
         return shopController;

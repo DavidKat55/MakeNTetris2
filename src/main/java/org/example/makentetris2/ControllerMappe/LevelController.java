@@ -20,11 +20,13 @@ public class LevelController {
     private LevelManager levelManager;
     private Preferences prefs;
 
+    // Initialisiert den LevelController und die Buttons
     public void initialize() {
         MakeNTetrisMain.setLevelController(this);
 
         prefs = Preferences.userNodeForPackage(LevelController.class);
 
+        // Setzen der Buttons
         bLevel2.setDisable(!prefs.getBoolean("level2Unlocked", false));
         bLevel3.setDisable(!prefs.getBoolean("level3Unlocked", false));
         bLevel4.setDisable(!prefs.getBoolean("level4Unlocked", false));
@@ -37,6 +39,7 @@ public class LevelController {
 
         levelManager = MakeNTetrisMain.getLevelManager();
 
+        // Setzen der ActionListener für die Buttons
         bLevel1.setOnAction(e -> {
             try {
                 levelManager.setCurrentLevelIndex(0);
@@ -123,6 +126,7 @@ public class LevelController {
         });
     }
 
+    // enableLevelButtons() wird aufgerufen, wenn ein Level erfolgreich abgeschlossen wurde
     public void enableLevelButtons(int levelIndex) {
         System.out.println("Enabling level buttons for level index: " + levelIndex);
         switch (levelIndex) {
@@ -159,6 +163,7 @@ public class LevelController {
         }
     }
 
+    // Reset der Level
     public void resetLevels() {
         bLevel2.setDisable(true);
         bLevel3.setDisable(true);
@@ -180,6 +185,7 @@ public class LevelController {
         prefs.putBoolean("level10Unlocked", false);
     }
 
+    // Unlockt alle Level
     public void unlockLevel() {
         bLevel2.setDisable(false);
         bLevel3.setDisable(false);
@@ -201,6 +207,7 @@ public class LevelController {
         prefs.putBoolean("level10Unlocked", true);
     }
 
+    // Schließt das Levelauswahlfenster
     public void zurueckButton() throws IOException {
         Stage stage = (Stage) bLevel1.getScene().getWindow();
         stage.close();

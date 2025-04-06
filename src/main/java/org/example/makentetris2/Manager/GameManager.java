@@ -56,7 +56,7 @@ public class GameManager {
         }
     }
 
-
+    // Konstruktor für den GameManager
     public GameManager(GridPane gridPane) {
         GameManager.gridPane = gridPane;
         this.activeBlocks = new ArrayList<>();
@@ -65,6 +65,7 @@ public class GameManager {
         level = MakeNTetrisMain.getLevelManager().getCurrentLevel();
     }
 
+    // Funktion zum Überprüfen, ob eine Position für einen Block frei ist
     public boolean isPositionFree(TetrisBlock block) {
         for (int[] shapePart : block.getShape()) {
             int blockX = block.getX() + shapePart[0];
@@ -154,11 +155,13 @@ public class GameManager {
         return activeBlocks.get(selectedBlockIndex);
     }
 
+    // Ausgewählte Block ändern
     public void changeSelectedBlock() {
         selectedBlockIndex = (selectedBlockIndex + 1) % activeBlocks.size();
         changeStrokeColor(Color.WHITE, 1);
     }
 
+   // Funktion zum Ändern der Farbe des Rahmens des ausgewählten Blocks
     public void changeStrokeColor(Color color, double strokeWidth) {
         for (TetrisBlock block : activeBlocks) {
             for (Rectangle r : block.getBlocks()) {
@@ -222,6 +225,7 @@ public class GameManager {
         return aktuellePositionen.containsAll(level.getZielPositionen());
     }
 
+    // Funktion zum Überprüfen, ob das Spiel gewonnen wurde
     public void onEnterPressed() throws IOException {
         updateAktuellePositionen(); // Aktualisiere die aktuellen Positionen
 
@@ -247,6 +251,7 @@ public class GameManager {
         }
     }
 
+    // Funktion zum Zurücksetzen der Blöcke
     public void falseIndicator() {
         PauseTransition delay = new PauseTransition(javafx.util.Duration.seconds(1.5));
         changeAllBlocksColor(Color.RED, 1.0);
@@ -255,7 +260,7 @@ public class GameManager {
         });
         delay.play();
     }
-
+    // Funktion zum Ändern der Farbe aller Blöcke
     private void changeAllBlocksColor(Color color, double strokeWidth) {
         for (TetrisBlock block : activeBlocks) {
             for (Rectangle r : block.getBlocks()) {

@@ -23,36 +23,43 @@ public class HauptBildschirmController {
     @FXML
     private JFXButton backButton;
 
+    // Wechselt die Szene
     @FXML
     private void gameStarten() throws IOException {
         MakeNTetrisMain.szeneWechseln(6);
     }
 
+    // Wechselt die Szene
     @FXML
     private void einstellungenStarten() throws IOException {
         MakeNTetrisMain.szeneWechseln(2);
     }
 
+    // Wechselt die Szene
     @FXML
     private void minigameStarten() throws IOException {
         MakeNTetrisMain.szeneWechseln(3);
     }
 
+    // Wechselt die Szene
     @FXML
     private void shopStarten() throws IOException {
         MakeNTetrisMain.szeneWechseln(7);
     }
 
+    // Wechselt die Szene
     @FXML
     private void verlassen() {
         System.exit(0);
     }
 
+    // Wechselt die Szene
     @FXML
     private void tutorial() throws  IOException {
         MakeNTetrisMain.szeneWechseln(8);
     }
 
+    // Geht zurück zur vorherigen Szene
     @FXML
     private void zurueckButton() throws IOException {
         Stage stage = (Stage) backButton.getScene().getWindow();

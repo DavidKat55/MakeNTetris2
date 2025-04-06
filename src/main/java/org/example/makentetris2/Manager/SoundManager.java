@@ -10,6 +10,7 @@ public class SoundManager {
     private static MediaPlayer mediaPlayer;
     private static final String VOLUME_FILE = "volume.txt";
 
+    // Singleton-Instanz
     public void playBackgroundMusic(String fileName) {
         if(mediaPlayer != null) {
             mediaPlayer.stop();
@@ -40,6 +41,7 @@ public class SoundManager {
             mediaPlayer.stop();
         }
     }
+
 
     public MediaPlayer getMediaPlayer() {
         return mediaPlayer;

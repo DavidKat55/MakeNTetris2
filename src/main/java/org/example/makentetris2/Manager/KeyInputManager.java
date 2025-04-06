@@ -76,9 +76,11 @@ public class KeyInputManager {
         });
     }
 
+
     public int getGewonnenePunkte() {
         return gewonnenePunkte;
     }
+
 
     public void setGewonnenePunkte(int gewonnenePunkte) {
         this.gewonnenePunkte = gewonnenePunkte;

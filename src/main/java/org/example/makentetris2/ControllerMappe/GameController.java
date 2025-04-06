@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static org.example.makentetris2.MakeNTetrisMain.getGameController;
 import static org.example.makentetris2.MakeNTetrisMain.soundManager;
 
 public class GameController implements Initializable {
@@ -47,6 +48,7 @@ public class GameController implements Initializable {
     private Timeline timeline;
 
 
+    // Initialisiert den GameController und setzt die Szene
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -91,21 +93,25 @@ public class GameController implements Initializable {
         });
     }
 
+    // Stoppt den Timer
     public void stopTimer() {
         if (timeline != null) {
             timeline.stop();
         }
     }
 
+    // Setztz den Timer
     public void setTime(Time time) {
         this.time = time;
     }
 
+    // Setzt die Zeit des Levels
     public void setLevelTime() {
         int levelZeit = levelManager.getCurrentLevel().getLevelZeit();
         setTime(new Time(levelZeit / 60, levelZeit % 60));
     }
 
+    // Updated das Levelbild
     public void updateLevelImage() {
         int currentLevel = levelManager.getCurrentLevelIndex() + 1;
         String imagePath = "/images/Level/Level" + currentLevel + ".png";
@@ -120,17 +126,21 @@ public class GameController implements Initializable {
         levelView.setImage(image);
     }
 
+    // zurückButton
     public void zurueckButton() throws IOException {
+        getGameController().stopTimer();
         soundManager.stopMusic();
         soundManager.playBackgroundMusic("/sounds/Start.mp3");
         MakeNTetrisMain.szeneWechseln(6);
     }
 
+    // Setzt die Punkte
     public void setPoints(int points) {
         this.points = points;
         punkte.setText(String.valueOf(points));
     }
 
+    // Gibt die Punkte zurück
     public int getPoints() {
         return points;
     }

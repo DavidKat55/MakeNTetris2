@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="minigameHintergrund" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.MinigameController">
+<AnchorPane fx:id="minigameHintergrund" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.MinigameController">
    <children>
       <JFXButton fx:id="rollButton" layoutX="246.0" layoutY="125.0" onAction="#roll" prefHeight="50.0" prefWidth="127.0" text="drehen">
          <font>
@@ -30,6 +30,6 @@
          <font>
             <Font size="30.0" />
          </font></Label>
-      <JFXButton fx:id="zMinigame" layoutX="507.0" layoutY="360.0" onAction="#back" prefHeight="26.0" prefWidth="79.0" text="Zurück" />
+      <JFXButton fx:id="zMinigame" layoutX="507.0" layoutY="360.0" onAction="#back1" prefHeight="26.0" prefWidth="79.0" text="Zurück" />
    </children>
 </AnchorPane>

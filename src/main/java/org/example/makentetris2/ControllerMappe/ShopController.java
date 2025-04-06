@@ -90,6 +90,7 @@ public class ShopController {
         kaufSkin("GameBoy", gKauf);
     }
 
+    // Methode zum Kauf eines Skins
     private void kaufSkin(String skinName, JFXButton button) {
         if (!gekaufteSkins.contains(skinName)) {
             if (kontostand >= 500) {
@@ -114,6 +115,7 @@ public class ShopController {
         applySelectedSkin();
     }
 
+    // Methode zum Anwenden des ausgewählten Skins
     private void applySelectedSkin() {
         String selectedSkin = getSelectedSkin();
 
@@ -130,6 +132,7 @@ public class ShopController {
         System.out.println("Neuer Skin: " + selectedSkin);
     }
 
+    // Methode zum Ermitteln des aktuell ausgewählten Skins
     private String getSelectedSkin() {
         if (mClassicSkin.isSelected()) return "Classic";
         if (mMinecraftSkin.isSelected()) return "Minecraft";
@@ -138,6 +141,7 @@ public class ShopController {
         return "Classic";
     }
 
+    // Methode zum Anwenden des ausgewählten Skins
     private void setSkinRadioButton(String skin) {
         mClassicSkin.setSelected(skin.equals("Classic"));
         mMinecraftSkin.setSelected(skin.equals("Minecraft"));
@@ -145,6 +149,7 @@ public class ShopController {
         mGameBoySkin.setSelected(skin.equals("GameBoy"));
     }
 
+    // Methode zum Laden des Kontostands
     private void loadBalance() {
         MinigameController minigameController = MakeNTetrisMain.getMinigameController();
         if (minigameController != null) {
@@ -153,6 +158,7 @@ public class ShopController {
         }
     }
 
+    // Methode zum Speichern des Kontostands
     private void saveBalance() {
         MinigameController minigameController = MakeNTetrisMain.getMinigameController();
         if (minigameController != null) {
@@ -191,6 +197,7 @@ public class ShopController {
         }
     }
 
+    // Methode zum Speichern der Skins
     private void speichereSkins() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(SKINS_FILE))) {
             writer.write(aktuellerSkin);
@@ -204,6 +211,7 @@ public class ShopController {
         }
     }
 
+    // Methode zum Zurücksetzen der Skins
     public void resetSkins() {
         gekaufteSkins.clear();
         aktuellerSkin = "Classic";
