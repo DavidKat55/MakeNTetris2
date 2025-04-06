@@ -42,6 +42,7 @@ public class ShopController {
     @FXML
     private ImageView lImage;
 
+
     @FXML
     private JFXButton zShop;
 
@@ -90,6 +91,8 @@ public class ShopController {
                 saveBalance();
                 updateKontostandLabel();
                 System.out.println("Skin gekauft: " + skin);
+                mKauf.setText("Gekauft");
+                mKauf.setDisable(true);
             } else {
                 System.out.println("Nicht genug Punkte!");
             }
@@ -109,6 +112,8 @@ public class ShopController {
                 saveBalance();
                 updateKontostandLabel();
                 System.out.println("Skin gekauft: " + skin);
+                lKauf.setText("Gekauft");
+                lKauf.setDisable(true);
             } else {
                 System.out.println("Nicht genug Punkte!");
             }
@@ -128,6 +133,8 @@ public class ShopController {
                 saveBalance();
                 updateKontostandLabel();
                 System.out.println("Skin gekauft: " + skin);
+                gKauf.setText("Gekauft");
+                gKauf.setDisable(true);
             } else {
                 System.out.println("Nicht genug Punkte!");
             }
@@ -202,4 +209,6 @@ public class ShopController {
         Stage stage = (Stage) zShop.getScene().getWindow();
         stage.close();
     }
+
+
 }

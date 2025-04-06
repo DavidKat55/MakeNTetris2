@@ -35,14 +35,6 @@ public class LevelController {
 
         levelManager = MakeNTetrisMain.getLevelManager();
 
-        bUnlock.setOnAction(e -> {
-            unlockLevel();
-        });
-
-        bReset.setOnAction(e -> {
-            resetLevels();
-        });
-
         bLevel1.setOnAction(e -> {
             try {
                 levelManager.setCurrentLevelIndex(0);

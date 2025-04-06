@@ -6,8 +6,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.example.makentetris2.MakeNTetrisMain;
 import org.example.makentetris2.Manager.SoundManager;
 
 import java.io.IOException;
@@ -21,6 +23,10 @@ public class EinstellungsController implements Initializable, ChangeListener<Num
     private JFXSlider regulierer;
     @FXML
     private JFXButton zEinstellungen;
+    @FXML
+    private TextField tPassword;
+
+    LevelController levelController = MakeNTetrisMain.getLevelController();
 
     SoundManager soundManager = new SoundManager();
 
@@ -38,4 +44,20 @@ public class EinstellungsController implements Initializable, ChangeListener<Num
         stage.close();
     }
 
+    @FXML
+    public void resetLevels() {
+        levelController.resetLevels();
+    }
+
+    @FXML
+    public void unlockLevels() {
+        String input = tPassword.getText();
+
+        if (input.equals("unlock")) {
+            levelController.unlockLevel();
+            tPassword.setText("Levels freigeschaltet");
+        } else {
+            tPassword.setText("Falsches Passwort");
+        }
+    }
 }

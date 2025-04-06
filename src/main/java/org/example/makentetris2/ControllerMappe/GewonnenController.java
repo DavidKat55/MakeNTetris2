@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.example.makentetris2.LevelManager.LevelManager;
 import org.example.makentetris2.MakeNTetrisMain;
 import org.example.makentetris2.Manager.KeyInputManager;
@@ -26,6 +27,9 @@ public class GewonnenController {
 
     @FXML
     private JFXButton bNext;
+
+    @FXML
+    private JFXButton bGewonnen;
 
     private LevelManager levelManager;
     private int points = 0;
@@ -61,4 +65,10 @@ public class GewonnenController {
     }
 
     public void setPoints(int points) {}
+
+    public void back() throws IOException {
+        // Hier wird die Szene gewechselt, wenn der Shop geschlossen wird
+        Stage stage = (Stage) bGewonnen.getScene().getWindow();
+        stage.close();
+    }
 }

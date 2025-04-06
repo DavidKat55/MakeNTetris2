@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.example.makentetris2.ControllerMappe.GameController;
@@ -37,8 +38,11 @@ public class MakeNTetrisMain extends Application {
         soundManager.playBackgroundMusic("/sounds/Start.mp3");
 
         initializeMinigameController();
-
+        initializeLevelController();
         initializeKeyInputManager();
+
+        Image icon = new Image("src/main/resources/images/Icons/Icon.png");
+        stage.getIcons().add(icon);
 
         stage.setResizable(false);
         stage.setTitle("MakeNTetris - Hauptbildschirm");
@@ -117,7 +121,6 @@ public class MakeNTetrisMain extends Application {
                 newStage.show();
                 break;
             case 5:
-                System.out.println("Szene 5");
                 Parent root5 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Verloren.fxml"));
                 soundManager.playSound("/sounds/verloren.mp3");
                 newStage.setResizable(false);
@@ -139,6 +142,13 @@ public class MakeNTetrisMain extends Application {
                 newStage.setScene(new Scene(root7));
                 newStage.show();
                 break;
+            case 8:
+                Parent root8 = FXMLLoader.load(MakeNTetrisMain.class.getResource("Tutorial.fxml"));
+                newStage.setResizable(false);
+                newStage.setTitle("MakeNTetris - Tutorial");
+                newStage.setScene(new Scene(root8));
+                newStage.show();
+                break;
         }
     }
 
@@ -150,6 +160,17 @@ public class MakeNTetrisMain extends Application {
             minigameController.initialize();
             minigameController.loadBalance();
             minigameController.updateKontostand();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void initializeLevelController() {
+        try {
+            FXMLLoader loader = new FXMLLoader(MakeNTetrisMain.class.getResource("LevelAuswahl.fxml"));
+            loader.load();
+            levelController = loader.getController();
+            levelController.initialize();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -190,7 +211,6 @@ public class MakeNTetrisMain extends Application {
 
     public static void setMinigameController(MinigameController controller) {
         minigameController = controller;
-        System.out.println("MinigameController set");
     }
 
     public static KeyInputManager getKeyInputManager() {

@@ -5,17 +5,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="hauptbildschirm" prefHeight="500.0" prefWidth="400.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.HauptBildschirmController">
+<AnchorPane fx:id="hauptbildschirm" prefHeight="500.0" prefWidth="400.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.HauptBildschirmController">
    <children>
-      <JFXButton fx:id="casino" layoutX="125.0" layoutY="270.0" onAction="#minigameStarten" prefHeight="45.0" prefWidth="150.0" text="Minigame" />
-      <JFXButton fx:id="bEinstellungen" layoutX="125.0" layoutY="120.0" onAction="#einstellungenStarten" prefHeight="45.0" prefWidth="150.0" text="Einstellungen" />
-      <JFXButton fx:id="bStart" layoutX="125.0" layoutY="200.0" onAction="#gameStarten" prefHeight="45.0" prefWidth="150.0" text="Level" />
-      <JFXButton fx:id="bVerlassen" layoutX="126.0" layoutY="441.0" onAction="#verlassen" prefHeight="45.0" prefWidth="150.0" text="Verlassen" />
-      <JFXButton fx:id="bShop" layoutX="125.0" layoutY="340.0" onAction="#shopStarten" prefHeight="45.0" prefWidth="150.0" text="shop" />
+      <JFXButton fx:id="casino" layoutX="125.0" layoutY="196.0" onAction="#minigameStarten" prefHeight="45.0" prefWidth="150.0" text="Minigame" />
+      <JFXButton fx:id="bEinstellungen" layoutX="236.0" layoutY="431.0" onAction="#einstellungenStarten" prefHeight="27.0" prefWidth="122.0" text="Einstellungen">
+         <font>
+            <Font size="10.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="bStart" layoutX="126.0" layoutY="133.0" onAction="#gameStarten" prefHeight="45.0" prefWidth="150.0" text="Level" />
+      <JFXButton fx:id="bVerlassen" layoutX="125.0" layoutY="346.0" onAction="#verlassen" prefHeight="45.0" prefWidth="150.0" text="Verlassen" />
+      <JFXButton fx:id="bShop" layoutX="125.0" layoutY="261.0" onAction="#shopStarten" prefHeight="45.0" prefWidth="150.0" text="shop" />
       <Text fx:id="title" layoutX="67.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAKE'N'TETRIS" textAlignment="CENTER" wrappingWidth="268.44775390625">
          <font>
             <Font size="33.0" />
          </font>
       </Text>
+      <JFXButton fx:id="bTutorial" layoutX="41.0" layoutY="431.0" onAction="#tutorial" prefHeight="27.0" prefWidth="122.0" text="Tutorial">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

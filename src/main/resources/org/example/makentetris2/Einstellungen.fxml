@@ -3,18 +3,24 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="einstellungHintergrund" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.EinstellungsController">
+<AnchorPane fx:id="einstellungHintergrund" prefHeight="400.0" prefWidth="392.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.EinstellungsController">
    <children>
-      <JFXSlider fx:id="regulierer" layoutX="195.0" layoutY="166.0" minorTickCount="5" prefHeight="69.0" prefWidth="211.0" showTickLabels="true" showTickMarks="true">
+      <JFXSlider fx:id="regulierer" layoutX="86.0" layoutY="66.0" minorTickCount="5" prefHeight="69.0" prefWidth="211.0" showTickLabels="true" showTickMarks="true">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
          <effect>
             <Glow level="1.0" />
          </effect></JFXSlider>
-      <JFXButton fx:id="zEinstellungen" layoutX="534.0" layoutY="373.0" onAction="#back" text="Zurück" />
+      <JFXButton fx:id="zEinstellungen" layoutX="157.0" layoutY="319.0" onAction="#back" text="Zurück" />
+      <JFXButton fx:id="bReset" layoutX="116.0" layoutY="143.0" onAction="#resetLevels" text="Resete alle Level" />
+      <JFXButton fx:id="bUnlock" layoutX="101.0" layoutY="198.0" onAction="#unlockLevels" text="Schalte Alle Level Frei" />
+      <TextField fx:id="tPassword" layoutX="175.0" layoutY="251.0" />
+      <Text fx:id="tText2" fill="#aaccff" layoutX="70.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
    </children>
 </AnchorPane>

@@ -45,9 +45,7 @@ public class MinigameController {
     boolean test = false;
 
     public void initialize() {
-        System.out.println("initialize");
         MakeNTetrisMain.setMinigameController(this);
-        System.out.println("MinigameController set in MakeNTetrisMain");
         loadBalance();
         updateKontostand();
     }

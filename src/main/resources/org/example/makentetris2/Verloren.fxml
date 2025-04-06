@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="vPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.VerlorenController">
+<AnchorPane fx:id="vPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../css/Stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.makentetris2.ControllerMappe.VerlorenController">
    <children>
       <Label fx:id="vLabel" layoutX="181.0" layoutY="101.0" prefHeight="115.0" prefWidth="239.0" text="Game Over">
          <font>
@@ -13,5 +13,6 @@
          </font>
       </Label>
       <JFXButton fx:id="vNeu" layoutX="220.0" layoutY="268.0" onAction="#NeuStarten" prefHeight="40.0" prefWidth="160.0" text="Neuerversuch" />
+      <JFXButton fx:id="bVerloren" layoutX="14.0" layoutY="370.0" onAction="#back" prefHeight="40.0" prefWidth="76.0" text="Zurück" />
    </children>
 </AnchorPane>

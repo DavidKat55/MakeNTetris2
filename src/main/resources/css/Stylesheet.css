@@ -1,4 +1,4 @@
-#hauptbildschirm {
+#hauptbildschirm, #ATutorial {
     -fx-background-color: linear-gradient(to bottom, #000033, #000022);
     -fx-border-color: #1a1a7a;
     -fx-border-width: 3px;
@@ -7,7 +7,7 @@
     -fx-padding: 10px;
 }
 
-#bStart, #bEinstellungen, #bVerlassen, #bShop, #casino {
+#bStart, #bVerlassen, #bShop, #casino, #bUnlock, #bReset, #bGewonnen, #bVerloren {
     -fx-background-color: rgba(0, 17, 68, 0.8);
     -fx-text-fill: #aaccff;
     -fx-font-family: "Arial", sans-serif;
@@ -19,10 +19,22 @@
     -fx-border-radius: 3px;
 }
 
-#bStart:hover, #bEinstellungen:hover, #bVerlassen:hover, #bShop:hover, #casino:hover {
+#bEinstellungen, #bTutorial{
+    -fx-background-color: rgba(0, 17, 68, 0.8);
+    -fx-text-fill: #aaccff;
+    -fx-font-family: "Arial", sans-serif;
+    -fx-font-weight: bold;
+    -fx-border-color: #3355aa;
+    -fx-border-width: 2px;
+    -fx-padding: 5px 15px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+#bStart:hover, #bEinstellungen:hover, #bVerlassen:hover, #bShop:hover, #casino:hover, #bTutorial:hover, #bUnlock:hover, #bReset:hover {
     -fx-background-color: #112255;
     -fx-border-color: #5577dd;
-    -fx-effect: innershadow(gaussian, #0066aa, 10, 0.7, 0, 0);
+    -fx-effect: innershadow(gaussian, #0066aa, 5, 0.7, 0, 0);
 }
 
 #einstellungHintergrund {
@@ -117,14 +129,28 @@
     -fx-font-size: 16px;
 }
 
-#gLabel {
+#gLabel, #tText {
     -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
     -fx-font-size: 40px;
     -fx-alignment: center;
 }
 
-#gLabel1 {
+#tText2 {
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-alignment: center;
+}
+
+#tText21 {
+    -fx-text-fill: #aaccff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: center;
+}
+
+#gLabel1{
     -fx-text-fill: #aaccff;
     -fx-font-weight: bold;
     -fx-font-size: 36px;
@@ -165,16 +191,6 @@
     -fx-effect: innershadow(gaussian, #00aaff, 15, 0.2, 0, 0),
     dropshadow(gaussian, #0033aa, 20, 0.4, 0, 0);
     -fx-padding: 10px;
-}
-
-#bReset {
-    -fx-background-color: #001144;
-    -fx-text-fill: #aaccff;
-    -fx-font-weight: bold;
-    -fx-border-color: #3355aa;
-    -fx-padding: 8px 15px;
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
 }
 
 #vNeu {
