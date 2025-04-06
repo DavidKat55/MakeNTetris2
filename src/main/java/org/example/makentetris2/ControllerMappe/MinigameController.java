@@ -36,7 +36,7 @@ public class MinigameController {
     private TextField einsatz;
 
     private int startKontostand = 0;
-    private static final String BALANCE_FILE = "src/main/resources/texts/balance.txt";
+    private static final String BALANCE_FILE = "balance.txt";
 
     Glow glowEffect = new Glow();
 
@@ -173,7 +173,8 @@ public class MinigameController {
             }
         }
     }
- // Geht zurück zur Startseite
+
+    // Geht zurück zur Startseite
     public void back1() throws IOException {
         soundManager.stopMusic();
         soundManager.playBackgroundMusic("/sounds/Start.mp3");

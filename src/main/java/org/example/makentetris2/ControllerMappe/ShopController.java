@@ -26,7 +26,7 @@ public class ShopController {
     private int kontostand;
     private Set<String> gekaufteSkins = new HashSet<>();
     private String aktuellerSkin = "Classic";
-    private static final String SKINS_FILE = "src/main/resources/texts/skins.txt";
+    private static final String SKINS_FILE = "skins.txt";
 
     @FXML
     public void initialize() {
