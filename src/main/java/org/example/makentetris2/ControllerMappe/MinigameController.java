@@ -84,6 +84,7 @@ public class MinigameController {
         }
     }
 
+    // Setzt den Einsatz
     // Setzt die Wette auf Rot oder Schwarz
     @FXML
     void setzeRot(ActionEvent event) {
