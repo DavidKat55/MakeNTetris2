@@ -1,7 +1,3 @@
-Klar! Hier ist ein Beispiel für ein übersichtliches und ansprechendes README für dein Spiel **MakeNTetris**, das du direkt auf GitHub verwenden kannst. Sag Bescheid, wenn du noch Details wie Programmiersprache, Screenshots oder Features hinzufügen willst:
-
----
-
 # 🎮 MakeNTetris
 
 **MakeNTetris** ist eine eigene Version des klassischen Tetris-Spiels – mit einem modernen Twist! Baue Reihen, knacke deinen Highscore und lass dich vom minimalistischen Design und dem flüssigen Gameplay begeistern.
