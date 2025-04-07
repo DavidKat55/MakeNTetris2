@@ -47,8 +47,8 @@ public class Level1 extends Level{
         zielPositionen.add(new Pair<>(4, 9));
         zielPositionen.add(new Pair<>(5, 8));
         zielPositionen.add(new Pair<>(6, 8));
-        //Z-Block (rot)
 
+        //Z-Block (rot)
         zielPositionen.add(new Pair<>(9, 9));
         zielPositionen.add(new Pair<>(9, 8));
         zielPositionen.add(new Pair<>(8, 8));

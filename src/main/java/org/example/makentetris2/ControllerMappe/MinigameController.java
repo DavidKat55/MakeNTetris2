@@ -61,23 +61,19 @@ public class MinigameController {
     @FXML
     void roll(ActionEvent event) {
         if (!test || startKontostand <= 0 || startKontostand < Integer.parseInt(einsatz.getText()) || Integer.parseInt(einsatz.getText()) <= 0) {
-            System.out.println("Fehler bei der Wette");
         } else {
             rollButton.setDisable(true);
             soundManager.playSound("/sounds/MinigameWin.mp3");
             Thread thread = new Thread() {
                 public void run() {
-                    System.out.println("Thread Running");
                     try {
                         for (int i = 0; i < 15; i++) {
-                            File file = new File("src/main/resources/images/Würfel/dice" + (rand.nextInt(7)) + ".png");
-                            würfel.setImage(new Image(file.toURI().toString()));
+                            String imagePath = "/images/Würfel/dice" + (rand.nextInt(7)) + ".png";
+                            würfel.setImage(new Image(getClass().getResource(imagePath).toString()));
                             Thread.sleep(93);
                         }
-
                         checkWinOrLose(wette);
                         rollButton.setDisable(false);
-                        Thread.sleep(900);
                         soundManager.playBackgroundMusic("/sounds/MinigameStart.mp3");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
